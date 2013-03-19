@@ -1,0 +1,8 @@
+*.o
+*.bar
+*.i
+*.sym
+monorail
+*.map
+mapfile
+*.err
