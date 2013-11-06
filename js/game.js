@@ -224,7 +224,19 @@ $.moveToRowCol = function(newRow, newCol) {
         $.goBack(newCircle)
     } else if (newCircle.next == null) {
         // user selects to go to unvisited circle
-        $.goForward(newCircle)
+        if (newCircle.preset == true) {
+            // special logic for presets:
+            // - If not forced then make sure entering on start/stop
+            // - If forced make sure entering from start
+            if (newCircle.forced == true && newCircle.presetPrev == null) {
+                $.goForward(newCircle)
+            } else if (newCircle.forced == false && 
+                    (newCircle.presetPrev == null || newCircle.presetNext == null)) {
+                $.goForward(newCircle)
+            }
+        } else {
+            $.goForward(newCircle)
+        }
     }
 }
 
