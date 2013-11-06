@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            .debug-blue
+            {
+                border-style: solid;
+                border-width: 1px;
+                border-color: blue;
+            }
+            #wrap {
+                left: 50%;
+                position: absolute;
+                padding: 10px;
+                top: 50%;
+            }
+            #wrap-inner {
+                overflow: hidden;
+                position: relative;
+            }
+            canvas {
+                top: 0;
+                left: 0;
+                position: absolute;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="wrap-inner">
+                <canvas id="main"></canvas>
+            </div>
+        </div>
+        <script>var $ = {}</script>
+        <script src="js/requestAnimFrame.js"></script>
+        <script src="js/requestInterval.js"></script>
+        <script src="js/util.js"></script> 
+        <script src="js/definitions.js"></script> 
+        <script src="js/button.js"></script> 
+        <script src="js/events.js"></script> 
+        <script src="js/state.js"></script> 
+        <script src="js/game.js"></script>
+    </body>
+</html>
