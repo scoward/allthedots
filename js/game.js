@@ -117,7 +117,7 @@ $.setStartingCircle = function(row, col) {
     $.startingCircle = $.circles[num]
 }
 
-$.setEndingCirlce = function(row, col) {
+$.setEndingCircle = function(row, col) {
     var num = $.getIndexForRowCol(row, col)
     $.circles[num].end = true
 }
@@ -307,7 +307,7 @@ $.loadLevel = function(level) {
 
     $.createCircles()
     $.setStartingCircle(level.start.row, level.start.col)
-    $.setEndingCirlce(level.end.row, level.start.col)
+    $.setEndingCircle(level.end.row, level.end.col)
     $.setupPresets()
 }
 
