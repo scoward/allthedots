@@ -1,5 +1,7 @@
 $.clearScreen = function() {
     $.ctxmg.clearRect(0, 0, $.cw, $.ch)
+    $.ctxmg.fillStyle = "white"
+    $.ctxmg.fillRect(0, 0, $.cw, $.ch)
 }
 
 $.createCircles = function() {
@@ -266,8 +268,14 @@ $.setupPresets = function() {
     }
 }
 
-$.reset = function() {
+$.resetMouse = function() {
     $.mouse.down = 0
+    $.mouse.touchClick = 0
+    $.pushMouseOffScreen()
+}
+
+$.reset = function() {
+    $.resetMouse()
     $.dt = 1
     $.lt = 0
     $.elapsed = 0
@@ -287,6 +295,7 @@ $.updateDelta = function() {
 }
 
 $.loadLevel = function(level) {
+    $.reset()
     $.level = level
     $.colStep = $.gameScreen.width / level.columns
     $.rowStep = $.gameScreen.height / level.rows
@@ -319,8 +328,9 @@ $.init = function() {
     $.wrapInner = document.getElementById("wrap-inner")
     $.canvas = document.getElementById("main")
     $.ctxmg = $.canvas.getContext("2d")
-    $.cw = $.canvas.width = 600
-    $.ch = $.canvas.height = 900
+    var dims = $.getWidthHeight()
+    $.cw = $.canvas.width = dims.width
+    $.ch = $.canvas.height = dims.height
     $.wrap.style.width = $.wrapInner.style.width = $.cw + 'px'
     $.wrap.style.height = $.wrapInner.style.height = $.ch + 'px'
     $.wrap.style.marginLeft = (-$.cw / 2) - 10 + 'px'
@@ -393,6 +403,13 @@ $.loop = function() {
         }
     }
     
+    if ($.mouse.odown == 1 && $.mouse.down == 0) {
+        $.mouse.click = true
+    } else {
+        $.mouse.click = false
+    }
+    $.mouse.odown = $.mouse.down
+    
     // run current state for delta
     $.states[$.state]();
 
@@ -400,6 +417,14 @@ $.loop = function() {
     $.okeys = {}
     for (var k in $.keys.state) {
         $.okeys[k] = $.keys.state[k]
+    }
+    
+    if ($.mobile && $.mouse.click) {
+        // reset mouse on mobile to clear x/y after click happens
+        // do this so because x/y isn't cleared on PC with mouse/keyboard 
+        // and the click button
+        $.resetMouse()
+        $.mouse.click = false
     }
 }
 

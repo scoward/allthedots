@@ -17,6 +17,7 @@ $.Button = function(opt) {
 }
 
 $.Button.prototype.update = function() {
+    this.ohovering = this.hovering
     if ($.util.pointInRect($.mouse.sx, $.mouse.sy, this.sx, this.sy, this.width, this.height)) {
         this.hovering = 1;
         if (!this.ohovering) {
@@ -26,7 +27,7 @@ $.Button.prototype.update = function() {
         this.hovering = 0
     }
     
-    if (this.hovering && $.mouse.down) {
+    if (this.ohovering && $.mouse.click) {
         // play click sound
         this.action()
     }

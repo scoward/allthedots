@@ -80,7 +80,6 @@ $.setState = function(state) {
                 lockedWidth: $.buttonWidth,
                 lockedHeight: $.buttonHeight,
                 action: function() {
-                    $.reset()
                     $.loadLevel(this.level)
                     $.setState('play')
                 },
@@ -124,7 +123,6 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.reset()
                 $.setState('level_select')
             },
         })
@@ -138,7 +136,6 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.reset()
                 $.countdownStart = Date.now()
                 $.loadLevel($.level)
             },
@@ -159,7 +156,6 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.reset()
                 $.loadLevel($.level)
                 $.setState('play')
             },
@@ -174,7 +170,6 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.reset()
                 $.setState('levels')
             },
         })
@@ -188,7 +183,6 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.reset()
                 $.setState('menu')
             },
         })
