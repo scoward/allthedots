@@ -42,6 +42,14 @@ $.util.strokeCircle = function( ctx, x, y, radius, strokeStyle, lineWidth ) {
     ctx.stroke();
 };
 
+$.util.line = function(sx, sy, ex, ey, stroke) {
+    $.ctxmg.beginPath()
+    $.ctxmg.moveTo(sx, sy)
+    $.ctxmg.lineTo(ex, ey)
+    $.ctxmg.strokeStyle=stroke
+    $.ctxmg.stroke()
+}
+
 /*==============================================================================
  * Symbols
  * ==============================================================================*/
@@ -50,9 +58,9 @@ $.util.drawBackArrow = function (sx, cx, ex, sy, cy, ey) {
         , endX = (cx + ex) / 2
         , startY = (sy + cy) / 2
         , endY = (cy + ey) / 2
-    $.drawLine(startX, cy, endX, cy, "black")
-    $.drawLine(startX, cy, cx, startY, "black")
-    $.drawLine(startX, cy, cx, endY, "black")
+    $.util.line(startX, cy, endX, cy, "black")
+    $.util.line(startX, cy, cx, startY, "black")
+    $.util.line(startX, cy, cx, endY, "black")
 };
 
 $.util.drawRestartSymbol = function (ctx, sx, cx, cy) {
@@ -62,6 +70,6 @@ $.util.drawRestartSymbol = function (ctx, sx, cx, cy) {
     ctx.strokeStyle = "black";
     ctx.stroke();
 
-    $.drawLine(cx + radius, cy, cx + radius / 2, cy - radius / 2, "black")
-    $.drawLine(cx + radius, cy, cx + radius * 1.25, cy - radius / 2, "black")
+    $.util.line(cx + radius, cy, cx + radius / 2, cy - radius / 2, "black")
+    $.util.line(cx + radius, cy, cx + radius * 1.25, cy - radius / 2, "black")
 };
