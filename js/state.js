@@ -389,9 +389,7 @@ $.canMoveToCircle = function(from, to) {
                 }
             }
         }
-    }
-    
-    if (to.preset == true) {
+    } else if (to.preset == true) {
         if (to.forced == true) {
             // must hit beginning of forced array
             if (to.presetPrev != null) {
