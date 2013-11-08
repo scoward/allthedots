@@ -42,7 +42,7 @@ $.drawBottomBar = function() {
 $.drawLines = function() {
     var circle = $.startingCircle
     while (circle.next != null) {
-        $.util.line(circle.x, circle.y, circle.next.x, circle.next.y, $.lineStrokeStyle)
+        $.util.line($.ctxmg, circle.x, circle.y, circle.next.x, circle.next.y, $.lineStrokeStyle)
         circle = circle.next
     }
 }

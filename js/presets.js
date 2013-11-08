@@ -27,7 +27,7 @@ $.setupPresets = function() {
 $.drawPresets = function() {
     for (var i = 0; i < $.presets.length; i++) {
         var circle = $.presets[i]
-        $.util.line(circle.x, circle.y, circle.presetNext.x, circle.presetNext.y, $.presetStrokeStyle)
+        $.util.line($.ctxmg, circle.x, circle.y, circle.presetNext.x, circle.presetNext.y, $.presetStrokeStyle)
         if (circle.forced == true) {
             // draw arrows for forced preset
             $.drawArrow(circle.x, circle.y, circle.presetNext.x, circle.presetNext.y, $.arrowStrokeStyle)
