@@ -34,7 +34,23 @@ $.Button.prototype.update = function() {
 }
 
 $.Button.prototype.render = function(i) {
-    if (this.type) {
+    if (this.type && this.type == "level") {
+        if (this.hovering) {
+            $.ctxmg.fillStyle = 'hsla(0, 0%, 10%, 1)'
+            $.util.fillCircle($.ctxmg, this.cx, this.cy, this.width / 1.5)
+            $.ctxmg.strokeStyle = 'hsla(0, 0%, 0%, 1)'
+            $.util.strokeCircle($.ctxmg, this.cx, this.cy, this.width / 1.5)
+            $.ctxmg.strokeStyle = 'hsla(0, 0%, 100%, 0.2)'
+            $.util.strokeCircle($.ctxmg, this.cx, this.cy, this.width / 1.5)
+        } else {
+            $.ctxmg.fillStyle = 'hsla(0, 0%, 0%, 1)'
+            $.util.fillCircle($.ctxmg, this.cx, this.cy, this.width / 2)
+            $.ctxmg.strokeStyle = 'hsla(0, 0%, 0%, 1)'
+            $.util.strokeCircle($.ctxmg, this.cx, this.cy, this.width / 2)
+            $.ctxmg.strokeStyle = 'hsla(0, 0%, 100%, 0.15)'
+            $.util.strokeCircle($.ctxmg, this.cx, this.cy, this.width / 2)
+        }
+    } else if (this.type) {
         if (this.hovering) {
             $.ctxmg.fillStyle = 'hsla(0, 0%, 90%, 1)'
             $.ctxmg.fillRect(Math.floor(this.sx), Math.floor(this.sy), this.width, this.height);
@@ -76,5 +92,5 @@ $.Button.prototype.render = function(i) {
     if (this.title) $.util.renderText($.ctxmg, this.title, this.x, this.y, 'bold 30pt Helvetica', fillStyle)
     
     $.ctxmg.fillStyle = 'hsla(0, 0%, 100%, 0.07)';
-    $.ctxmg.fillRect(Math.floor(this.sx) + 2, Math.floor(this.sy) + 2, this.width - 4, Math.floor((this.height - 4) / 2));
+    if (!this.type) $.ctxmg.fillRect(Math.floor(this.sx) + 2, Math.floor(this.sy) + 2, this.width - 4, Math.floor((this.height - 4) / 2));
 }

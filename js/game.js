@@ -344,6 +344,8 @@ $.init = function() {
     $.wrap.style.marginTop = (-$.ch / 2) - 10 + 'px'
     $.buttonWidth = 250
     $.buttonHeight = 40
+    $.circleButtonWidth = 60
+    $.circleButtonHeight = 60
     $.gameScreen = {
         x: 0
         , y: ($.ch - $.cw) / 2

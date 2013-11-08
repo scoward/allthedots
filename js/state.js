@@ -65,7 +65,7 @@ $.setState = function(state) {
         $.mouse.down = 0
         var level
             , startingX = 30
-            , padding = 10
+            , padding = 50
             , x = startingX
             , y = 30
             , levels = $.definitions.levels[$.levelGroup]
@@ -73,12 +73,13 @@ $.setState = function(state) {
         for (var i = 0; i < levels.length; i++) {
             level = levels[i]
             var button = new $.Button({
-                title: '',
+                title: i+1,
+                type: "level",
                 level: level,
-                x: x + $.buttonWidth / 2,
-                y: y + $.buttonHeight / 2,
-                lockedWidth: $.buttonWidth,
-                lockedHeight: $.buttonHeight,
+                x: x + $.circleButtonWidth / 2,
+                y: y + $.circleButtonHeight / 2,
+                lockedWidth: $.circleButtonWidth,
+                lockedHeight: $.circleButtonHeight,
                 action: function() {
                     $.loadLevel(this.level)
                     $.setState('play')
@@ -86,11 +87,11 @@ $.setState = function(state) {
             })
             $.buttons.push(button)
 
-            if (x + padding + 2 * $.buttonWidth < $.cw) {
-                x += padding + $.buttonWidth
+            if (x + padding + 2 * $.circleButtonWidth < $.cw) {
+                x += padding + $.circleButtonWidth
             } else {
                 x = startingX
-                y += padding + $.buttonHeight
+                y += padding + $.circleButtonHeight
             }
         }
         
