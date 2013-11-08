@@ -172,7 +172,7 @@ $.init = function() {
     }
     $.topBar = {
         x: 0
-        , y: 0
+        , y: $.gameScreen.y - Math.ceil($.ch * .075)
         , height: Math.ceil($.ch * .075)
         , width: $.cw
     }
