@@ -49,12 +49,12 @@ $.touchmovecb = function(e) {
 
 $.touchstartcb = function( e ) {
     e.preventDefault()
-    $.mouse.touch = 1
+    $.mouse.down = 1
 }
 
 $.touchendcb = function( e ) {
     e.preventDefault()
-    $.mouse.touch = 0
+    $.mouse.down = 0
 }
 
 $.pushMouseOffScreen = function() {

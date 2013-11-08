@@ -27,7 +27,10 @@ $.Button.prototype.update = function() {
         this.hovering = 0
     }
     
-    if (this.ohovering && $.mouse.click) {
+    if ($.mouse.click) {
+        console.log("Click: Hovering: " + this.hovering)
+    }
+    if (this.hovering && $.mouse.click) {
         // play click sound
         this.action()
     }
