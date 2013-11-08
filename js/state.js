@@ -17,7 +17,6 @@ $.setState = function(state) {
         $.buttons.push(levelsButton)
     } 
     else if (state == 'levels') {
-        $.drawBottomBar()
         $.mouse.down = 0
         var level
             , startingX = 30
@@ -197,8 +196,7 @@ $.setState = function(state) {
 $.setupStates = function() {
     $.states['menu'] = function() {
         $.clearScreen();
-                $.drawBottomBar()
-
+        $.drawBottomBar()
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -206,8 +204,7 @@ $.setupStates = function() {
     
     $.states['levels'] = function() {
         $.clearScreen();
-                $.drawBottomBar()
-
+        $.drawBottomBar()
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -215,8 +212,7 @@ $.setupStates = function() {
 
     $.states['level_select'] = function() {
         $.clearScreen();
-                $.drawBottomBar()
-
+        $.drawBottomBar()
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -224,8 +220,7 @@ $.setupStates = function() {
     
     $.states['game_over'] = function() {
         $.clearScreen();
-                $.drawBottomBar()
-
+        $.drawBottomBar()
 
         var levelTime = ($.elapsed * (1000 / 60)) / 1000
             , fillStyle = 'hsla(0, 50%, 50%, 1)'
@@ -237,7 +232,7 @@ $.setupStates = function() {
     
     $.states['play'] = function() {
         $.clearScreen()
-                $.drawBottomBar()
+        $.drawBottomBar()
 
         if ($.levelStarted == false) {
             var now = Date.now()
