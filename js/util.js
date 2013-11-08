@@ -12,10 +12,10 @@ $.util.pointInRect = function(px, py, rx, ry, rw, rh) {
 /*==============================================================================
 * Renders
 * ==============================================================================*/
-$.util.renderText = function(ctx, text, x, y, font, fillStyle) {
+$.util.renderText = function(ctx, text, x, y, font, fillStyle, halign) {
     ctx.fillStyle = fillStyle
     ctx.font = font
-    ctx.textAlign = 'center'
+    ctx.textAlign = halign
     ctx.textBaseline = 'middle'
     ctx.fillText(text, x, y)
 }
@@ -54,14 +54,24 @@ $.util.line = function(ctx, sx, sy, ex, ey, stroke) {
 /*==============================================================================
  * Symbols
  * ==============================================================================*/
-$.util.drawBackArrow = function (sx, cx, ex, sy, cy, ey) {
+$.util.drawBackArrow = function (sx, sy, cx, cy, ex, ey) {
     var startX = (sx + cx) / 2
         , endX = (cx + ex) / 2
         , startY = (sy + cy) / 2
         , endY = (cy + ey) / 2
-    $.util.line($.ctxmg, startX, cy, endX, cy, "black")
-    $.util.line($.ctxmg, startX, cy, cx, startY, "black")
-    $.util.line($.ctxmg, startX, cy, cx, endY, "black")
+    $.util.line($.ctxmg, startX, cy, endX, cy, $.blackFillStyle)
+    $.util.line($.ctxmg, startX, cy, cx, startY, $.blackFillStyle)
+    $.util.line($.ctxmg, startX, cy, cx, endY, $.blackFillStyle)
+};
+
+$.util.drawNextArrow = function (sx, sy, cx, cy, ex, ey) {
+    var startX = (sx + cx) / 2
+        , endX = (cx + ex) / 2
+        , startY = (sy + cy) / 2
+        , endY = (cy + ey) / 2
+    $.util.line($.ctxmg, startX, cy, endX, cy, $.blackFillStyle)
+    $.util.line($.ctxmg, endX, cy, cx, startY, $.blackFillStyle)
+    $.util.line($.ctxmg, endX, cy, cx, endY, $.blackFillStyle)
 };
 
 $.util.drawRestartSymbol = function (ctx, sx, cx, cy) {
@@ -71,6 +81,6 @@ $.util.drawRestartSymbol = function (ctx, sx, cx, cy) {
     ctx.strokeStyle = "black";
     ctx.stroke();
 
-    $.util.line($.ctxmg, cx + radius, cy, cx + radius / 2, cy - radius / 2, "black")
-    $.util.line($.ctxmg, cx + radius, cy, cx + radius * 1.25, cy - radius / 2, "black")
+    $.util.line($.ctxmg, cx + radius, cy, cx + radius / 2, cy - radius / 2, $.blackFillStyle)
+    $.util.line($.ctxmg, cx + radius, cy, cx + radius * 1.25, cy - radius / 2, $.blackFillStyle)
 };
