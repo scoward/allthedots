@@ -58,12 +58,16 @@ $.Button.prototype.render = function(i) {
             $.ctxmg.fillStyle = 'hsla(0, 0%, 100%, 1)'
             $.ctxmg.fillRect(Math.floor(this.sx), Math.floor(this.sy), this.width, this.height);
         }
-        if (this.type == "back") {
-            $.util.drawBackArrow(this.sx, this.cx, this.ex, this.sy, this.cy, this.ey)
+        if (this.type == 'back') {
+            $.util.drawBackArrow(this.sx, this.sy, this.cx, this.cy, this.ex, this.ey)
         }
 
-        if (this.type == "restart") {
+        if (this.type == 'restart') {
             $.util.drawRestartSymbol($.ctxmg, this.sx, this.cx, this.cy)
+        }
+        
+        if (this.type == 'next') {
+            $.util.drawNextArrow(this.sx, this.sy, this.cx, this.cy, this.ex, this.ey)
         }
     } else {
         if (this.hovering) {
@@ -89,7 +93,7 @@ $.Button.prototype.render = function(i) {
     } else {
         fillStyle = 'hsla(0, 0%, 100%, 0.7)'
     }
-    if (this.title) $.util.renderText($.ctxmg, this.title, this.x, this.y, 'bold 30pt Helvetica', fillStyle)
+    if (this.title) $.util.renderText($.ctxmg, this.title, this.x, this.y, 'bold 30pt Helvetica', fillStyle, 'center')
     
     $.ctxmg.fillStyle = 'hsla(0, 0%, 100%, 0.07)';
     if (!this.type) $.ctxmg.fillRect(Math.floor(this.sx) + 2, Math.floor(this.sy) + 2, this.width - 4, Math.floor((this.height - 4) / 2));

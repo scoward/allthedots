@@ -130,7 +130,7 @@ $.loadLevel = function(level) {
     $.level = level
     $.colStep = $.gameScreen.width / level.columns
     $.rowStep = $.gameScreen.height / level.rows
-    $.circleDiam = ($.cw) / 24
+    $.circleDiam = $.getCircleDiameter()
     $.circleRadius = $.circleDiam / 2
     $.circles = []
     $.presets = []
@@ -166,18 +166,25 @@ $.init = function() {
     }
     $.bottomBar = {
         x: 0
-        , y: $.ch - $.ch * .05 // 5% of screen
-        , height: $.ch * .05
+        , y: Math.ceil($.ch - $.ch * .075) // 7.5% of screen
+        , height: Math.ceil($.ch * .075)
         , width: $.cw
     }
-    $.bottomButtonWidth = $.bottomBar.height
-    $.bottomButtonHeight = $.bottomBar.height
+    $.topBar = {
+        x: 0
+        , y: $.gameScreen.y - Math.ceil($.ch * .075)
+        , height: Math.ceil($.ch * .075)
+        , width: $.cw
+    }
+    $.barButtonWidth = $.bottomBar.height
+    $.barButtonHeight = $.bottomBar.height
     
     $.defaultFillStyle = "#000000"
     $.selectedFillStyle = "#FF0000"
     $.startingFillStyle = "#006600"
     $.endingFillStyle = "#00CC00"
     $.whiteFillStyle = "#FFFFFF"
+    $.blackFillStyle = "#000000"
     $.lineStrokeStyle = "#87E1F5"
     $.presetStrokeStyle = "#000FFF"
     $.arrowStrokeStyle = "#CCC"

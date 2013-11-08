@@ -2,8 +2,6 @@ $.setState = function(state) {
     $.buttons.length = 0;
 
     if (state == 'menu') {
-        $.mouse.down = 0
-
         var levelsButton = new $.Button({
             title: 'LEVELS',
             x: $.cw / 2,
@@ -11,63 +9,51 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.setState('levels')
+                $.levelGroup = 0
+                $.setState('level_select')
             },
         })
         $.buttons.push(levelsButton)
     } 
-    else if (state == 'levels') {
-        $.mouse.down = 0
-        var level
-            , startingX = 30
-            , padding = 10
-            , x = startingX
-            , y = 30
-
-        for (var key in $.definitions.levels) {
-            level = $.definitions.levels[key]
-            var button = new $.Button({
-                title: key,
-                x: x + $.buttonWidth / 2,
-                y: y + $.buttonHeight / 2,
-                lockedWidth: $.buttonWidth,
-                lockedHeight: $.buttonHeight,
-                action: function() {
-                    $.levelGroup = this.title
-                    $.setState('level_select')
-                },
-            })
-            $.buttons.push(button)
-
-            if (x + padding + 2 * $.buttonWidth < $.cw) {
-                x += padding + $.buttonWidth
-            } else {
-                x = startingX
-                y += padding + $.buttonHeight
-            }
-        }
-        
-        // back to Menu
-        var button = new $.Button({
-            type: 'back',
-            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
-            action: function() {
-                $.setState('menu')
-            },
-        })
-        $.buttons.push(button) 
-    } 
     else if (state == 'level_select') {
-        $.mouse.down = 0
         var level
             , startingX = 30
             , padding = 50
             , x = startingX
-            , y = 30
-            , levels = $.definitions.levels[$.levelGroup]
+            , y = $.gameScreen.y
+            , levels = $.definitions.levels[$.levelGroup].levels
+
+        // back to Levels
+        var button = new $.Button({
+            type: 'back',
+            x: ($.topBar.x + $.barButtonWidth / 2),
+            y: ($.topBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
+            action: function() {
+                if ($.levelGroup != 0 && $.levelGroup - 1 > -1) {
+                    $.levelGroup--
+                    $.setState('level_select')
+                }
+            },
+        })
+        $.buttons.push(button)
+
+        // back to Levels
+        var button = new $.Button({
+            type: 'next',
+            x: ($.topBar.width - $.barButtonWidth / 2),
+            y: ($.topBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
+            action: function() {
+                if ($.levelGroup + 1 < $.definitions.levels.length) {
+                    $.levelGroup++
+                    $.setState('level_select')
+                }
+            },
+        })
+        $.buttons.push(button)
 
         for (var i = 0; i < levels.length; i++) {
             level = levels[i]
@@ -97,12 +83,12 @@ $.setState = function(state) {
         // back to Levels
         var button = new $.Button({
             type: 'back',
-            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
+            x: ($.bottomBar.x + $.barButtonWidth / 2),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
             action: function() {
-                $.setState('levels')
+                $.setState('menu')
             },
         })
         $.buttons.push(button)
@@ -118,10 +104,10 @@ $.setState = function(state) {
         // back to Level Select
         var button = new $.Button({
             type: 'back',
-            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
+            x: ($.bottomBar.x + $.barButtonWidth / 2),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
             action: function() {
                 $.setState('level_select')
             },
@@ -131,10 +117,10 @@ $.setState = function(state) {
         // Restart level
         var button = new $.Button({
             type: 'restart',
-            x: ($.bottomBar.x + $.bottomButtonWidth * 1.5),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
+            x: ($.bottomBar.x + $.barButtonWidth * 1.5),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
             action: function() {
                 $.countdownStart = Date.now()
                 $.loadLevel($.level)
@@ -143,7 +129,6 @@ $.setState = function(state) {
         $.buttons.push(button)
     }
     else if (state == 'game_over') {
-        $.mouse.down = 0
         var level
             , padding = 10
             , x = $.cw / 2
@@ -152,10 +137,10 @@ $.setState = function(state) {
         // Restart level
         var button = new $.Button({
             type: 'restart',
-            x: ($.bottomBar.x + $.bottomButtonWidth * 1.5),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
+            x: ($.bottomBar.x + $.barButtonWidth * 1.5),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
             action: function() {
                 $.loadLevel($.level)
                 $.setState('play')
@@ -166,10 +151,10 @@ $.setState = function(state) {
         // Back to Level Select
         button = new $.Button({
             type: 'back',
-            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
-            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
-            lockedWidth: $.bottomButtonWidth,
-            lockedHeight: $.bottomButtonHeight,
+            x: ($.bottomBar.x + $.barButtonWidth / 2),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
             action: function() {
                 $.setState('level_select')
             },
@@ -216,6 +201,10 @@ $.setupStates = function() {
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
+
+        // draw level name
+        $.util.renderText($.ctxmg, $.definitions.levels[$.levelGroup].title, $.topBar.width / 2, 
+                $.topBar.y + ($.topBar.height / 2), 'bold 32pt Helvetica', $.blackFillStyle, 'center')
     }
     
     $.states['game_over'] = function() {
@@ -224,7 +213,7 @@ $.setupStates = function() {
 
         var levelTime = ($.elapsed * (1000 / 60)) / 1000
             , fillStyle = 'hsla(0, 50%, 50%, 1)'
-        $.util.renderText($.ctxmg, levelTime.toFixed(2), $.cw / 2, 100, 'bold 40pt Helvetica', fillStyle)
+        $.util.renderText($.ctxmg, levelTime.toFixed(2), $.cw / 2, 100, 'bold 40pt Helvetica', fillStyle, 'center')
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -248,7 +237,7 @@ $.setupStates = function() {
                 var fillPercent = secLeft / round
                     //, fillStyle = 'hsla(0, 50%, 50%, ' + fillPercent.toFixed(1).toString() + ')'
                     , fillStyle = 'hsla(0, 50%, 50%, 1)'
-                $.util.renderText($.ctxmg, round.toString(), $.cw / 2, $.ch / 2, 'bold 200pt Helvetica', fillStyle)
+                $.util.renderText($.ctxmg, round.toString(), $.cw / 2, $.ch / 2, 'bold 200pt Helvetica', fillStyle, 'center')
             } else {
                 $.levelStarted = true
             }
@@ -267,7 +256,8 @@ $.setupStates = function() {
                 // draw timer
                 var timerSeconds = ($.elapsed * (1000 / 60)) / 1000
                     , fillStyle = 'hsla(0, 50%, 50%, 1)'
-                $.util.renderText($.ctxmg, timerSeconds.toFixed(2), $.cw / 2, 100, 'bold 40pt Helvetica', fillStyle)
+                $.util.renderText($.ctxmg, timerSeconds.toFixed(2), $.bottomBar.width - 20, 
+                        $.bottomBar.y + ($.bottomBar.height / 2), 'bold 40pt Helvetica', fillStyle, 'right')
             }
         }
 
@@ -389,9 +379,7 @@ $.canMoveToCircle = function(from, to) {
                 }
             }
         }
-    }
-    
-    if (to.preset == true) {
+    } else if (to.preset == true) {
         if (to.forced == true) {
             // must hit beginning of forced array
             if (to.presetPrev != null) {
