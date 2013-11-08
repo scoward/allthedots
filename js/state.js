@@ -280,3 +280,187 @@ $.setupStates = function() {
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
     }
 }
+
+$.goBackOneCircle = function(backCircle) {
+    backCircle.selected = true
+    $.selectedCircle.selected = false
+    $.selectedCircle.prev = null
+    backCircle.next = null
+    $.selectedCircle = backCircle
+}
+
+$.goBack = function(backCircle) {
+    var startingFrom = $.selectedCircle
+    $.goBackOneCircle(backCircle)
+    // Only go back on presets if pressing back at the beginning of a preset
+    while ($.selectedCircle.preset != null && startingFrom.preset != null &&
+            (startingFrom == $.selectedCircle.presetNext ||
+             startingFrom == $.selectedCircle.presetPrev)) {
+        startingFrom = $.selectedCircle
+        $.goBackOneCircle($.selectedCircle.prev)
+    }
+}
+
+$.goForwardOneCircle = function(forwardCircle) {
+    forwardCircle.prev = $.selectedCircle
+    $.selectedCircle.next = forwardCircle
+    $.selectedCircle.selected = false
+    forwardCircle.selected = true
+    $.selectedCircle = forwardCircle
+}
+
+$.goForward = function(forwardCircle) {
+    $.goForwardOneCircle(forwardCircle)
+    var direction
+    while ($.selectedCircle.preset != null && forwardCircle != null) {
+        forwardCircle = null
+        if ($.selectedCircle.presetNext != null && (direction == null || direction == 1)) {
+            forwardCircle = $.selectedCircle.presetNext
+            direction = 1
+        } else if ($.selectedCircle.presetPrev != null && (direction == null || direction == -1)) {
+            forwardCircle = $.selectedCircle.presetPrev
+            direction = -1
+        }
+        
+        if (forwardCircle) {
+            $.goForwardOneCircle(forwardCircle)
+        }
+    }
+}
+
+$.moveToRowCol = function(newRow, newCol) {
+    if (newRow < 0 || newRow > $.level.rows - 1 || newCol < 0 || newCol > $.level.columns - 1) {
+        return
+    }
+    var newCircle = $.circles[$.getIndexForRowCol(newRow, newCol)]
+    if (newCircle.end == true) {
+        // check end condition
+        $.goForward(newCircle)
+        if (!$.checkWinCondition()) {
+            $.goBack($.selectedCircle.prev)
+        }
+    } else if (newCircle.next == $.selectedCircle) {
+        // user pressed back to previously selected circle, so 
+        // newCircle.next == selectedCircle
+        $.goBack(newCircle)
+    } else if (newCircle.next == null) {
+        // user selects to go to unvisited circle
+        if (newCircle.preset == true) {
+            // special logic for presets:
+            // - If not forced then make sure entering on start/stop
+            // - If forced make sure entering from start
+            if (newCircle.forced == true && newCircle.presetPrev == null) {
+                $.goForward(newCircle)
+            } else if (newCircle.forced == false && 
+                    (newCircle.presetPrev == null || newCircle.presetNext == null)) {
+                $.goForward(newCircle)
+            }
+        } else {
+            $.goForward(newCircle)
+        }
+    }
+}
+
+// only send if not in end condition or going backward
+$.canMoveToCircle = function(from, to) {
+    if (from.preset == true) {
+        if (from.forced == true) {
+            // end of forced string
+            if (from.presetNext != null && from.presetNext != to) {
+                return false
+            }
+        } else {
+            if (from.presetNext != null && from.presetPrev != null) {
+                if (from.prev != null) {
+                    if (from.presetNext == from.prev) {
+                        return from.presetPrev == to
+                    } else {
+                        return from.presetNext == to
+                    }
+                } else if (from.next != null) {
+                    if (from.presetNext == from.next) {
+                        return from.presetPrev == to
+                    } else {
+                        return from.presetNext == to
+                    }
+                }
+            } else if (from.presetNext != null) {
+                if (from.presetNext != from.prev) {
+                    return from.presetNext == to
+                }
+            } else if (from.presetPrev != null) {
+                if (from.presetPrev != from.prev) {
+                    return from.presetPrev == to
+                }
+            }
+        }
+    }
+    
+    if (to.preset == true) {
+        if (to.forced == true) {
+            // must hit beginning of forced array
+            if (to.presetPrev != null) {
+                return false
+            }
+        } else {
+            // can't enter middle of preset array
+            if (to.presetPrev != null && to.presetNext != null) {
+                return false
+            }
+        }
+    }
+
+    return true
+}
+
+$.touchMoveToCircle = function(to) {
+    var from = $.selectedCircle
+        , diff = Math.abs(to.col - from.col) 
+                 + Math.abs(to.row - from.row)
+    // TODO: make movement possible across different diffs
+    if (diff != 1) {
+        return
+    }
+    
+    if (to.end == true) {
+        $.goForwardOneCircle(to)
+        if (!$.checkWinCondition()) {
+            $.goBackOneCircle(from)
+        }
+    } else if (to.next == from) {
+        // user pressed back to previously selected circle, so 
+        // newCircle.next == selectedCircle
+        $.goBackOneCircle(to)
+    } else if (to.next == null) {
+        var canMove = $.canMoveToCircle(from, to)
+        if (canMove) {
+            $.goForwardOneCircle(to)
+        }
+    }
+}
+
+// Mouse has different movement handling than keyboard
+$.handleEvents = function() {
+    if ($.keys.pressed.up) {
+        $.moveToRowCol($.selectedCircle.row - 1, $.selectedCircle.col)
+    } else if ($.keys.pressed.down) {
+        $.moveToRowCol($.selectedCircle.row + 1, $.selectedCircle.col)
+    } else if ($.keys.pressed.left) {
+        $.moveToRowCol($.selectedCircle.row, $.selectedCircle.col - 1)
+    } else if ($.keys.pressed.right) {
+        $.moveToRowCol($.selectedCircle.row, $.selectedCircle.col + 1)
+    }
+    
+    if ($.mouse.down == 1) {
+        var circle
+            , diff = 0
+        for (var i = 0; i < $.circles.length; i++) {
+            circle = $.circles[i]
+            if (circle.pointIntersects($.mouse.sx, $.mouse.sy)) {
+                $.touchMoveToCircle(circle)
+                
+                break // break loop, can only be over one circle at a time
+            }
+        }
+    }
+}
