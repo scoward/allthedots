@@ -17,6 +17,7 @@ $.setState = function(state) {
         $.buttons.push(levelsButton)
     } 
     else if (state == 'levels') {
+        $.drawBottomBar()
         $.mouse.down = 0
         var level
             , startingX = 30
@@ -47,14 +48,13 @@ $.setState = function(state) {
             }
         }
         
-        x = startingX
-        y = $.ch - padding - $.buttonHeight
+        // back to Menu
         var button = new $.Button({
-            title: 'MAIN',
-            x: x + $.buttonWidth / 2,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'back',
+            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
                 $.setState('menu')
             },
@@ -94,14 +94,13 @@ $.setState = function(state) {
             }
         }
         
-        x = startingX
-        y = $.ch - padding - $.buttonHeight
+        // back to Levels
         var button = new $.Button({
-            title: 'LEVELS',
-            x: x + $.buttonWidth / 2,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'back',
+            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
                 $.setState('levels')
             },
@@ -116,25 +115,26 @@ $.setState = function(state) {
             , padding = 10
             , y = $.ch - padding - $.buttonHeight
 
+        // back to Level Select
         var button = new $.Button({
-            title: 'QUIT',
-            x: x + $.buttonWidth / 2,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'back',
+            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
                 $.setState('level_select')
             },
         })
         $.buttons.push(button)
 
-        x = $.cw - 30 - $.buttonWidth
+        // Restart level
         var button = new $.Button({
-            title: 'RESTART',
-            x: x + $.buttonWidth / 2,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'restart',
+            x: ($.bottomBar.x + $.bottomButtonWidth * 1.5),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
                 $.countdownStart = Date.now()
                 $.loadLevel($.level)
@@ -148,29 +148,30 @@ $.setState = function(state) {
             , padding = 10
             , x = $.cw / 2
             , y = $.ch - 3 * (padding + $.buttonHeight)
-            
+        
+        // Restart level
         var button = new $.Button({
-            title: 'REPLAY',
-            x: x,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'restart',
+            x: ($.bottomBar.x + $.bottomButtonWidth * 1.5),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
                 $.loadLevel($.level)
                 $.setState('play')
             },
         })
         $.buttons.push(button)
-            
-        y += padding + $.buttonHeight
+        
+        // Back to Level Select
         button = new $.Button({
-            title: 'LEVELS',
-            x: x,
-            y: y + $.buttonHeight / 2,
-            lockedWidth: $.buttonWidth,
-            lockedHeight: $.buttonHeight,
+            type: 'back',
+            x: ($.bottomBar.x + $.bottomButtonWidth / 2),
+            y: ($.bottomBar.y + $.bottomButtonHeight / 2),
+            lockedWidth: $.bottomButtonWidth,
+            lockedHeight: $.bottomButtonHeight,
             action: function() {
-                $.setState('levels')
+                $.setState('level_select')
             },
         })
         $.buttons.push(button)
@@ -195,6 +196,8 @@ $.setState = function(state) {
 $.setupStates = function() {
     $.states['menu'] = function() {
         $.clearScreen();
+                $.drawBottomBar()
+
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -202,6 +205,8 @@ $.setupStates = function() {
     
     $.states['levels'] = function() {
         $.clearScreen();
+                $.drawBottomBar()
+
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -209,6 +214,8 @@ $.setupStates = function() {
 
     $.states['level_select'] = function() {
         $.clearScreen();
+                $.drawBottomBar()
+
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
@@ -216,6 +223,8 @@ $.setupStates = function() {
     
     $.states['game_over'] = function() {
         $.clearScreen();
+                $.drawBottomBar()
+
 
         var levelTime = ($.elapsed * (1000 / 60)) / 1000
             , fillStyle = 'hsla(0, 50%, 50%, 1)'
@@ -227,6 +236,8 @@ $.setupStates = function() {
     
     $.states['play'] = function() {
         $.clearScreen()
+                $.drawBottomBar()
+
         if ($.levelStarted == false) {
             var now = Date.now()
                 , diff = (now - $.countdownStart) / 1000

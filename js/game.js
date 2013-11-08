@@ -36,6 +36,13 @@ $.drawCircles = function() {
     }
 }
 
+$.drawBottomBar = function() {
+    $.ctxmg.beginPath()
+    $.ctxmg.rect($.bottomBar.x, $.bottomBar.y, $.bottomBar.width, $.bottomBar.height)
+    $.ctxmg.fillStyle = "#FFFFFF"
+    $.ctxmg.fill()
+}
+
 $.drawLine = function(startX, startY, endX, endY, stroke) {
     $.ctxmg.beginPath()
     $.ctxmg.moveTo(startX, startY)
@@ -343,6 +350,14 @@ $.init = function() {
         , height: $.cw
         , width: $.cw
     }
+    $.bottomBar = {
+        x: 0
+        , y: $.ch - $.ch * .05 // 5% of screen
+        , height: $.ch * .05
+        , width: $.cw
+    }
+    $.bottomButtonWidth = $.bottomBar.height
+    $.bottomButtonHeight = $.bottomBar.height
     
     $.defaultFillStyle = "#000000"
     $.selectedFillStyle = "#FF0000"
