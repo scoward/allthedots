@@ -218,6 +218,7 @@ $.init = function() {
     
     $.states = {}
     $.state = ''
+    $.lastState = ''
     $.buttons = []
     
     $.resizecb() // to set initial cOffset
@@ -225,6 +226,12 @@ $.init = function() {
     $.setupStates()
     $.setState('menu')
     $.loop()
+
+    CocoonJS.App.setAppShouldFinishCallback(function() {
+        if ($.state == 'menu') return true
+        $.setState($.lastState)
+        return false
+    })
 }
 
 $.loop = function() {

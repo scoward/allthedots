@@ -16,6 +16,7 @@ $.setState = function(state) {
         $.buttons.push(levelsButton)
     } 
     else if (state == 'level_select') {
+        $.lastState = 'menu'
         var level
             , startingX = 30
             , padding = 50
@@ -80,7 +81,7 @@ $.setState = function(state) {
             }
         }
         
-        // back to Levels
+        // back to Menu
         var button = new $.Button({
             type: 'back',
             x: ($.bottomBar.x + $.barButtonWidth / 2),
@@ -94,6 +95,7 @@ $.setState = function(state) {
         $.buttons.push(button)
     }
     else if (state == 'play') {
+        $.lastState = 'level_select'
         $.countdownStart = Date.now()
         $.levelStarted = false
         
@@ -129,6 +131,7 @@ $.setState = function(state) {
         $.buttons.push(button)
     }
     else if (state == 'game_over') {
+        $.lastState = 'level_select'
         var level
             , padding = 10
             , x = $.cw / 2
