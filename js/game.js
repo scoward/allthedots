@@ -148,6 +148,11 @@ $.init = function() {
     $.canvas = document.getElementById("main")
     $.ctxmg = $.canvas.getContext("2d")
     var dims = $.getWidthHeight()
+
+    $.audioManager = new CAAT.Module.Audio.AudioManager().initialize(4)
+    $.audioManager.setAudioFormatExtensions(['wav', 'ogg', 'x-wav', 'mp3']) 
+    $.audioManager.addAudioFromURL('connect', 'sounds/blip.wav', function() {console.log("played")})
+    
     $.cw = $.canvas.width = dims.width
     $.ch = $.canvas.height = dims.height
     $.wrap.style.width = $.wrapInner.style.width = $.cw + 'px'

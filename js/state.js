@@ -326,11 +326,14 @@ $.moveToRowCol = function(newRow, newCol) {
         $.goForward(newCircle)
         if (!$.checkWinCondition()) {
             $.goBack($.selectedCircle.prev)
+        } else {
+            // play winning sound
         }
     } else if (newCircle.next == $.selectedCircle) {
         // user pressed back to previously selected circle, so 
         // newCircle.next == selectedCircle
         $.goBack(newCircle)
+        $.audioManager.play('connect')
     } else if (newCircle.next == null) {
         // user selects to go to unvisited circle
         if (newCircle.preset == true) {
@@ -339,12 +342,15 @@ $.moveToRowCol = function(newRow, newCol) {
             // - If forced make sure entering from start
             if (newCircle.forced == true && newCircle.presetPrev == null) {
                 $.goForward(newCircle)
+                $.audioManager.play('connect')
             } else if (newCircle.forced == false && 
                     (newCircle.presetPrev == null || newCircle.presetNext == null)) {
                 $.goForward(newCircle)
+                $.audioManager.play('connect')
             }
         } else {
             $.goForward(newCircle)
+            $.audioManager.play('connect')
         }
     }
 }
@@ -412,15 +418,19 @@ $.touchMoveToCircle = function(to) {
         $.goForwardOneCircle(to)
         if (!$.checkWinCondition()) {
             $.goBackOneCircle(from)
+        } else {
+            // play winning sound
         }
     } else if (to.next == from) {
         // user pressed back to previously selected circle, so 
         // newCircle.next == selectedCircle
         $.goBackOneCircle(to)
+        $.audioManager.play('connect')
     } else if (to.next == null) {
         var canMove = $.canMoveToCircle(from, to)
         if (canMove) {
             $.goForwardOneCircle(to)
+            $.audioManager.play('connect')
         }
     }
 }
