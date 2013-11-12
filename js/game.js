@@ -153,6 +153,9 @@ $.init = function() {
     $.audioManager.setAudioFormatExtensions(['wav', 'ogg', 'x-wav', 'mp3']) 
     $.audioManager.addAudioFromURL('connect', 'sounds/blip.wav')
     $.audioManager.addAudioFromURL('wrong', 'sounds/wrong.wav')
+    $.audioManager.addAudioFromURL('win', 'sounds/win.wav')
+    $.audioManager.addAudioFromURL('countdown', 'sounds/countdown.wav')
+    $.audioManager.addAudioFromURL('start', 'sounds/start.wav')
     
     $.cw = $.canvas.width = dims.width
     $.ch = $.canvas.height = dims.height
