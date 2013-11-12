@@ -237,12 +237,17 @@ $.setupStates = function() {
             $.drawCircles()
             // draw countdown stuff
             if (round > 0) {
+                if ($.lastNum != round) {
+                    $.audioManager.play('countdown')
+                    $.lastNum = round
+                }
                 var fillPercent = secLeft / round
                     //, fillStyle = 'hsla(0, 50%, 50%, ' + fillPercent.toFixed(1).toString() + ')'
                     , fillStyle = 'hsla(0, 50%, 50%, 1)'
                 $.util.renderText($.ctxmg, round.toString(), $.cw / 2, $.ch / 2, 'bold 200pt Helvetica', fillStyle, 'center')
             } else {
                 $.levelStarted = true
+                $.audioManager.play('start')
             }
         } else {
             $.updateDelta()
@@ -253,6 +258,7 @@ $.setupStates = function() {
             if ($.checkWinCondition()) {
                 // stop timer
                 $.levelEndTime = Date.now()
+                $.audioManager.play('win')
                 $.levelStarted = false
                 $.setState('game_over')
             } else {
@@ -357,6 +363,8 @@ $.moveToRowCol = function(newRow, newCol) {
             $.goForward(newCircle)
             $.audioManager.play('connect')
         }
+    } else {
+        $.audioManager.play('wrong')
     }
     $.toCircle = newCircle
 }
