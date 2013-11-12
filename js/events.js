@@ -86,4 +86,3 @@ $.resizecb = function( e ) {
         top: rect.top
     }
 }
-

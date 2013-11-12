@@ -325,6 +325,9 @@ $.moveToRowCol = function(newRow, newCol) {
         // check end condition
         $.goForward(newCircle)
         if (!$.checkWinCondition()) {
+            // don't need to check because you can't attempt to go to the same circle twice
+            // without letting go of the arrow button
+            $.audioManager.play('wrong')
             $.goBack($.selectedCircle.prev)
         } else {
             // play winning sound
@@ -347,12 +350,15 @@ $.moveToRowCol = function(newRow, newCol) {
                     (newCircle.presetPrev == null || newCircle.presetNext == null)) {
                 $.goForward(newCircle)
                 $.audioManager.play('connect')
+            } else {
+                $.audioManager.play('wrong')
             }
         } else {
             $.goForward(newCircle)
             $.audioManager.play('connect')
         }
     }
+    $.toCircle = newCircle
 }
 
 // only send if not in end condition or going backward
@@ -411,13 +417,12 @@ $.touchMoveToCircle = function(to) {
                  + Math.abs(to.row - from.row)
     // TODO: make movement possible across different diffs
     if (diff != 1) {
-        return
-    }
-    
-    if (to.end == true) {
+        $.playIncorrectMoveSound(to)
+    } else if (to.end == true) {
         $.goForwardOneCircle(to)
         if (!$.checkWinCondition()) {
             $.goBackOneCircle(from)
+            $.playIncorrectMoveSound(to)
         } else {
             // play winning sound
         }
@@ -431,8 +436,22 @@ $.touchMoveToCircle = function(to) {
         if (canMove) {
             $.goForwardOneCircle(to)
             $.audioManager.play('connect')
+        } else {
+            $.playIncorrectMoveSound(to)
         }
+    } else {
+        $.playIncorrectMoveSound(to)
     }
+
+    $.toCircle = to
+}
+
+$.playIncorrectMoveSound = function(to) {
+    if (to == $.toCircle) {
+        return
+    }
+    
+    $.audioManager.play('wrong')
 }
 
 // Mouse has different movement handling than keyboard
