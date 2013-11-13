@@ -1,13 +1,49 @@
 $.definitions = {}
+var i = 0
 
 /* ==================================================
  * Levels
  * ================================================== */
 $.definitions.levels = []
-// intro levels
+// 4x4
+$.definitions.levels[i++] = {
+    title: "4 x 4",
+    levels: [
+        {
+            rows: 4,
+            columns: 4,
+            start: {row: 0, col: 0},
+            end: {row: 2, col: 3},
+            presets: [
+                // vertical
+                // horizontal
+                {forced: true, array:[{row: 1, col: 3}, {row: 1, col: 2}]},
+                // combined
+            ],
+        },
+    ],
+}
+
+// 5x5
+$.definitions.levels[i++] = {
+    title: "5 x 5",
+    levels: [
+        {
+            rows: 5,
+            columns: 5,
+            start: {row: 1, col: 1},
+            end: {row: 2, col: 2},
+            presets: [
+                // vertical
+                // horizontal
+                // combined
+            ],
+        },
+    ],
+}
 
 // 6x6
-$.definitions.levels[0] = {
+$.definitions.levels[i++] = {
     title: "6 x 6",
     levels: [
         {
@@ -56,7 +92,7 @@ $.definitions.levels[0] = {
     ]
 }
 
-$.definitions.levels[1] = {
+$.definitions.levels[i++] = {
     title: "7 x 7",
     levels: [
         {

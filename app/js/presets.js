@@ -1,6 +1,6 @@
 $.setupPresets = function() {
     var array = $.level.presets
-    if (array.length > 1) {
+    if (array.length > 0) {
         for (var i = 0; i < array.length; i++) {
             var presetObject = array[i]
                 , presetArray = presetObject.array
