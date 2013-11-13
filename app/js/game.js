@@ -154,13 +154,13 @@ $.init = function() {
     Parse.initialize('quDSRgEzAUVoCiAMZUmGJHcE32pb1BavT1QgH0KZ',
                      '9rEPleAPExWkHVIB5i8tjkX6hR2aqqhXXMBnse99')
     
-    var TestObject = Parse.Object.extend("TestObject")
+    /*var TestObject = Parse.Object.extend("TestObject")
     var testObject = new TestObject()
     testObject.save({foo: "bar"}, {
         success: function(object) {
             alert("yay!, it worked")
         }
-    })
+    })*/
 
     var devInfo = CocoonJS.App.getDeviceInfo()
     if (devInfo) {
