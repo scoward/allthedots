@@ -9,7 +9,7 @@ type Graph interface {
 	AddAdj(from, to int)    // err
 	RemoveAdj(from, to int) // err
 	NumNodes() int
-	CanMove(from, to int) bool
+	CanMove(from, to int, p *Path) bool
 }
 
 type GridGraph struct {
