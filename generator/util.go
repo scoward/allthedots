@@ -11,21 +11,21 @@ func getGridRowColFromIdx(idx, cols int) (row, col int) {
 	return
 }
 
-func isHamiltonianPath(start, end int, graph Graph, stack *Stack) bool {
-	//fmt.Printf("Testing path: %+v\n", stack.GetArray())
-	//fmt.Printf("Testing count: %d\n", stack.Count())
-	if stack.Count() != graph.NumNodes() {
+func isHamiltonianPath(start, end int, graph Graph, p *Path) bool {
+	//fmt.Printf("Testing path: %+v\n", p.GetArray())
+	//fmt.Printf("Testing count: %d\n", p.Count())
+	if p.Count() != graph.NumNodes() {
 		//fmt.Printf("Failed count\n")
 		return false
 	}
-	if start != stack.Bottom() {
-        //fmt.Printf("Testing path: %+v\n", stack.GetArray())
-		//fmt.Printf("Failed start: start:%d path:%d\n", start, stack.Bottom())
+	if start != p.Bottom() {
+        //fmt.Printf("Testing path: %+v\n", p.GetArray())
+		//fmt.Printf("Failed start: start:%d path:%d\n", start, p.Bottom())
 		return false
 	}
-	if end != stack.Peek() {
-        //fmt.Printf("Testing path: %+v\n", stack.GetArray())
-		//fmt.Printf("Failed end: end:%d path:%d\n", end, stack.Peek())
+	if end != n.Peek() {
+        //fmt.Printf("Testing path: %+v\n", p.GetArray())
+		//fmt.Printf("Failed end: end:%d path:%d\n", end, p.Peek())
 		return false
 	}
 

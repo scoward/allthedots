@@ -57,22 +57,15 @@ func NewGridGraph(rows, cols int) Graph {
 
 // TODO: presets, should be in graph
 // to and from are indexes, need to convert to row/col
-func (g *GridGraph) CanMove(from, to int) bool {
+func (g *GridGraph) CanMove(from, to int, p *Path) bool {
 	fromRow, fromCol := getGridRowColFromIdx(from, g.Cols)
 	toRow, toCol := getGridRowColFromIdx(to, g.Cols)
-
-	diffCol := toCol - fromCol
-	if diffCol < 0 {
-		diffCol = -diffCol
-	}
-	diffRow := toRow - fromRow
-	if diffRow < 0 {
-		diffRow = -diffRow
-	}
-	diff := diffCol + diffRow
-	if diff != 1 {
-		return false
-	}
+    
+    if fromRow > toRow { // moving down
+    } else if fromRow < toRow { // moving up
+    } else if fromCol < toCol { // move right
+    } else { // moving left
+    }
 
 	return true
 }

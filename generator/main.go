@@ -11,31 +11,31 @@ type Problem struct {
 	Solves int
 }
 
-func findHamiltonianPath(p *Problem, startIdx, endIdx int, stack *Stack) error {
-	stack.Push(startIdx)
+func findHamiltonianPath(p *Problem, startIdx, endIdx int, p *Path) error {
+	p.Push(startIdx)
 	for _, next := range p.Graph.GetAdjs(startIdx) {
-		if stack.Contains(next) {
+		if p.Contains(next) {
 			//fmt.Printf("Skipping %d, already in path\n", next)
 			continue
 		}
-		if !p.Graph.CanMove(startIdx, next) {
+		if !p.Graph.CanMove(startIdx, next, p) {
 			fmt.Printf("Can't move from %d to %d\n", startIdx, next)
 			continue
 		}
 
 		if next == endIdx {
-			stack.Push(next)
-			if isHamiltonianPath(p.Start, p.End, p.Graph, stack) {
+			p.Push(next)
+			if isHamiltonianPath(p.Start, p.End, p.Graph, p) {
 				p.Solves++
 				//fmt.Printf("%d\n", p.Solves)
-				//fmt.Printf("Solution found:\n%+v\n", stack.GetArray())
+				//fmt.Printf("Solution found:\n%+v\n", p.GetArray())
 			}
-			stack.Pop()
+			p.Pop()
 		} else {
-			findHamiltonianPath(p, next, endIdx, stack)
+			findHamiltonianPath(p, next, endIdx, p)
 		}
 	}
-	stack.Pop()
+	p.Pop()
 
 	return nil
 }
@@ -46,7 +46,7 @@ func main() {
 
 	graph := NewGridGraph(numRows, numCols)
 	p := &Problem{Graph: graph, Start: 0, End: 34}
-	s := NewStack(graph.NumNodes())
+	s := NewPath(graph.NumNodes())
 	err := findHamiltonianPath(p, p.Start, p.End, s)
 	if err != nil {
 	}
