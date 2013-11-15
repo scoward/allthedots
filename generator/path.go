@@ -34,6 +34,16 @@ func (s *Path) Peek() int {
     return s.nodes[s.count - 1]
 }
 
+// Looks into the stack s.count - 1 - num
+// will return -1 if OOB
+func (s *Path) Past(num int) int {
+    idx := s.count - 1 - num
+    if idx > -1 {
+        return s.nodes[idx]
+    }
+    return -1
+}
+
 func (s *Path) Bottom() int {
     return s.nodes[0]
 }

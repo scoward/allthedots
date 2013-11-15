@@ -4,13 +4,6 @@ import (
 	//"fmt"
 )
 
-// row and col are 0 based
-func getGridRowColFromIdx(idx, cols int) (row, col int) {
-	row = idx / cols
-	col = idx % cols
-	return
-}
-
 func isHamiltonianPath(start, end int, graph Graph, p *Path) bool {
 	//fmt.Printf("Testing path: %+v\n", p.GetArray())
 	//fmt.Printf("Testing count: %d\n", p.Count())
