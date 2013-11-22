@@ -21,12 +21,7 @@ func testIsHamiltonianPath(start, end int, graph *GridGraph, p *Path) bool {
 	return true
 }
 
-func testFindHamiltonianPath(prob *Problem, g *GridGraph, from, endIdx int, p *Path) {
-    if p.count >= len(p.nodes) {
-		nodes := make([]int, len(p.nodes)*2)
-		copy(nodes, p.nodes)
-		p.nodes = nodes
-	}
+/*func testFindHamiltonianPath(prob *Problem, g *GridGraph, from, endIdx int, p *Path) {
 	p.nodes[p.count] = from
     p.set[from] = 1
 	p.count++
@@ -143,23 +138,17 @@ func testFindHamiltonianPath(prob *Problem, g *GridGraph, from, endIdx int, p *P
 				}
 			}
 		}
-        
 
 		if to == endIdx {
-            if p.count >= len(p.nodes) {
-                nodes := make([]int, len(p.nodes)*2)
-                copy(nodes, p.nodes)
-                p.nodes = nodes
-            }
             p.nodes[p.count] = to
             p.set[to] = 1
             p.count++
 
-			if testIsHamiltonianPath(prob.Start, prob.End, prob.Graph, p) {
-				prob.Solves++
-				//fmt.Printf("%d\n", p.Solves)
-				//fmt.Printf("Solution found:\n%+v\n", p.GetArray())
-			}
+            if p.count == g.Num && start == p.nodes[0] && end == p.nodes[p.count - 1] {
+                prob.Solves++
+            }
+
+            // pop
             if p.count != 0 {
                 node := p.nodes[p.count-1]
                 p.set[node] = 0
@@ -169,9 +158,11 @@ func testFindHamiltonianPath(prob *Problem, g *GridGraph, from, endIdx int, p *P
 			testFindHamiltonianPath(prob, prob.Graph, to, endIdx, p)
 		}
 	}
+    
+    // pop
     if p.count != 0 {
         node := p.nodes[p.count-1]
         p.set[node] = 0
         p.count--
     }
-}
+}*/

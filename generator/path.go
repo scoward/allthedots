@@ -1,7 +1,7 @@
 package main
 
 func NewPath(capacity int) *Path {
-    s := &Path{nodes: make([]int, capacity), set: make([]int, capacity)}
+    s := &Path{nodes: make([]int, capacity), set: make([]int, capacity), count: 0, last: -1}
     return s
 }
 
@@ -9,6 +9,7 @@ type Path struct {
 	nodes []int
     set []int
 	count int
+    last int
 }
 
 func (s *Path) Push(n int) {
@@ -20,6 +21,7 @@ func (s *Path) Push(n int) {
 	s.nodes[s.count] = n
     s.set[n] = 1
 	s.count++
+    s.last++
 }
 
 func (s *Path) Contains(idx int) bool {
@@ -31,13 +33,13 @@ func (s *Path) Count() int {
 }
 
 func (s *Path) Peek() int {
-    return s.nodes[s.count - 1]
+    return s.nodes[s.last]
 }
 
 // Looks into the stack s.count - 1 - num
 // will return -1 if OOB
 func (s *Path) Past(num int) int {
-    idx := s.count - 1 - num
+    idx := s.last - num
     if idx > -1 {
         return s.nodes[idx]
     }
@@ -52,7 +54,8 @@ func (s *Path) Pop() int {
 	if s.count == 0 {
 		return 0
 	}
-	node := s.nodes[s.count-1]
+	node := s.nodes[s.last]
+    s.last--
 	s.count--
     s.set[node] = 0
 	return node
