@@ -1,0 +1,8 @@
+1. For loop lookup for contains - use array map instead
+2. For loops for adjacency matrix, use list instead
+3. No check if in adjacency list (canMove deltas)
+4. Stranded checks - double moves
+5. Get rid of function calls
+6. No more recursion
+7. Naive parallelism
+8. Get rid of all addition
