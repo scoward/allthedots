@@ -6,3 +6,4 @@
 6. No more recursion
 7. Naive parallelism
 8. Get rid of all addition
+9. Top/bottom left/right checking (massive improvement)
