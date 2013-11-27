@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"fmt"
+//"fmt"
 )
 
 func isHamiltonianPath(start, end int, graph Graph, p *Path) bool {
@@ -12,12 +12,12 @@ func isHamiltonianPath(start, end int, graph Graph, p *Path) bool {
 		return false
 	}
 	if start != p.Bottom() {
-        //fmt.Printf("Testing path: %+v\n", p.GetArray())
+		//fmt.Printf("Testing path: %+v\n", p.GetArray())
 		//fmt.Printf("Failed start: start:%d path:%d\n", start, p.Bottom())
 		return false
 	}
 	if end != p.Peek() {
-        //fmt.Printf("Testing path: %+v\n", p.GetArray())
+		//fmt.Printf("Testing path: %+v\n", p.GetArray())
 		//fmt.Printf("Failed end: end:%d path:%d\n", end, p.Peek())
 		return false
 	}

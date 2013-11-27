@@ -158,7 +158,7 @@ func testIsHamiltonianPath(start, end int, graph *GridGraph, p *Path) bool {
 			testFindHamiltonianPath(prob, prob.Graph, to, endIdx, p)
 		}
 	}
-    
+
     // pop
     if p.count != 0 {
         node := p.nodes[p.count-1]

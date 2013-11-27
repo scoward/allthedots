@@ -57,7 +57,7 @@ func NewGridGraph(rows, cols int) *GridGraph {
 		}
 	}
 	graph := GridGraph{Rows: rows, Cols: cols, Num: num, adj: adj, adjShort: adjShort, rowCol: rowCol}
-    /**for i, array := range adjShort {
+	/**for i, array := range adjShort {
 		fmt.Printf("%d: %+v\n", i, array)
 	}*/
 	return &graph
@@ -85,7 +85,7 @@ func (g *GridGraph) AddAdj(from, to int) {
 
 // From and to are vertex indexes
 func (g *GridGraph) RemoveAdj(from, to int) {
-	// do nothing atm
+
 }
 
 func (g *GridGraph) NumNodes() int {
