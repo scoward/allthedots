@@ -1,27 +1,62 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"math/rand"
 	"os"
-    "bytes"
-    "time"
+	"strconv"
+	"strings"
+	"time"
 
 	//	"os"
 	//	"runtime/pprof"
 )
 
-var rows, cols, numProblems int
-var solvesFile string
+var rows, cols, numProblems, start, count int
+var solvesFile, refFile, countFile string
 
 func init() {
-	flag.IntVar(&rows, "r", 6, "rows")
-	flag.IntVar(&cols, "c", 6, "cols")
-	flag.IntVar(&numProblems, "n", 5, "numProblems")
-	flag.StringVar(&solvesFile, "s", fmt.Sprintf("levels/%dx%dsolves.txt", rows, cols), "solvesFile")
+	flag.IntVar(&rows, "r", 6, "Rows")
+	flag.IntVar(&cols, "c", 6, "Cols")
+	flag.IntVar(&numProblems, "n", 5, "Number of levels to generate")
+	flag.StringVar(&solvesFile, "s", "", "Solves file")
+	flag.StringVar(&refFile, "ref", "", "Reference file")
+	flag.StringVar(&countFile, "count", "", "Path to count file")
 	flag.Parse()
+}
+
+func getCount() error {
+	b, err := ioutil.ReadFile(countFile)
+	if err != nil {
+		return err
+	}
+	pCount, err := strconv.ParseInt(strings.Trim(string(b), "\n"), 10, 64)
+	if err != nil {
+		return err
+	}
+	count = int(pCount)
+	return nil
+}
+
+func writeCount() {
+	out := strconv.Itoa(count)
+	file, err := os.OpenFile(countFile, os.O_WRONLY, 0666)
+	if err != nil {
+		fmt.Printf("Error opening count file, something very bad has happened!!!\n")
+		fmt.Printf("I really hope you backed up previous levels\n")
+		return
+	}
+	_, err = file.Write([]byte(out))
+	if err != nil {
+		fmt.Printf("Error writing out count, something very bad has happened!!!\n")
+		fmt.Printf("I really hope you backed up previous levels\n")
+		return
+	}
+	file.Close()
 }
 
 func main() {
@@ -29,31 +64,75 @@ func main() {
 	pprof.StartCPUProfile(f)
 	defer pprof.StopCPUProfile()*/
 
+	if solvesFile == "" {
+		fmt.Printf("Output file needs to be specified\n")
+		return
+	}
+
+	if countFile == "" {
+		count = 0
+	} else {
+		err := getCount()
+		if err != nil {
+			fmt.Printf("Error getting count from file: %s\n", err)
+			return
+		}
+	}
+
+	fmt.Printf("Starting with count: %d\n", count)
+
 	r := rand.New(rand.NewSource(time.Now().Unix()))
+	//r = rand.New(rand.NewSource(1))
+	solvability := LoadSolvability(rows, cols)
+
+	var refSolves []*Solve
+	var solves []*Solve
 
 	file, err := os.OpenFile(solvesFile, os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
-
+		fmt.Printf("Error opening file\n")
+		solves = make([]*Solve, 0)
+	} else {
+		solves = ParseSolvesFile(file)
 	}
-	solves := ParseSolvesFile(file)
-	solveNum := len(solves)
+
+	if refFile != "" {
+		refF, err := os.OpenFile(refFile, os.O_RDONLY, 0666)
+		if err != nil {
+			fmt.Printf("Error opening ref file")
+			refSolves = make([]*Solve, 0)
+			refF.Close()
+		} else {
+			refSolves = ParseSolvesFile(refF)
+		}
+	}
 
 	numSolves := 0
-    skips := 0
-    nonUniques := 0
+	skips := 0
+	solvabilitySkips := 0
+	nonUniques := 0
 	unique := true
 	for numSolves < numProblems {
 		start, end := generateStartEnd(rows*cols, r)
 		prob := NewProblem(rows, cols, start, end, r)
+		if solvability.IsSolvable(start, end) == false {
+			solvabilitySkips++
+			continue
+		}
 		errNum := prob.Solve()
 		if errNum != 0 {
 			// do nothing atm
 			if errNum != 1 {
-                skips++
+				skips++
 				//fmt.Printf("Skipping problem: %d\n", errNum)
+			} else {
+				solvability.AddUnsolvable(start, end)
 			}
 		} else {
 			unique = prob.isSolveUnique(solves)
+			if unique && len(refSolves) > 0 {
+				unique = prob.isSolveUnique(refSolves)
+			}
 			if unique {
 				/*fmt.Printf("Successful generation!\n")
 				fmt.Printf("# s: %d, e: %d\n", prob.Start, prob.End)
@@ -61,33 +140,42 @@ func main() {
 				for i := 0; i < prob.Presets.Num; i++ {
 					fmt.Printf("Preset: %+v\n", prob.Presets.Presets[i])
 				}*/
-				fmt.Printf("Successful generation!\n")
+				fmt.Printf("Successful generation! %d\n", numSolves+1)
 
 				// add to solves, increase num solves
 				numSolves++
-				solveNum++
-				s := CreateSolve(solveNum, prob)
+				count++
+				s := CreateSolve(count, prob)
 				solves = append(solves, s)
 			} else {
-                nonUniques++
+				nonUniques++
 				fmt.Printf("Non unique solution\n")
 			}
 		}
 	}
 
-    out, err := json.MarshalIndent(solves, "", "\t")
-    if err != nil {
-        fmt.Printf("Error marshalling data\n")
-    } else {
-        file.Seek(0, 0)
-        buf := bytes.NewBuffer(out)
-        _, err = buf.WriteTo(file)
-        if err != nil {
-            fmt.Printf("Error writing to file\n")
-        } else {
-            fmt.Printf("\nFinished creating %d new problems for a total of %d problems in file %s\n", numSolves, solveNum, file.Name())
-            fmt.Printf("Non unique finds: %d\n", nonUniques)
-            fmt.Printf("Skips: %d\n", skips)
-        }
-    }
+	solvability.Save()
+
+	out, err := json.MarshalIndent(solves, "", "\t")
+	if err != nil {
+		fmt.Printf("Error marshalling data\n")
+	} else {
+		file.Seek(0, 0)
+		buf := bytes.NewBuffer(out)
+		_, err = buf.WriteTo(file)
+		file.Write([]byte{'\n'})
+		if err != nil {
+			fmt.Printf("Error writing to file\n")
+		} else {
+			if countFile != "" {
+				writeCount()
+			}
+
+			fmt.Printf("\nFinished creating %d new problems for a total of %d problems in file %s\n",
+				numSolves, len(solves), file.Name())
+			fmt.Printf("Non unique finds: %d\n", nonUniques)
+			fmt.Printf("General Skips: %d\n", skips)
+			fmt.Printf("Unsolvable Skips: %d\n", solvabilitySkips)
+		}
+	}
 }

@@ -92,8 +92,8 @@ $.definitions.levels[i++] = {
         {
             rows: 6,
             columns: 6,
-            start: {row: 0, col: 0},
-            end: {row: 2, col: 3},
+            start: {row: 2, col: 3},
+            end: {row: 0, col: 0},
             presets: [
                 // vertical
                 // horizontal
