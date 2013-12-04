@@ -9,22 +9,100 @@ $.setState = function(state) {
             lockedWidth: $.buttonWidth,
             lockedHeight: $.buttonHeight,
             action: function() {
-                $.levelGroup = 0
-                $.setState('level_select')
+                $.setState('level_group_select')
             },
         })
         $.buttons.push(levelsButton)
+    }
+    else if (state == 'level_group_select') {
+        $.lastState = 'menu'
+
+        // 4 x 4 Group Select Button
+        var fourByFourButton = new $.Button({
+            title: '4 x 4',
+            x: $.cw / 2,
+            y: $.ch / 2 - $.buttonHeight * 2.25,
+            lockedWidth: $.buttonWidth,
+            lockedHeight: $.buttonHeight,
+            action: function() {
+                $.levelGroup = 0
+                $.levelSet = 0
+                $.setState('level_select')
+            },
+        })
+        $.buttons.push(fourByFourButton)
+
+        // 5 x 5 Group Select Button
+        var fiveByFiveButton = new $.Button({
+            title: '5 x 5',
+            x: $.cw / 2,
+            y: $.ch / 2 - $.buttonHeight * .75,
+            lockedWidth: $.buttonWidth,
+            lockedHeight: $.buttonHeight,
+            action: function() {
+                $.levelGroup = 1
+                $.levelSet = 0
+                $.setState('level_select')
+            },
+        })
+        $.buttons.push(fiveByFiveButton)
+
+        // 6 x 6 Group Select Button
+        var sixBySixButton = new $.Button({
+            title: '6 x 6',
+            x: $.cw / 2,
+            y: $.ch / 2 + $.buttonHeight * .75,
+            lockedWidth: $.buttonWidth,
+            lockedHeight: $.buttonHeight,
+            action: function() {
+                $.levelGroup = 2
+                $.levelSet = 0
+                $.setState('level_select')
+            },
+        })
+        $.buttons.push(sixBySixButton)
+
+        // 7 x 7 Group Select Button
+        var sevenBySevenButton = new $.Button({
+            title: '7 x 7',
+            x: $.cw / 2,
+            y: $.ch / 2 + $.buttonHeight * 2.25,
+            lockedWidth: $.buttonWidth,
+            lockedHeight: $.buttonHeight,
+            action: function() {
+                $.levelGroup = 3
+                $.levelSet = 0
+                $.setState('level_select')
+            },
+        })
+        $.buttons.push(sevenBySevenButton)
+
+        // back to Menu
+        var button = new $.Button({
+            type: 'back',
+            x: ($.bottomBar.x + $.barButtonWidth / 2),
+            y: ($.bottomBar.y + $.barButtonHeight / 2),
+            lockedWidth: $.barButtonWidth,
+            lockedHeight: $.barButtonHeight,
+            action: function() {
+                $.setState('menu')
+            },
+        })
+        $.buttons.push(button)
     } 
     else if (state == 'level_select') {
-        $.lastState = 'menu'
+        $.lastState = 'level_group_select'
         var level
             , startingX = 30
             , padding = 50
             , x = startingX
             , y = $.gameScreen.y
             , levels = $.definitions.levels[$.levelGroup].levels
+            , levelSets = Math.ceil(levels.length / 30) // Display up to 30 levels per page
 
-        // back to Levels
+        console.log(levels)
+
+        // Previous Level Page
         var button = new $.Button({
             type: 'back',
             x: ($.topBar.x + $.barButtonWidth / 2),
@@ -32,15 +110,15 @@ $.setState = function(state) {
             lockedWidth: $.barButtonWidth,
             lockedHeight: $.barButtonHeight,
             action: function() {
-                if ($.levelGroup != 0 && $.levelGroup - 1 > -1) {
-                    $.levelGroup--
+                if ($.levelSet != 0 && $.levelSet - 1 > -1) {
+                    $.levelSet--
                     $.setState('level_select')
                 }
             },
         })
         $.buttons.push(button)
 
-        // back to Levels
+        // Next Level Page
         var button = new $.Button({
             type: 'next',
             x: ($.topBar.width - $.barButtonWidth / 2),
@@ -48,18 +126,18 @@ $.setState = function(state) {
             lockedWidth: $.barButtonWidth,
             lockedHeight: $.barButtonHeight,
             action: function() {
-                if ($.levelGroup + 1 < $.definitions.levels.length) {
-                    $.levelGroup++
+                if ($.levelSet + 1 < levelSets) {
+                    $.levelSet++
                     $.setState('level_select')
                 }
             },
         })
         $.buttons.push(button)
 
-        for (var i = 0; i < levels.length; i++) {
-            level = levels[i]
+        for (var i = 0; i < 30 && i + 30 * $.levelSet < levels.length; i++) {
+            level = levels[i + 30 * $.levelSet]
             var button = new $.Button({
-                title: i+1,
+                title: i + 1 + 30 * $.levelSet,
                 type: "level",
                 level: level,
                 x: x + $.circleButtonWidth / 2,
@@ -81,7 +159,7 @@ $.setState = function(state) {
             }
         }
         
-        // back to Menu
+        // back to Level Set Select
         var button = new $.Button({
             type: 'back',
             x: ($.bottomBar.x + $.barButtonWidth / 2),
@@ -89,7 +167,7 @@ $.setState = function(state) {
             lockedWidth: $.barButtonWidth,
             lockedHeight: $.barButtonHeight,
             action: function() {
-                $.setState('menu')
+                $.setState('level_group_select')
             },
         })
         $.buttons.push(button)
@@ -194,6 +272,14 @@ $.setupStates = function() {
         $.clearScreen();
         $.drawBottomBar()
         
+        var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
+            i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
+    }
+
+    $.states['level_group_select'] = function() {
+        $.clearScreen();
+        $.drawBottomBar()
+
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}
     }
