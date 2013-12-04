@@ -407,8 +407,7 @@ $.goForward = function(forwardCircle) {
 }
 
 $.moveToIndex = function(newIndex) {
-    console.log(newIndex)
-    if (newIndex < 0 || newIndex > $.level.rows * $.level.columns) {
+    if (newIndex < 0 || newIndex >= $.level.rows * $.level.cols) {
         return
     }
     var newCircle = $.circles[newIndex]
@@ -508,7 +507,7 @@ $.touchMoveToCircle = function(to) {
     var from = $.selectedCircle
         , diff = Math.abs(to.index - from.index) 
     // TODO: make movement possible across different diffs
-    if (diff != 1 && diff != $.level.columns) {
+    if (diff != 1 && diff != $.level.cols) {
         $.playIncorrectMoveSound(to)
     } else if (to.end == true) {
         $.goForwardOneCircle(to)
@@ -549,9 +548,9 @@ $.playIncorrectMoveSound = function(to) {
 // Mouse has different movement handling than keyboard
 $.handleEvents = function() {
     if ($.keys.pressed.up) {
-        $.moveToIndex($.selectedCircle.index - $.level.columns)
+        $.moveToIndex($.selectedCircle.index - $.level.cols)
     } else if ($.keys.pressed.down) {
-        $.moveToIndex($.selectedCircle.index + $.level.columns)
+        $.moveToIndex($.selectedCircle.index + $.level.cols)
     } else if ($.keys.pressed.left) {
         $.moveToIndex($.selectedCircle.index - 1)
     } else if ($.keys.pressed.right) {
