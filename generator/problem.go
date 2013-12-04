@@ -86,7 +86,7 @@ func (p *Problem) addNewPreset() (int, error) {
 	var err error
 
 	for attempts < maxAttempts && presetGenerated == false {
-		array, err = generatePreset(p.Presets, p.Graph.Rows, p.Graph.Cols, p.Rand)
+		array, err = generatePreset(p.Start, p.End, p.Presets, p.Graph.Rows, p.Graph.Cols, p.Rand)
 		if err != nil {
 			attempts++
 		} else {
