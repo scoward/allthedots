@@ -5,10 +5,10 @@ $.setupPresets = function() {
             var presetObject = array[i]
                 , presetArray = presetObject.array
                 , circle = presetArray[0]
-                , from = $.circles[$.getIndexForRowCol(circle.row, circle.col)]
+                , from = $.circles[circle]
             for (var j = 1; j < presetArray.length; j++) {
                 circle = presetArray[j] 
-                var to = $.circles[$.getIndexForRowCol(circle.row, circle.col)]
+                var to = $.circles[circle]
                 
                 from.preset = true 
                 from.forced = presetObject.forced

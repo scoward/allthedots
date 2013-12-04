@@ -13,8 +13,9 @@ $.createCircles = function() {
             circle = new $.Circle({
                         x: x
                         , y: y
-                        , row: row
-                        , col: col
+                        //, row: row
+                        //, col: col
+                        , index: row * $.level.columns + col
                         , radius: $.circleRadius
             })
             $.circles.push(circle)
@@ -47,22 +48,20 @@ $.drawLines = function() {
     }
 }
 
-$.setStartingCircle = function(row, col) {
-    var num = $.getIndexForRowCol(row, col)
+$.setStartingCircle = function(num) {
     $.circles[num].selected = true
     $.circles[num].start = true
     $.selectedCircle = $.circles[num]
     $.startingCircle = $.circles[num]
 }
 
-$.setEndingCircle = function(row, col) {
-    var num = $.getIndexForRowCol(row, col)
+$.setEndingCircle = function(num) {
     $.circles[num].end = true
 }
 
-$.getIndexForRowCol = function(row, col) {
+/*$.getIndexForRowCol = function(row, col) {
     return row * $.level.columns + col
-}
+}*/
 
 $.checkWinCondition = function() {
     var set = {}
@@ -72,7 +71,7 @@ $.checkWinCondition = function() {
         // start at one because end won't be counted
         , length = 1
     while (circle.next != null && error == null) {
-        index = $.getIndexForRowCol(circle.row, circle.col)
+        index = circle.index
         if (index in set) {
             error = true
             continue
@@ -137,8 +136,8 @@ $.loadLevel = function(level) {
     $.levelStarted = false
 
     $.createCircles()
-    $.setStartingCircle(level.start.row, level.start.col)
-    $.setEndingCircle(level.end.row, level.end.col)
+    $.setStartingCircle(level.start)
+    $.setEndingCircle(level.end)
     $.setupPresets()
 }
 

@@ -12,20 +12,20 @@ $.definitions.levels[i++] = {
         {
             rows: 4,
             columns: 4,
-            start: {row: 0, col: 0},
-            end: {row: 2, col: 3},
+            start: 0,
+            end: 11,
             presets: [
                 // vertical
                 // horizontal
-                {forced: true, array:[{row: 1, col: 3}, {row: 1, col: 2}]},
+                {forced: true, array:[7, 6]},
                 // combined
             ],
         },
         {
             rows: 4,
             columns: 4,
-            start: {row: 1, col: 0},
-            end: {row: 1, col: 1},
+            start: 4,
+            end: 5,
             presets: [
                 // vertical
                 // horizontal
@@ -42,8 +42,8 @@ $.definitions.levels[i++] = {
         {
             rows: 5,
             columns: 5,
-            start: {row: 1, col: 1},
-            end: {row: 2, col: 2},
+            start: 6,
+            end: 12,
             presets: [
                 // vertical
                 // horizontal
@@ -60,40 +60,40 @@ $.definitions.levels[i++] = {
         {
             rows: 6,
             columns: 6,
-            start: {row: 0, col: 0},
-            end: {row: 5, col: 0},
+            start: 0,
+            end: 30,
             presets: [
                 // vertical
-                {forced: false, array:[{row: 1, col: 0}, {row: 2, col: 0}]},
-                {forced: false, array:[{row: 2, col: 5}, {row: 3, col: 5}]},
-                {forced: false, array:[{row: 4, col: 5}, {row: 5, col: 5}]},
+                {forced: false, array:[6, 12]},
+                {forced: false, array:[17, 23]},
+                {forced: false, array:[29, 35]},
                 // horizontal
-                {forced: false, array:[{row: 1, col: 3}, {row: 1, col: 4}]},
-                {forced: false, array:[{row: 2, col: 2}, {row: 2, col: 3}]},
-                {forced: false, array:[{row: 3, col: 1}, {row: 3, col: 2}]},
+                {forced: false, array:[9, 10]},
+                {forced: false, array:[14, 15]},
+                {forced: false, array:[19, 20]},
                 // combined
-                {forced: false, array:[{row: 3, col: 0}, {row: 4, col: 0}, {row: 4, col: 1}]},
-                {forced: false, array:[{row: 0, col: 4}, {row: 0, col: 5}, {row: 1, col: 5}]},
+                {forced: false, array:[18, 24, 25]},
+                {forced: false, array:[4, 5, 11]},
             ],
         },
         {
             rows: 6,
             columns: 6,
-            start: {row: 0, col: 0},
-            end: {row: 5, col: 0},
+            start: 0,
+            end: 30,
             presets: [
                 // vertical
                 // horizontal
                 // combined
-                {forced: true, array:[{row: 1, col: 2}, {row: 2, col: 2}, {row: 2, col: 3}, {row: 1, col: 3}]},
-                {forced: false, array:[{row: 4, col: 3}, {row: 3, col: 3}, {row: 3, col: 2}, {row: 4, col: 2}]}
+                {forced: true, array:[8, 14, 15, 9]},
+                {forced: false, array:[27, 21, 20, 26]}
             ],
         },
         {
             rows: 6,
             columns: 6,
-            start: {row: 0, col: 0},
-            end: {row: 2, col: 3},
+            start: 0,
+            end: 15,
             presets: [
                 // vertical
                 // horizontal
@@ -109,8 +109,8 @@ $.definitions.levels[i++] = {
         {
             rows: 7,
             columns: 7,
-            start: {row: 0, col: 0},
-            end: {row: 6, col: 6},
+            start: 0,
+            end: 48,
             presets: [
                 // vertical
                 // horizontal
