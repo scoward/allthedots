@@ -49,7 +49,7 @@ func main() {
 	}
 
 	// output
-	_, err = oFile.WriteString("$.definitions.levels[$.levelCount++] = {\n")
+	_, err = oFile.WriteString("$.definitions.levels[$.definitions.levelCount++] = {\n")
 	if err != nil {
 		fmt.Printf("Error writing definition start output file: %s\n, err")
 		return
