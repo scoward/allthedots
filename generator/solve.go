@@ -1,7 +1,7 @@
 package main
 
 import (
-    //"fmt"
+    "fmt"
 )
 
 type Pair struct {
@@ -56,7 +56,8 @@ func getNumHamPaths(prob *Problem) int {
 
 func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, solves chan<- int) {
 	var pair *Pair
-    var preset *Preset
+	var startPreset *Preset
+	var nextPreset *Preset
 	var canMove bool = true
 	var g *GridGraph = prob.Graph
 	var numSolves int = 0
@@ -156,23 +157,127 @@ func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, s
 		if prob.Presets.Num > 0 {
 			// first check if pair.start was part of a preset.  if so make sure it's allowed to move
 			// to pair.next
-            if prob.Presets.Set[pair.start] != 0 {
-                preset = prob.Presets.Presets[prob.Presets.Set[pair.start] - 1]
-            } else if prob.Presets.Set[pair.next] != 0 {
-                // if pair.start not in a preset, check if pair.next is able to receive from pair.start
-                preset = prob.Presets.Presets[prob.Presets.Set[pair.next] - 1]
-                if preset.Directed == true {
-                    if preset.Path[0] != pair.next {
-                        //fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
-                        canMove = false
-                    }
-                } else {
-                    if preset.Path[0] != pair.next && preset.Path[len(preset.Path) - 1] != pair.next {
-                        //fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
-                        canMove = false
-                    }
-                }
-            }
+			if prob.Presets.Set[pair.start] != 0 {
+				startPreset = prob.Presets.Presets[prob.Presets.Set[pair.start]-1]
+				if prob.Presets.Set[pair.next] != 0 {
+					nextPreset = prob.Presets.Presets[prob.Presets.Set[pair.next]-1]
+					if startPreset == nextPreset { // if on same presets
+						if startPreset.Directed == true {
+							found := false
+                            i := 0
+							for i < len(startPreset.Path) && found == false {
+								if startPreset.Path[i] == pair.start {
+									found = true
+								} else {
+                                    i++
+                                }
+                            }
+                            if found == false {
+                                fmt.Printf("This shouldn't be able to happen\n")
+                            } else {
+                                // if at end or next node in path is not pair.next
+                                if i == len(startPreset.Path)-1 ||
+                                    startPreset.Path[i+1] != pair.next {
+                                    canMove = false
+                                }
+                            }
+						} else { // undirected
+                            found := false
+                            i := 0
+							for i < len(startPreset.Path) && found == false {
+								if startPreset.Path[i] == pair.start {
+									found = true
+								} else {
+                                    i++
+                                }
+                            }
+                            if found == false {
+                                fmt.Printf("This shouldn't be able to happen\n")
+                            } else {
+                                if i > 0 && p.nodes[p.last - 1] == startPreset.Path[i - 1] {
+                                    // if moving right on path then pair must be at i + 1
+                                    if startPreset.Path[i+1] != pair.next {
+                                        canMove = false
+                                    }
+                                } else if i < len(startPreset.Path) - 1 && p.nodes[p.last - 1] == startPreset.Path[i + 1] {
+                                    // if moving left on path then pair must be at i - 1
+                                    if startPreset.Path[i-1] != pair.next {
+                                        canMove = false
+                                    }
+                                }
+							}
+						}
+					} else { // if on different presets
+						// just check if start can leave the preset
+						if startPreset.Directed == true {
+							if startPreset.Path[len(startPreset.Path)-1] != pair.start {
+								// checks if pair.start is the last node in a directed preset
+								canMove = false
+							}
+						} else {
+							canMove = false
+							// Non directed so we need to see if pair.start is on either end of the preset,
+							// and if so, then the node in the path before it needs to be the node in the
+							// preset path before it as well.
+							// TODO phrase this better
+							if (startPreset.Path[0] == pair.start && startPreset.Path[1] == p.nodes[p.last-1]) &&
+								(startPreset.Path[len(startPreset.Path)-1] != pair.start &&
+									startPreset.Path[len(startPreset.Path)-2] == p.nodes[p.last-1]) {
+								canMove = true
+							}
+						}
+
+						// if canMove is still true then we'll need to check if next can receive from
+						// pair.start
+						if canMove {
+							if nextPreset.Directed == true {
+								if nextPreset.Path[0] != pair.next {
+									//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+									canMove = false
+								}
+							} else {
+								if nextPreset.Path[0] != pair.next && nextPreset.Path[len(nextPreset.Path)-1] != pair.next {
+									//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+									canMove = false
+								}
+							}
+						}
+					}
+				} else { // only start preset set
+					// just check if start can leave the preset
+					if startPreset.Directed == true {
+						if startPreset.Path[len(startPreset.Path)-1] != pair.start {
+							// checks if pair.start is the last node in a directed preset
+							canMove = false
+						}
+					} else {
+						canMove = false
+						// Non directed so we need to see if pair.start is on either end of the preset,
+						// and if so, then the node in the path before it needs to be the node in the
+						// preset path before it as well.
+						// TODO phrase this better
+						if (startPreset.Path[0] == pair.start && startPreset.Path[1] == p.nodes[p.last-1]) &&
+							(startPreset.Path[len(startPreset.Path)-1] != pair.start &&
+								startPreset.Path[len(startPreset.Path)-2] == p.nodes[p.last-1]) {
+							canMove = true
+						}
+					}
+				}
+			} else if prob.Presets.Set[pair.next] != 0 {
+				// if pair.start not in a preset, check if pair.next is able to receive from pair.start
+				nextPreset = prob.Presets.Presets[prob.Presets.Set[pair.next]-1]
+				if nextPreset.Directed == true {
+					if nextPreset.Path[0] != pair.next {
+						//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+						canMove = false
+					}
+				} else {
+					if nextPreset.Path[0] != pair.next && nextPreset.Path[len(nextPreset.Path)-1] != pair.next {
+						//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+						canMove = false
+					}
+				}
+			}
 		}
 
 		if canMove {
