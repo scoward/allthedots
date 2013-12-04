@@ -406,13 +406,15 @@ $.goForward = function(forwardCircle) {
     }
 }
 
-$.moveToIndex = function(newIndex) {
-    console.log(newIndex)
+$.moveToIndex = function(currentIndex, newIndex) {
     if (newIndex < 0 || newIndex > $.level.rows * $.level.columns) {
         return
     }
+    if ((newIndex + 1)%$.level.columns == 1  && (currentIndex + 1)%$.level.columns == 0 || (newIndex + 1)%$.level.columns == 0 && (currentIndex + 1)%$.level.columns == 1) {
+        return
+    }
     var newCircle = $.circles[newIndex]
-    if (newCircle.end == true) {
+    if (newCircle && newCircle.end == true) {
         // check end condition
         $.goForward(newCircle)
         if (!$.checkWinCondition()) {
@@ -506,9 +508,12 @@ $.canMoveToCircle = function(from, to) {
 
 $.touchMoveToCircle = function(to) {
     var from = $.selectedCircle
-        , diff = Math.abs(to.index - from.index) 
+        , diff = Math.abs(to.index - from.index)
+
     // TODO: make movement possible across different diffs
     if (diff != 1 && diff != $.level.columns) {
+        $.playIncorrectMoveSound(to)
+    } else if ((to.index + 1)%$.level.columns == 1  && (from.index + 1)%$.level.columns == 0 || (to.index + 1)%$.level.columns == 0 && (from.index + 1)%$.level.columns == 1){
         $.playIncorrectMoveSound(to)
     } else if (to.end == true) {
         $.goForwardOneCircle(to)
@@ -549,13 +554,13 @@ $.playIncorrectMoveSound = function(to) {
 // Mouse has different movement handling than keyboard
 $.handleEvents = function() {
     if ($.keys.pressed.up) {
-        $.moveToIndex($.selectedCircle.index - $.level.columns)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - $.level.columns)
     } else if ($.keys.pressed.down) {
-        $.moveToIndex($.selectedCircle.index + $.level.columns)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + $.level.columns)
     } else if ($.keys.pressed.left) {
-        $.moveToIndex($.selectedCircle.index - 1)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - 1)
     } else if ($.keys.pressed.right) {
-        $.moveToIndex($.selectedCircle.index + 1)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + 1)
     }
     
     if ($.mouse.down == 1) {
