@@ -26,7 +26,7 @@ func main() {
         return
 	}
 	if title == "" {
-		fmt.Printf("Level group title not specified")
+		fmt.Printf("Level group title not specified\n")
         return
 	}
 
