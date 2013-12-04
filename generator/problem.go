@@ -16,6 +16,7 @@ type Problem struct {
 	Presets *PresetGroup
 	Rand    *rand.Rand
 	Solves  int
+    MaxSolves int
 }
 
 func NewProblem(row, cols, start, end int, r *rand.Rand) *Problem {
@@ -36,15 +37,9 @@ func (p *Problem) Solve() int {
 	if solves == 0 {
 		return 1
 	}
+    maxSolves := generateMaxSolves(p.Graph.Rows, p.Graph.Cols, p.Rand)
 
 	for {
-		attempts++
-		errNo, _ := p.addNewPreset()
-		if errNo == 2 {
-			fmt.Printf("ERROR: Could not generate presets\n")
-			return 2
-		}
-		solves = getNumHamPaths(p)
 		if solves == 0 {
 			if attempts == MAX_ATTEMPTS {
 				return 3
@@ -52,8 +47,9 @@ func (p *Problem) Solve() int {
 				p.Presets.removeLastPreset()
 			}
 		} else {
-			if solves < 20 {
+			if solves <= maxSolves {
 				p.Solves = solves
+                p.MaxSolves = maxSolves
 				return 0
 			} else {
 				if attempts == MAX_ATTEMPTS {
@@ -63,6 +59,13 @@ func (p *Problem) Solve() int {
 				}
 			}
 		}
+        attempts++
+		errNo, _ := p.addNewPreset()
+		if errNo == 2 {
+			fmt.Printf("ERROR: Could not generate presets\n")
+			return 2
+		}
+		solves = getNumHamPaths(p)
 	}
 	return 0
 }

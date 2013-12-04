@@ -8,16 +8,19 @@ import (
 )
 
 type Solve struct {
-	Start   int       `json:"start"`
-	End     int       `json:"end"`
-	Rows    int       `json:"rows"`
-	Cols    int       `json:"cols"`
-	Id      int       `json:"id"`
-	Presets []*Preset `json:"presets"`
+	Start     int       `json:"start"`
+	End       int       `json:"end"`
+	Rows      int       `json:"rows"`
+	Cols      int       `json:"cols"`
+	Id        int       `json:"id"`
+	Solves    int       `json:"solves"`
+	MaxSolves int       `json:"maxSolves"`
+	Presets   []*Preset `json:"presets"`
 }
 
 func CreateSolve(id int, p *Problem) *Solve {
-	s := Solve{Start: p.Start, End: p.End, Rows: p.Graph.Rows, Cols: p.Graph.Cols, Id: id}
+	s := Solve{Start: p.Start, End: p.End, Rows: p.Graph.Rows, Cols: p.Graph.Cols, Id: id,
+		Solves: p.Solves, MaxSolves: p.MaxSolves}
 
 	s.Presets = make([]*Preset, p.Presets.Num)
 	for i := 0; i < p.Presets.Num; i++ {
