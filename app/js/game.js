@@ -9,13 +9,13 @@ $.createCircles = function() {
     for (var row = 0; row < $.level.rows; row++) {
         var x = $.colStep / 2
             , circle
-        for (var col = 0; col < $.level.columns; col++) {
+        for (var col = 0; col < $.level.cols; col++) {
             circle = new $.Circle({
                         x: x
                         , y: y
                         //, row: row
                         //, col: col
-                        , index: row * $.level.columns + col
+                        , index: row * $.level.cols + col
                         , radius: $.circleRadius
             })
             $.circles.push(circle)
@@ -60,7 +60,7 @@ $.setEndingCircle = function(num) {
 }
 
 /*$.getIndexForRowCol = function(row, col) {
-    return row * $.level.columns + col
+    return row * $.level.cols + col
 }*/
 
 $.checkWinCondition = function() {
@@ -88,7 +88,7 @@ $.checkWinCondition = function() {
         return false
     }
     // not enough values in set
-    if (length < $.level.rows * $.level.columns) {
+    if (length < $.level.rows * $.level.cols) {
         return false
     }
     // not actually on end value
@@ -127,7 +127,7 @@ $.updateDelta = function() {
 $.loadLevel = function(level) {
     $.reset()
     $.level = level
-    $.colStep = $.gameScreen.width / level.columns
+    $.colStep = $.gameScreen.width / level.cols
     $.rowStep = $.gameScreen.height / level.rows
     $.circleDiam = $.getCircleDiameter()
     $.circleRadius = $.circleDiam / 2

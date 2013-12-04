@@ -407,10 +407,10 @@ $.goForward = function(forwardCircle) {
 }
 
 $.moveToIndex = function(currentIndex, newIndex) {
-    if (newIndex < 0 || newIndex > $.level.rows * $.level.columns) {
+    if (newIndex < 0 || newIndex >= $.level.rows * $.level.cols) {
         return
     }
-    if ((newIndex + 1)%$.level.columns == 1  && (currentIndex + 1)%$.level.columns == 0 || (newIndex + 1)%$.level.columns == 0 && (currentIndex + 1)%$.level.columns == 1) {
+    if ((newIndex + 1)%$.level.cols == 1  && (currentIndex + 1)%$.level.cols == 0 || (newIndex + 1)%$.level.cols == 0 && (currentIndex + 1)%$.level.cols == 1) {
         return
     }
     var newCircle = $.circles[newIndex]
@@ -511,9 +511,9 @@ $.touchMoveToCircle = function(to) {
         , diff = Math.abs(to.index - from.index)
 
     // TODO: make movement possible across different diffs
-    if (diff != 1 && diff != $.level.columns) {
+    if (diff != 1 && diff != $.level.cols) {
         $.playIncorrectMoveSound(to)
-    } else if ((to.index + 1)%$.level.columns == 1  && (from.index + 1)%$.level.columns == 0 || (to.index + 1)%$.level.columns == 0 && (from.index + 1)%$.level.columns == 1){
+    } else if ((to.index + 1)%$.level.cols == 1  && (from.index + 1)%$.level.cols == 0 || (to.index + 1)%$.level.cols == 0 && (from.index + 1)%$.level.cols == 1){
         $.playIncorrectMoveSound(to)
     } else if (to.end == true) {
         $.goForwardOneCircle(to)
@@ -554,9 +554,9 @@ $.playIncorrectMoveSound = function(to) {
 // Mouse has different movement handling than keyboard
 $.handleEvents = function() {
     if ($.keys.pressed.up) {
-        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - $.level.columns)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - $.level.cols)
     } else if ($.keys.pressed.down) {
-        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + $.level.columns)
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + $.level.cols)
     } else if ($.keys.pressed.left) {
         $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - 1)
     } else if ($.keys.pressed.right) {
