@@ -18,14 +18,23 @@ import (
 
 var rows, cols, numProblems, start, count int
 var solvesFile, refFile, countFile string
+var outputPath, levelFile, title string
+var help bool
 
 func init() {
+	// For generator
 	flag.IntVar(&rows, "r", 6, "Rows")
 	flag.IntVar(&cols, "c", 6, "Cols")
 	flag.IntVar(&numProblems, "n", 5, "Number of levels to generate")
 	flag.StringVar(&solvesFile, "s", "", "Solves file")
 	flag.StringVar(&refFile, "ref", "", "Reference file")
 	flag.StringVar(&countFile, "count", "", "Path to count file")
+	// For converting and output
+	flag.StringVar(&levelFile, "l", "", "Level file from generator")
+	flag.StringVar(&outputPath, "o", "", "Output file")
+	flag.StringVar(&title, "t", "", "Level group title")
+	// Help
+	flag.BoolVar(&help, "h", false, "Whether to show usage")
 	flag.Parse()
 }
 
@@ -59,11 +68,7 @@ func writeCount() {
 	file.Close()
 }
 
-func main() {
-	/*f, _ := os.Create("gen.cpuprofile")
-	pprof.StartCPUProfile(f)
-	defer pprof.StopCPUProfile()*/
-
+func runGenerator() {
 	if solvesFile == "" {
 		fmt.Printf("Output file needs to be specified\n")
 		return
@@ -81,8 +86,7 @@ func main() {
 
 	fmt.Printf("Starting with count: %d\n", count)
 
-	r := rand.New(rand.NewSource(time.Now().Unix()))
-	//r = rand.New(rand.NewSource(1))
+	r := rand.New(rand.NewSource(time.Now().Unix())) //r = rand.New(rand.NewSource(1))
 	solvability := LoadSolvability(rows, cols)
 
 	var refSolves []*Solve
@@ -177,5 +181,33 @@ func main() {
 			fmt.Printf("General Skips: %d\n", skips)
 			fmt.Printf("Unsolvable Skips: %d\n", solvabilitySkips)
 		}
+	}
+}
+
+func main() {
+	/*f, _ := os.Create("gen.cpuprofile")
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()*/
+
+	if help {
+		fmt.Printf("\nLevel generator and converter for All the Dots\n\n")
+		fmt.Printf("To run the generator:\n")
+		fmt.Printf("\t-r     Number of rows \t\t\t(6)\n")
+		fmt.Printf("\t-c     Number of columns \t\t(6)\n")
+		fmt.Printf("\t-n     Number of levels to generate \t(5)\n")
+		fmt.Printf("\t-s     Solve output file\n")
+		fmt.Printf("\t-ref   Reference file, a list of previously solved problems for row/col\n")
+		fmt.Printf("\t-count Path to count file\n")
+
+		fmt.Printf("\nTo run the converter:\n")
+		fmt.Printf("\t-l Generated level file\n")
+		fmt.Printf("\t-o Output file\n")
+		fmt.Printf("\t-t Level group title\n")
+
+		fmt.Printf("\nThe converter and generator run exclusively,\nsetting -o will attempt to run the converter.\n\n")
+	} else if outputPath == "" {
+		runGenerator()
+	} else {
+		runConverter()
 	}
 }

@@ -6,3 +6,4 @@ monorail
 *.map
 mapfile
 *.err
+generator

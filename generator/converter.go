@@ -1,36 +1,26 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
 )
 
-var levelPath, outputPath, title string
-
-func init() {
-	flag.StringVar(&levelPath, "l", "", "Level file from generator")
-	flag.StringVar(&outputPath, "o", "", "Output file")
-	flag.StringVar(&title, "t", "", "Level group title")
-	flag.Parse()
-}
-
-func main() {
-	if levelPath == "" {
+func runConverter() {
+	if levelFile == "" {
 		fmt.Printf("Not levels file specified\n")
-        return
+		return
 	}
 	if outputPath == "" {
 		fmt.Printf("Not ouptut file specified\n")
-        return
+		return
 	}
 	if title == "" {
 		fmt.Printf("Level group title not specified\n")
-        return
+		return
 	}
 
-	lFile, err := os.Open(levelPath)
+	lFile, err := os.Open(levelFile)
 	if err != nil {
 		fmt.Printf("Error opening %s: %s\n", lFile.Name(), err)
 		return
@@ -74,4 +64,5 @@ func main() {
 		fmt.Printf("Error writing close to output file: %s\n, err")
 		return
 	}
+
 }
