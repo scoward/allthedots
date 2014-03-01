@@ -39,8 +39,29 @@ func generateMaxSolves(rows, cols int, r *rand.Rand) int {
 			return 7
 		}
 	} else if rows == 5 && cols == 5 {
+        if rNum < 33 {
+            return 10
+        } else if rNum < 66 {
+            return 20
+        } else {
+            return 30
+        }
 	} else if rows == 6 && cols == 6 {
+        if rNum < 33 {
+            return 20
+        } else if rNum < 66 {
+            return 40
+        } else {
+            return 60
+        }
 	} else if rows == 7 && cols == 7 {
+        if rNum < 25 {
+            return 20
+        } else if rNum < 50 {
+            return 45
+        } else {
+            return 75
+        }
 	}
 	return 20
 }
@@ -50,15 +71,30 @@ func generatePresetLength(rows, cols int, r *rand.Rand) int {
 	// get longer presets)
 	n := r.Intn(100)
 
-	if n < 45 {
-		// 45% chance for 2
-		return 2
-	} else if n <= 85 {
-		// 45% chance for 3
-		return 3
-	} else if n > 90 {
-		// 10% chance for 4
-		return 4
+	if rows == 7 && cols == 7 {
+		if n < 25 {
+			return 2
+		} else if n <= 65 {
+			return 3
+		} else {
+			return 4
+		}
+    } else if rows == 6 && cols == 6 {
+        if n < 33 {
+			return 2
+		} else if n <= 66 {
+			return 3
+		} else {
+			return 4
+		}
+	} else {
+		if n < 45 {
+			return 2
+		} else if n <= 85 {
+			return 3
+		} else {
+			return 4
+		}
 	}
 
 	return 2
@@ -114,10 +150,10 @@ func generatePreset(start, end int, p *PresetGroup, rows, cols int, r *rand.Rand
 		}
 		attempts++
 		n = r.Intn(num)
-        // make sure n is neither start nor end
-        if n == start || n == end {
-            continue
-        }
+		// make sure n is neither start nor end
+		if n == start || n == end {
+			continue
+		}
 		// make sure generated n is not already taken by a different path
 		if p.Set[n] != 0 {
 			continue

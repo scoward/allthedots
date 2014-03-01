@@ -1,0 +1,51 @@
+[
+	{
+		"start": 1,
+		"end": 14,
+		"rows": 6,
+		"cols": 6,
+		"id": 1211,
+		"solves": 6,
+		"maxSolves": 20,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					19,
+					25,
+					26,
+					32
+				]
+			}
+		]
+	},
+	{
+		"start": 36,
+		"end": 42,
+		"rows": 7,
+		"cols": 7,
+		"id": 1212,
+		"solves": 12,
+		"maxSolves": 20,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					16,
+					15,
+					14,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					13,
+					20,
+					19
+				]
+			}
+		]
+	}
+]

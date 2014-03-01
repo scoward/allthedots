@@ -345,6 +345,7 @@ $.setupStates = function() {
                 $.audioManager.play('win')
                 $.levelStarted = false
                 $.setState('game_over')
+                // store completion information
             } else {
                 // draw timer
                 var timerSeconds = ($.elapsed * (1000 / 60)) / 1000
