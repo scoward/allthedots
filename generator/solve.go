@@ -1,7 +1,7 @@
 package main
 
 import (
-    //"fmt"
+//"fmt"
 )
 
 type Pair struct {
@@ -21,9 +21,20 @@ type largeSmallStack struct {
 	last  int
 }
 
-func getNumHamPaths(prob *Problem) int {
-	solve_channel := make(chan int)
+type SolveResults struct {
+	numSolves int
+	paths     []*Path
+}
+
+func NewSolveResults() *SolveResults {
+	return &SolveResults{0, []*Path{}}
+}
+
+func getNumHamPaths(prob *Problem) (int, *Path) {
+	solve_channel := make(chan *SolveResults)
 	var solves, numProcs int
+	var results *SolveResults
+	var solvePath *Path
 
 	for _, idx := range prob.Graph.GetAdjs(prob.Start) {
 		s := new(PairStack)
@@ -47,19 +58,23 @@ func getNumHamPaths(prob *Problem) int {
 	}
 
 	for numProcs > 0 {
-		solves += <-solve_channel
+		results = <-solve_channel
+		solves += results.numSolves
+		if solvePath == nil && len(results.paths) > 0 {
+			solvePath = results.paths[0]
+		}
 		numProcs--
 	}
 
-	return solves
+	return solves, solvePath
 }
 
-func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, solves chan<- int) {
+func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, solves chan<- *SolveResults) {
 	var pair *Pair
-    var preset *Preset
+	var preset, nextPreset *Preset
 	var canMove bool = true
 	var g *GridGraph = prob.Graph
-	var numSolves int = 0
+	solveResults := NewSolveResults()
 	lastCol := g.Cols - 1
 	lastRow := g.Rows - 1
 	twoCols := g.Cols * 2
@@ -112,7 +127,7 @@ func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, s
 
 	for {
 		if s.count == 0 {
-			solves <- numSolves
+			solves <- solveResults
 			return
 		}
 		// pop
@@ -156,23 +171,82 @@ func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, s
 		if prob.Presets.Num > 0 {
 			// first check if pair.start was part of a preset.  if so make sure it's allowed to move
 			// to pair.next
-            if prob.Presets.Set[pair.start] != 0 {
-                preset = prob.Presets.Presets[prob.Presets.Set[pair.start] - 1]
-            } else if prob.Presets.Set[pair.next] != 0 {
-                // if pair.start not in a preset, check if pair.next is able to receive from pair.start
-                preset = prob.Presets.Presets[prob.Presets.Set[pair.next] - 1]
-                if preset.Directed == true {
-                    if preset.Path[0] != pair.next {
-                        //fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
-                        canMove = false
-                    }
-                } else {
-                    if preset.Path[0] != pair.next && preset.Path[len(preset.Path) - 1] != pair.next {
-                        //fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
-                        canMove = false
-                    }
-                }
-            }
+			if prob.Presets.Set[pair.start] != 0 {
+				preset = prob.Presets.Presets[prob.Presets.Set[pair.start]-1]
+				nextPreset = nil
+				if prob.Presets.Set[pair.next] != 0 {
+					nextPreset = prob.Presets.Presets[prob.Presets.Set[pair.next]-1]
+				}
+				if preset != nextPreset {
+					// on different presets, 2 things to check:
+					// 1. if start preset is directed, make sure we're at end else just make sure
+					//    that we're on an end and that the opposite end is already in the path
+					// 2. if next preset is directed, make sure pair.next is at the beginning, else just
+					//    make sure that we're on an end					
+                    if preset.Directed == true {
+						if preset.Path[len(preset.Path)-1] != pair.start {
+							canMove = false
+						}
+					} else {
+						if preset.Path[0] != pair.start && preset.Path[len(preset.Path)-1] != pair.start {
+							canMove = false
+							// if == preset.Path[0], preset.Path[last] must be in the path already
+						} else if preset.Path[0] != pair.start && p.set[preset.Path[0]] != 1 {
+							canMove = false
+							// if == preset.Path[last], preset.Path[0] must be in the path already
+						} else if preset.Path[len(preset.Path)-1] != pair.start && p.set[preset.Path[len(preset.Path)-1]] != 1 {
+							canMove = false
+						}
+					}
+					if nextPreset != nil && canMove {
+						if nextPreset.Directed == true {
+							if nextPreset.Path[0] != pair.next {
+								canMove = false
+							}
+						} else {
+							if nextPreset.Path[0] != pair.next && nextPreset.Path[len(nextPreset.Path)-1] != pair.next {
+								canMove = false
+							}
+						}
+					}
+				} else {
+					startIndex := -1
+					for i := 0; i < len(preset.Path) && startIndex == -1; i++ {
+						if preset.Path[i] == pair.start {
+							startIndex = i
+						}
+					}
+					if preset.Directed == true {
+						if startIndex < len(preset.Path)-1 && preset.Path[startIndex+1] != pair.next {
+							canMove = false
+						}
+					} else {
+						found := false
+						if startIndex < len(preset.Path)-1 && preset.Path[startIndex+1] == pair.next {
+							found = true
+						} else if startIndex > 0 && preset.Path[startIndex-1] == pair.next {
+							found = true
+						}
+						if found == false {
+							canMove = false
+						}
+					}
+				}
+			} else if prob.Presets.Set[pair.next] != 0 {
+				// if pair.start not in a preset, check if pair.next is able to receive from pair.start
+				preset = prob.Presets.Presets[prob.Presets.Set[pair.next]-1]
+				if preset.Directed == true {
+					if preset.Path[0] != pair.next {
+						//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+						canMove = false
+					}
+				} else {
+					if preset.Path[0] != pair.next && preset.Path[len(preset.Path)-1] != pair.next {
+						//fmt.Printf("%d can't move to %d: %+v\n", pair.start, pair.next, *preset)
+						canMove = false
+					}
+				}
+			}
 		}
 
 		if canMove {
@@ -457,7 +531,8 @@ func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, s
 
 			if pair.next == endIdx {
 				if p.count == prob.Graph.Num && prob.Start == p.nodes[0] && prob.End == p.nodes[p.last] {
-					numSolves++
+					solveResults.numSolves++
+					solveResults.paths = append(solveResults.paths, p.Copy())
 				}
 			} else {
 				for _, idx := range prob.Graph.adjShort[pair.next] {

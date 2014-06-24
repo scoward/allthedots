@@ -12,8 +12,8 @@ func TestPresetGen(t *testing.T) {
 		t.Errorf("Should not be able to move\n")
 	}
 
-    array[0] = 4
-    canMove = genCanMove(3, 4, array)
+	array[0] = 4
+	canMove = genCanMove(3, 4, array)
 	if canMove == true {
 		t.Errorf("Should not be able to move\n")
 	}

@@ -16,11 +16,12 @@ type Solve struct {
 	Solves    int       `json:"solves"`
 	MaxSolves int       `json:"maxSolves"`
 	Presets   []*Preset `json:"presets"`
+	SolvePath []int     `json:"solvePath"`
 }
 
 func CreateSolve(id int, p *Problem) *Solve {
 	s := Solve{Start: p.Start, End: p.End, Rows: p.Graph.Rows, Cols: p.Graph.Cols, Id: id,
-		Solves: p.Solves, MaxSolves: p.MaxSolves}
+    Solves: p.Solves, MaxSolves: p.MaxSolves, SolvePath: p.SolvePath.nodes}
 
 	s.Presets = make([]*Preset, p.Presets.Num)
 	for i := 0; i < p.Presets.Num; i++ {

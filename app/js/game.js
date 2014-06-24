@@ -141,6 +141,30 @@ $.loadLevel = function(level) {
     $.setupPresets()
 }
 
+$.setState = function(state) {
+    $.buttons.length = 0;
+
+    if (state == 'level_group_select')
+        $.lastState = 'menu'
+    else if (state == 'level_select')
+        $.lastState = 'level_group_select'
+    else if (state == 'play')
+        $.lastState = 'level_select'
+    else if (state == 'game_over')
+        $.lastState = 'level_select'
+        
+    $.definitions.states[state].setup();
+    $.state = state
+}
+
+$.setupStates = function() {
+    $.states['menu'] = $.definitions.states['menu'].render;
+    $.states['level_group_select'] = $.definitions.states['level_group_select'].render;
+    $.states['level_select'] = $.definitions.states['level_select'].render;
+    $.states['game_over'] = $.definitions.states['game_over'].render;
+    $.states['play'] = $.definitions.states['play'].render;
+}
+
 $.init = function() {
     $.wrap = document.getElementById("wrap")
     $.wrapInner = document.getElementById("wrap-inner")
@@ -180,10 +204,10 @@ $.init = function() {
     $.wrap.style.height = $.wrapInner.style.height = $.ch + 'px'
     $.wrap.style.marginLeft = (-$.cw / 2) - 10 + 'px'
     $.wrap.style.marginTop = (-$.ch / 2) - 10 + 'px'
-    $.buttonWidth = 250
-    $.buttonHeight = 40
-    $.circleButtonWidth = 60
-    $.circleButtonHeight = 60
+    $.buttonWidth = $.cw / 2
+    $.buttonHeight = $.ch / 16
+    $.circleButtonWidth = $.cw / 10
+    $.circleButtonHeight = $.cw / 8
     $.gameScreen = {
         x: 0
         , y: ($.ch - $.cw) / 2
