@@ -86,3 +86,28 @@ $.resizecb = function( e ) {
         top: rect.top
     }
 }
+
+// Mouse has different movement handling than keyboard
+$.handleEvents = function() {
+    if ($.keys.pressed.up) {
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - $.level.cols)
+    } else if ($.keys.pressed.down) {
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + $.level.cols)
+    } else if ($.keys.pressed.left) {
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index - 1)
+    } else if ($.keys.pressed.right) {
+        $.moveToIndex($.selectedCircle.index, $.selectedCircle.index + 1)
+    }
+    
+    if ($.mouse.down == 1) {
+        var circle
+            , diff = 0
+        for (var i = 0; i < $.circles.length; i++) {
+            circle = $.circles[i]
+            if (circle.pointIntersects($.mouse.sx, $.mouse.sy)) {
+                $.touchMoveToCircle(circle)
+                break // break loop, can only be over one circle at a time
+            }
+        }
+    }
+}

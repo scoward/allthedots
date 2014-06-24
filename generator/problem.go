@@ -10,13 +10,14 @@ var MAX_PRESETS_IN_LEVEL int = 5
 var MAX_ATTEMPTS = 10
 
 type Problem struct {
-	Graph   *GridGraph
-	Start   int
-	End     int
-	Presets *PresetGroup
-	Rand    *rand.Rand
-	Solves  int
-    MaxSolves int
+	Graph     *GridGraph
+	Start     int
+	End       int
+	Presets   *PresetGroup
+	Rand      *rand.Rand
+	Solves    int
+	MaxSolves int
+	SolvePath *Path
 }
 
 func NewProblem(row, cols, start, end int, r *rand.Rand) *Problem {
@@ -29,15 +30,15 @@ func NewProblem(row, cols, start, end int, r *rand.Rand) *Problem {
 // 1 no initial solves
 // 2 can't generate # presets
 // 3 can't generate # presets with sufficient solves
-func (p *Problem) Solve() int {
+func (p *Problem) Generate() int {
 	var attempts int = 0
 	//numPrefPresets := generateNumPresets(p.Graph.Rows, p.Graph.Cols, p.Rand)
 	// check for initial solves
-	solves := getNumHamPaths(p)
+	solves, path := getNumHamPaths(p)
 	if solves == 0 {
 		return 1
 	}
-    maxSolves := generateMaxSolves(p.Graph.Rows, p.Graph.Cols, p.Rand)
+	maxSolves := generateMaxSolves(p.Graph.Rows, p.Graph.Cols, p.Rand)
 
 	for {
 		if solves == 0 {
@@ -49,7 +50,8 @@ func (p *Problem) Solve() int {
 		} else {
 			if solves <= maxSolves {
 				p.Solves = solves
-                p.MaxSolves = maxSolves
+				p.MaxSolves = maxSolves
+				p.SolvePath = path
 				return 0
 			} else {
 				if attempts == MAX_ATTEMPTS {
@@ -59,13 +61,13 @@ func (p *Problem) Solve() int {
 				}
 			}
 		}
-        attempts++
+		attempts++
 		errNo, _ := p.addNewPreset()
 		if errNo == 2 {
 			fmt.Printf("ERROR: Could not generate presets\n")
 			return 2
 		}
-		solves = getNumHamPaths(p)
+		solves, path = getNumHamPaths(p)
 	}
 	return 0
 }
@@ -104,18 +106,18 @@ func (p *Problem) addNewPreset() (int, error) {
 }
 
 func (p *Problem) isSolveUnique(solves []*Solve) bool {
-    var solvePresets []*Preset
-    var probPresets []*Preset
+	var solvePresets []*Preset
+	var probPresets []*Preset
 	for _, solve := range solves {
-        // This check needs to be done here, it is not and should not
-        // be done in the doPresetArraysMatch method
+		// This check needs to be done here, it is not and should not
+		// be done in the doPresetArraysMatch method
 		if len(solve.Presets) == p.Presets.Num {
-            solvePresets = solve.Presets
-            probPresets = p.Presets.Presets
-            // probPresets needs to be second!
-            if doPresetArraysMatch(solvePresets, probPresets) == true {
-                return false
-            }
+			solvePresets = solve.Presets
+			probPresets = p.Presets.Presets
+			// probPresets needs to be second!
+			if doPresetArraysMatch(solvePresets, probPresets) == true {
+				return false
+			}
 		}
 	}
 

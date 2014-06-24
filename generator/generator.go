@@ -114,10 +114,10 @@ func generatePreset(start, end int, p *PresetGroup, rows, cols int, r *rand.Rand
 		}
 		attempts++
 		n = r.Intn(num)
-        // make sure n is neither start nor end
-        if n == start || n == end {
-            continue
-        }
+		// make sure n is neither start nor end
+		if n == start || n == end {
+			continue
+		}
 		// make sure generated n is not already taken by a different path
 		if p.Set[n] != 0 {
 			continue

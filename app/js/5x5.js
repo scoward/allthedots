@@ -1,4 +1,6 @@
-[
+$.definitions.levels[$.definitions.levelCount++] = {
+title: "5 x 5",
+levels: [
 	{
 		"start": 4,
 		"end": 20,
@@ -7529,3 +7531,4 @@
 		]
 	}
 ]
+}

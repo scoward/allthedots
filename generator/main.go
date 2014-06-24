@@ -86,7 +86,9 @@ func runGenerator() {
 
 	fmt.Printf("Starting with count: %d\n", count)
 
-	r := rand.New(rand.NewSource(time.Now().Unix())) //r = rand.New(rand.NewSource(1))
+	//seed := 1
+	seed := time.Now().Unix()
+	r := rand.New(rand.NewSource(seed))
 	solvability := LoadSolvability(rows, cols)
 
 	var refSolves []*Solve
@@ -123,7 +125,7 @@ func runGenerator() {
 			solvabilitySkips++
 			continue
 		}
-		errNum := prob.Solve()
+		errNum := prob.Generate()
 		if errNum != 0 {
 			// do nothing atm
 			if errNum != 1 {
