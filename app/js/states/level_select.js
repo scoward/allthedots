@@ -2,12 +2,39 @@
     function setup() {
         var level
             , levelNumber
-            , startingX = 30
-            , padding = 50
-            , x = startingX
-            , y = $.gameScreen.y
             , levels = $.definitions.levels[$.levelGroup].levels
             , levelSets = Math.ceil(levels.length / 30) // Display up to 30 levels per page
+            , colStep = $.gameScreen.width / 6
+            , rowStep = $.gameScreen.height / 5
+
+        var index = 0
+            , y = $.gameScreen.y + rowStep / 2 - rowStep / 8
+            , diameter = $.getCircleDiameter(colStep, rowStep) * 1.8
+        for (var row = 0; row < 5; row++) {
+            var x = colStep / 2
+            for (var col = 0; col < 6; col++) {
+                index = 6 * row + col
+                level = levels[index + 30 * $.levelSet]
+                levelNumber = index + 1 + 30 * $.levelSet
+                button = new $.Button({
+                    title: levelNumber,
+                    type: "level",
+                    level: level,
+                    x: x,
+                    y: y + rowStep / 2,
+                    lockedWidth: diameter,
+                    lockedHeight: diameter,
+                    action: function() {
+                        $.loadLevel(this.level)
+                        $.levelNumber = levelNumber
+                        $.setState('play')
+                    },
+                })
+                $.buttons.push(button)
+                x += colStep
+            }
+            y += rowStep
+        }
 
         // Previous Level Page
         var button = new $.Button({
@@ -41,32 +68,7 @@
         })
         $.buttons.push(button)
 
-        for (var i = 0; i < 30 && i + 30 * $.levelSet < levels.length; i++) {
-            level = levels[i + 30 * $.levelSet]
-            levelNumber = i + 1 + 30 * $.levelSet
-            var button = new $.Button({
-                title: levelNumber,
-                type: "level",
-                level: level,
-                x: x + $.circleButtonWidth / 2,
-                y: y + $.circleButtonHeight / 2,
-                lockedWidth: $.circleButtonWidth,
-                lockedHeight: $.circleButtonHeight,
-                action: function() {
-                    $.loadLevel(this.level)
-                    $.levelNumber = levelNumber
-                    $.setState('play')
-                },
-            })
-            $.buttons.push(button)
 
-            if (x + padding + 2 * $.circleButtonWidth < $.cw) {
-                x += padding + $.circleButtonWidth
-            } else {
-                x = startingX
-                y += padding + $.circleButtonHeight
-            }
-        }
         
         // back to Level Set Select
         var button = new $.Button({

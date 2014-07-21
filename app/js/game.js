@@ -129,7 +129,7 @@ $.loadLevel = function(level) {
     $.level = level
     $.colStep = $.gameScreen.width / level.cols
     $.rowStep = $.gameScreen.height / level.rows
-    $.circleDiam = $.getCircleDiameter()
+    $.circleDiam = $.getCircleDiameter($.colStep, $.rowStep)
     $.circleRadius = $.circleDiam / 2
     $.circles = []
     $.presets = []
@@ -172,19 +172,6 @@ $.init = function() {
     $.ctxmg = $.canvas.getContext("2d")
     var dims = $.getWidthHeight()
     
-    // let's setup parse
-    // TODO: Disable class creation before launch
-    Parse.initialize('quDSRgEzAUVoCiAMZUmGJHcE32pb1BavT1QgH0KZ',
-                     '9rEPleAPExWkHVIB5i8tjkX6hR2aqqhXXMBnse99')
-    
-    /*var TestObject = Parse.Object.extend("TestObject")
-    var testObject = new TestObject()
-    testObject.save({foo: "bar"}, {
-        success: function(object) {
-            alert("yay!, it worked")
-        }
-    })*/
-
     var devInfo = CocoonJS.App.getDeviceInfo()
     if (devInfo) {
         console.log("Device info", devInfo.imei, devInfo.odin, devInfo.openudid)

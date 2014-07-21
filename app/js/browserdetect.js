@@ -1,10 +1,10 @@
 var BrowserDetect = {
     init: function () {
-        this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+        this.browser = this.searchString(this.dataBrowser) || "U";
         this.version = this.searchVersion(navigator.userAgent)
             || this.searchVersion(navigator.appVersion)
-            || "an unknown version";
-        this.OS = this.searchString(this.dataOS) || "an unknown OS";
+            || "Unknown";
+        this.OS = this.searchString(this.dataOS) || "U";
         if (this.OS == "Android" || this.OS == "iPhone/iPod") {
             $.mobile = true
         } else {
@@ -27,71 +27,82 @@ var BrowserDetect = {
     searchVersion: function (dataString) {
         var index = dataString.indexOf(this.versionSearchString);
         if (index == -1) return;
-        return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+        var version = parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+        if (isNaN(version)) {
+            return version;
+        } else {
+            return version.toString();
+        }
     },
     dataBrowser: [
         {
             string: navigator.userAgent,
             subString: "Chrome",
-            identity: "Chrome"
+            identity: "C",
+            versionSearch: "Chrome"
         },
         {   string: navigator.userAgent,
             subString: "OmniWeb",
             versionSearch: "OmniWeb/",
-            identity: "OmniWeb"
+            identity: "H"
         },
         {
             string: navigator.vendor,
             subString: "Apple",
-            identity: "Safari",
+            identity: "S",
             versionSearch: "Version"
         },
         {
             prop: window.opera,
-            identity: "Opera",
+            identity: "O",
             versionSearch: "Version"
         },
         {
             string: navigator.vendor,
             subString: "iCab",
-            identity: "iCab"
+            identity: "H",
+            versionSearch: "iCab"
         },
         {
             string: navigator.vendor,
             subString: "KDE",
-            identity: "Konqueror"
+            identity: "K",
+            versionSearch: "Konqueror"
         },
         {
             string: navigator.userAgent,
             subString: "Firefox",
-            identity: "Firefox"
+            identity: "F",
+            versionSearch: "Firefox"
         },
         {
             string: navigator.vendor,
             subString: "Camino",
-            identity: "Camino"
+            identity: "B",
+            versionSearch: "Camino"
         },
         {       // for newer Netscapes (6+)
             string: navigator.userAgent,
             subString: "Netscape",
-            identity: "Netscape"
+            identity: "N",
+            versionSearch: "Netscape"
         },
         {
             string: navigator.userAgent,
             subString: "MSIE",
-            identity: "Explorer",
+            identity: "E",
             versionSearch: "MSIE"
         },
         {
             string: navigator.userAgent,
             subString: "Gecko",
-            identity: "Mozilla",
+            identity: "N",
             versionSearch: "rv"
         },
         {       // for older Netscapes (4-)
             string: navigator.userAgent,
             subString: "Mozilla",
-            identity: "Netscape",
+            identity: "N",
             versionSearch: "Mozilla"
         }
     ],

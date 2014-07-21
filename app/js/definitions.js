@@ -1,5 +1,6 @@
 $.definitions = {}
 $.definitions.states = {}
+$.definitions.version = '0.0.1';
 var i = 0
 
 /* ==================================================

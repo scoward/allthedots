@@ -6,6 +6,6 @@ $.getWidthHeight = function() {
     }
 }
 
-$.getCircleDiameter = function() {
-    return Math.ceil(($.colStep / 2 + $.rowStep / 2) / 3)
+$.getCircleDiameter = function(colStep, rowStep) {
+    return Math.ceil((colStep / 2 + rowStep / 2) / 3)
 }

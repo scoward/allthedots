@@ -7,3 +7,4 @@ monorail
 mapfile
 *.err
 generator
+server
