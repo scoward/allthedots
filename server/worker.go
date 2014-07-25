@@ -12,8 +12,8 @@ type Worker struct {
 }
 
 const (
-    PlayerScoreEvent = iota
-    UserReportEvent = iota
+	LevelCompleteEvent = iota
+	UserReportEvent    = iota
 )
 
 type WorkRequest struct {
@@ -40,36 +40,36 @@ func (w *Worker) Start() {
 			select {
 			case work := <-w.Work:
 				found := false
-                var err error = nil
-                var shouldIncrement bool
+				var err error
+				var shouldIncrement bool
 				if work.Type == UserReportEvent {
 					found = true
 					u := work.Object.(*UserReport)
 					fmt.Printf("Worker%d: Received work request, %+v\n", w.Id, work.Object)
-					err, shouldIncrement = handleUserReport(u)
-				} else if work.Type == PlayerScoreEvent {
-                    found = true
-                    p := work.Object.(*PlayerScore)
+					shouldIncrement, err = handleUserReport(u)
+				} else if work.Type == LevelCompleteEvent {
+					found = true
+					l := work.Object.(*LevelComplete)
 					fmt.Printf("Worker%d: Received player score, %+v\n", w.Id, work.Object)
-					err, shouldIncrement = handlePlayerScore(p)
-                }
+					shouldIncrement, err = handleLevelComplete(l)
+				}
 				if found {
-                    if err != nil {
-						fmt.Printf("%s (increment: %b)\n", err, shouldIncrement)
+					if err != nil {
+						fmt.Printf("%s (increment: %t)\n", err, shouldIncrement)
 						if shouldIncrement {
 							work.Retries++
 						}
 					}
-                    if err != nil {
-                        if work.Retries < 10 {
-                            fmt.Printf("Requeueing work request due to error\n")
-                            MessageQueue <- work
-                        } else {
-                            fmt.Printf("Dropping work %s from queue\n", work.Type)
-                        }
-                    }
+					if err != nil {
+						if work.Retries < 10 {
+							fmt.Printf("Requeueing work request due to error\n")
+							MessageQueue <- work
+						} else {
+							fmt.Printf("Dropping work %d from queue\n", work.Type)
+						}
+					}
 				} else {
-					fmt.Printf("Type not found: %s\n", work.Type)
+					fmt.Printf("Type not found: %d\n", work.Type)
 				}
 			case <-w.QuitChan:
 				fmt.Printf("Worker%d stopping\n", w.Id)

@@ -1,8 +1,8 @@
 package main
 
 import (
-    "time"
-    "strconv"
+	"strconv"
+	"time"
 )
 
 func stringifyTime(t time.Time) string {

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"net"
 	"net/http"
@@ -50,6 +51,8 @@ func getConfigDataInt(c *conf.Config, key string) int {
 	return int(i)
 }
 
+var db *sql.DB
+
 func main() {
 	configFile, err := conf.ReadDefault("config.cfg")
 	if err != nil {
@@ -65,23 +68,35 @@ func main() {
 	config.DBPass = getConfigData(configFile, "db_password")
 	config.NumWorkers = getConfigDataInt(configFile, "num_workers")
 
+	// Make sure DB is actually there
+	db, err := sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
+	if err != nil {
+		fmt.Sprintf("Error with sql.Open on DB: %s\n", err)
+	}
+	defer db.Close()
+
+	err = db.Ping()
+	if err != nil {
+		panic(fmt.Sprintf("Error with db.Ping: %s\n", err))
+	}
+
 	// Check if port is available
-    addr, err := net.ResolveTCPAddr("tcp", "0.0.0.0:" + config.Port)
-    if err != nil {
-        return
-    }
+	addr, err := net.ResolveTCPAddr("tcp", "0.0.0.0:"+config.Port)
+	if err != nil {
+		return
+	}
 	l, err := net.ListenTCP("tcp", addr)
 	if err != nil {
 		return
 	}
-    l.Close();
+	l.Close()
 
 	StartDispatcher(config.NumWorkers)
 
-	http.HandleFunc("/report/score", scoreReport)
+	http.HandleFunc("/level/complete", levelComplete)
+	http.HandleFunc("/level/stats", getLevelStats)
 	http.HandleFunc("/report/user", userReport)
 	http.HandleFunc("/register/user", userRegister)
-	http.HandleFunc("/stats/level", getLevelStats)
 	if err := http.ListenAndServe(net.JoinHostPort("", config.Port), nil); err != nil {
 		fmt.Printf("%s\n", err.Error())
 	}

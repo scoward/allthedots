@@ -1,13 +1,12 @@
 package main
 
 import (
-	"database/sql"
 	"encoding/json"
-	"errors"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
 	"net/http"
 	"time"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type UserReport struct {
@@ -28,7 +27,7 @@ func parseUserReport(r *http.Request) (u *UserReport, err error) {
 
 	if u.Id == "" || u.Browser == "" || u.BrowserVersion == "" ||
 		u.OS == "" || u.Mobile == "" || u.Version == "" {
-		return u, errors.New(fmt.Sprintf("UserReport encoded incorrectly: %+v", u))
+		return u, fmt.Errorf("UserReport encoded incorrectly: %+v", u)
 	}
 
 	return u, nil
@@ -67,19 +66,8 @@ func userReport(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, Response{"data": Response{}, "error": ""})
 }
 
-func handleUserReport(u *UserReport) (error, bool) {
-	db, err := sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
-	if err != nil {
-		return errors.New(fmt.Sprintf("Error with sql.Open on DB: %s\n", err)), false
-	}
-	defer db.Close()
-
-	err = db.Ping()
-	if err != nil {
-		return errors.New(fmt.Sprintf("Error with db.Ping: %s\n", err)), false
-	}
-
-	_, err = db.Exec("UPDATE `atd_users` SET "+
+func handleUserReport(u *UserReport) (bool, error) {
+	_, err := db.Exec("UPDATE `atd_users` SET "+
 		"`current_version`=?, "+
 		"`os`=?, "+
 		"`browser`=?, "+
@@ -89,9 +77,9 @@ func handleUserReport(u *UserReport) (error, bool) {
 		"WHERE `id` = ?",
 		u.Version, u.OS, u.Browser, u.BrowserVersion, u.Mobile, u.Id)
 	if err != nil {
-		return errors.New(fmt.Sprintf("Error making user report stmt exec: %s\n", err)), true
+		return true, fmt.Errorf("Error making user report stmt exec: %s\n", err)
 	}
-	return nil, false
+	return false, nil
 }
 
 type UserRegister struct {
@@ -145,21 +133,6 @@ func userRegister(w http.ResponseWriter, r *http.Request) {
 	if version == "" {
 		fmt.Printf("Version not present in user register\n")
 		http.Error(w, "Version not present in user register", http.StatusBadRequest)
-	}
-
-	db, err := sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
-	if err != nil {
-		fmt.Printf("Error with sql.Open on DB: %s\n", err)
-		fmt.Fprint(w, Response{"data": Response{}, "error": "DB sql.Open failed"})
-		return
-	}
-	defer db.Close()
-
-	err = db.Ping()
-	if err != nil {
-		fmt.Printf("Error with db.Ping: %s\n", err)
-		fmt.Fprint(w, Response{"data": Response{}, "error": "DB not reachable"})
-		return
 	}
 
 	_, err = db.Exec("INSERT INTO atd_users (id, installed_at, installed_version) VALUES (?, ?, ?)",

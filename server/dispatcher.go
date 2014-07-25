@@ -44,7 +44,7 @@ func StartDispatcher(nworkers int) {
 		worker := NewWorker(i+1, WorkerQueue)
 		worker.Start()
 	}
-    fmt.Printf("Done starting workers\n");
+	fmt.Printf("Done starting workers\n")
 
 	go RunQueue(MessageQueue, WorkQueue)
 

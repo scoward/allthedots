@@ -3,33 +3,33 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
-	"errors"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
 	"net/http"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
-type PlayerScore struct {
-	LevelId int    `json:"level"`
+type LevelComplete struct {
+	LevelId string `json:"level"`
 	Millis  int    `json:"time"`
 	UserId  string `json:"user"`
 }
 
-func parsePlayerScore(r *http.Request) (p *PlayerScore, err error) {
+func parseLevelComplete(r *http.Request) (l *LevelComplete, err error) {
 	decoder := json.NewDecoder(r.Body)
-	err = decoder.Decode(p)
+	err = decoder.Decode(l)
 	if err != nil {
-		return p, err
+		return l, err
 	}
 
-	if p.LevelId == 0 || p.Millis == 0 || p.UserId == "" {
-		return p, errors.New(fmt.Sprintf("PlayerScore encoded incorrectly: %+v", p))
+	if l.LevelId == "" || l.Millis == 0 || l.UserId == "" {
+		return l, fmt.Errorf("LevelComplete encoded incorrectly: %+v", l)
 	}
 
-	return p, nil
+	return l, nil
 }
 
-func playerScore(w http.ResponseWriter, r *http.Request) {
+func levelComplete(w http.ResponseWriter, r *http.Request) {
 	origin := r.Header.Get("Origin")
 	fmt.Printf("Origin: %s\n", origin)
 	if origin != "" {
@@ -48,32 +48,53 @@ func playerScore(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p, err := parsePlayerScore(r)
+	l, err := parseLevelComplete(r)
 	if err != nil {
 		fmt.Printf("Error marshalling player score JSON: %s\n", err)
 		http.Error(w, "Bad JSON: "+err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	MessageQueue <- &WorkRequest{Type: PlayerScoreEvent, Object: &p}
+	MessageQueue <- &WorkRequest{Type: LevelCompleteEvent, Object: l}
 
 	fmt.Fprint(w, Response{"data": Response{}, "error": ""})
 }
 
-func handlePlayerScore(p *PlayerScore) (error, bool) {
-	db, err := sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
-	if err != nil {
-		return errors.New(fmt.Sprintf("Error with sql.Open on DB: %s\n", err)), false
-	}
-	defer db.Close()
+/*func levelStats(w http.ResponseWriter, r *http.Request) {
 
-	err = db.Ping()
-	if err != nil {
-		return errors.New(fmt.Sprintf("Error with db.Ping: %s\n", err)), false
+}*/
+
+func handleLevelComplete(l *LevelComplete) (bool, error) {
+	// Check if user has old time
+	userLevelId := l.UserId + l.LevelId
+	var millis int
+	err := db.QueryRow("SELECT time FROM atd_scores WHERE id=?", userLevelId).Scan(&millis)
+	if err != nil && err != sql.ErrNoRows {
+		return true, fmt.Errorf("Error querying user score stmt exec: %s\n", err)
+	}
+	// If new time is better, save, and update top scores if needed
+	if err == sql.ErrNoRows || l.Millis < millis {
+		if err == sql.ErrNoRows {
+			_, err = db.Exec("INSERT INTO atd_scores (id, level, time, user) VALUES (?,?,?,?)\n",
+				userLevelId,
+				l.LevelId,
+				l.Millis,
+				l.UserId,
+				l.Millis,
+			)
+			if err != nil {
+				return true, fmt.Errorf("Error making level complete insert stmt exec: %s\n", err)
+			}
+		} else {
+			_, err = db.Exec("UPDATE `time`=? WHERE `id` = ?", l.Millis, userLevelId)
+			if err != nil {
+				return true, fmt.Errorf("Error making level complete update stmt exec: %s\n", err)
+			}
+		}
+
+		// update top scores, or something
+		// TODO: do this
 	}
 
-	if err != nil {
-		return errors.New(fmt.Sprintf("Error making user report stmt exec: %s\n", err)), true
-	}
-	return nil, false
+	return false, nil
 }
