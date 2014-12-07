@@ -84,7 +84,7 @@
                 $.setState('game_over')
             } else {
                 // draw timer
-                var timerSeconds = ($.elapsed * (1000 / 60)) / 1000
+                var timerSeconds = ($.lt - $.st) / 1000
                     , fillStyle = 'hsla(0, 50%, 50%, 1)'
                 $.util.renderText($.ctxmg, timerSeconds.toFixed(2), $.bottomBar.width - 20, 
                         $.bottomBar.y + ($.bottomBar.height / 2), 'bold 40pt Helvetica', fillStyle, 'right')

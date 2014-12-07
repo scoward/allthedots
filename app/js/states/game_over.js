@@ -44,15 +44,31 @@
             },
         })
         $.buttons.push(button)
+            
+        _scores.getLevelStats($.level.id, function(stats) {
+            $.stats = stats;
+        });
+        _scores.levelComplete($.level.id, $.lt - $.st)
     }
     
     function render() {
         $.clearScreen();
         $.drawBottomBar()
 
-        var levelTime = ($.elapsed * (1000 / 60)) / 1000
+        var levelTime = ($.lt - $.st) / 1000
             , fillStyle = 'hsla(0, 50%, 50%, 1)'
         $.util.renderText($.ctxmg, levelTime.toFixed(2), $.cw / 2, 100, 'bold 40pt Helvetica', fillStyle, 'center')
+        
+        if ($.stats !== null) {
+            if ($.stats.tries > 0 && $.stats.worldAvg != 0) {
+                var avgTime = ($.stats.worldAvg) / 1000
+                $.util.renderText($.ctxmg, "Avg: " + avgTime.toFixed(2), $.cw / 2, 200, 'bold 40pt Helvetica', fillStyle, 'center')
+            } else {
+                $.util.renderText($.ctxmg, "No level stats ATM", $.cw / 2, $.ch / 2, 'bold 40pt Helvetica', fillStyle, 'center')
+            }
+        } else {
+            // maybe spinner?
+        }
         
         var i = $.buttons.length; while (i--) {$.buttons[i].update(i)}
             i = $.buttons.length; while (i--) {$.buttons[i].render(i)}

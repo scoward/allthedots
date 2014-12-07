@@ -1,8 +1,8 @@
 package main
 
-import (
+import "fmt"
+
 //"fmt"
-)
 
 type Pair struct {
 	start int
@@ -31,6 +31,9 @@ func NewSolveResults() *SolveResults {
 }
 
 func getNumHamPaths(prob *Problem) (int, *Path) {
+	if prob.Start == 10 && prob.End == 9 {
+		fmt.Printf("Prob getNumHamPaths: %+v\n", prob)
+	}
 	solve_channel := make(chan *SolveResults)
 	var solves, numProcs int
 	var results *SolveResults
@@ -60,6 +63,9 @@ func getNumHamPaths(prob *Problem) (int, *Path) {
 	for numProcs > 0 {
 		results = <-solve_channel
 		solves += results.numSolves
+		if prob.Start == 10 && prob.End == 9 {
+			fmt.Printf("getNumHamPaths: %d, numProcs: %d\n", solves, numProcs)
+		}
 		if solvePath == nil && len(results.paths) > 0 {
 			solvePath = results.paths[0]
 		}
@@ -182,8 +188,8 @@ func findHamiltonianPathIter(prob *Problem, s *PairStack, endIdx int, p *Path, s
 					// 1. if start preset is directed, make sure we're at end else just make sure
 					//    that we're on an end and that the opposite end is already in the path
 					// 2. if next preset is directed, make sure pair.next is at the beginning, else just
-					//    make sure that we're on an end					
-                    if preset.Directed == true {
+					//    make sure that we're on an end
+					if preset.Directed == true {
 						if preset.Path[len(preset.Path)-1] != pair.start {
 							canMove = false
 						}

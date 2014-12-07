@@ -29,20 +29,21 @@ func generatePresetPathType(r *rand.Rand) bool {
 }
 
 func generateMaxSolves(rows, cols int, r *rand.Rand) int {
-	rNum := r.Intn(100)
+	//rNum := r.Intn(100)
 	if rows == 4 && cols == 4 {
-		if rNum < 25 {
-			return 2
+		return 1
+		/*if rNum < 25 {
 		} else if rNum < 50 {
-			return 4
 		} else {
-			return 7
-		}
+		}*/
 	} else if rows == 5 && cols == 5 {
+		return 3
 	} else if rows == 6 && cols == 6 {
+		return 4
 	} else if rows == 7 && cols == 7 {
+		return 5
 	}
-	return 20
+	return 5
 }
 
 func generatePresetLength(rows, cols int, r *rand.Rand) int {

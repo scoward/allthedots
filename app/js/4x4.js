@@ -2,672 +2,89 @@ $.definitions.levels[$.definitions.levelCount++] = {
 title: "4 x 4",
 levels: [
 	{
-		"start": 1,
-		"end": 2,
-		"rows": 4,
-		"cols": 4,
-		"id": 440001,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [],
-		"solvePath": [
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			5,
-			6,
-			10,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440002,
-		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					4,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			5,
-			6,
-			10,
-			14,
-			13,
-			9,
-			8,
-			12
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440003,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					6,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			9,
-			13,
-			12
-		]
-	},
-	{
-		"start": 5,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440004,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					9,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			5,
-			6,
-			10,
-			9,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 0,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440005,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					15,
-					11
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					4,
-					5,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			4,
-			5,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			10,
-			6
-		]
-	},
-	{
-		"start": 1,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440006,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					6,
-					2
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			10,
-			14,
-			15
-		]
-	},
-	{
-		"start": 15,
-		"end": 14,
-		"rows": 4,
-		"cols": 4,
-		"id": 440007,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					3,
-					7
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					10,
-					9,
-					13
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			10,
-			14
-		]
-	},
-	{
-		"start": 12,
-		"end": 10,
-		"rows": 4,
-		"cols": 4,
-		"id": 440008,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					0,
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10
-		]
-	},
-	{
-		"start": 13,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440009,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					8,
-					4
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					10,
-					9,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 9,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440010,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					4,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					14,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					10,
-					11,
-					7,
-					3
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			5,
-			6,
-			10,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 11,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440011,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					10,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			10,
-			14,
-			15
-		]
-	},
-	{
-		"start": 9,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440012,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					0,
-					4
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
 		"start": 3,
 		"end": 0,
 		"rows": 4,
 		"cols": 4,
-		"id": 440013,
-		"solves": 4,
-		"maxSolves": 7,
+		"id": 440151,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					15,
-					14,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			5,
-			1,
-			0
-		]
-	},
-	{
-		"start": 15,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440014,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					8,
-					12
-				]
-			},
-			{
-				"forced": false,
-				"array": [
+					2,
 					1,
-					0
+					5
 				]
 			},
 			{
 				"forced": false,
 				"array": [
-					5,
-					6,
 					10,
-					11
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			5,
-			6,
-			10,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4
-		]
-	},
-	{
-		"start": 10,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440015,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					8,
 					9
 				]
 			},
 			{
-				"forced": false,
+				"forced": true,
 				"array": [
 					6,
-					2
+					7,
+					11
 				]
-			}
-		],
-		"solvePath": [
-			10,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440016,
-		"solves": 5,
-		"maxSolves": 7,
-		"presets": [
+			},
 			{
 				"forced": false,
 				"array": [
-					13,
 					14,
-					10
+					13
 				]
 			}
 		],
 		"solvePath": [
-			15,
-			11,
-			7,
 			3,
 			2,
-			6,
+			1,
+			5,
+			9,
 			10,
+			6,
+			7,
+			11,
+			15,
 			14,
 			13,
-			9,
-			5,
-			1,
-			0,
-			4,
+			12,
 			8,
-			12
+			4,
+			0
 		]
 	},
 	{
-		"start": 11,
-		"end": 15,
+		"start": 3,
+		"end": 7,
 		"rows": 4,
 		"cols": 4,
-		"id": 440017,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440152,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
 					9,
-					13,
-					12
+					5,
+					1,
+					0
 				]
 			}
 		],
 		"solvePath": [
-			11,
-			7,
 			3,
 			2,
 			6,
+			10,
+			9,
 			5,
 			1,
 			0,
@@ -675,77 +92,31 @@ levels: [
 			8,
 			12,
 			13,
-			9,
-			10,
 			14,
-			15
-		]
-	},
-	{
-		"start": 15,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440018,
-		"solves": 6,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					7,
-					6
-				]
-			}
-		],
-		"solvePath": [
 			15,
-			14,
-			10,
 			11,
-			7,
-			6,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3
+			7
 		]
 	},
 	{
-		"start": 0,
+		"start": 10,
 		"end": 9,
 		"rows": 4,
 		"cols": 4,
-		"id": 440019,
+		"id": 440153,
 		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					5,
-					1,
-					2,
-					3
-				]
-			}
-		],
+		"maxSolves": 1,
+		"presets": [],
 		"solvePath": [
-			0,
-			4,
+			10,
+			6,
 			5,
+			4,
+			0,
 			1,
 			2,
 			3,
 			7,
-			6,
-			10,
 			11,
 			15,
 			14,
@@ -756,48 +127,133 @@ levels: [
 		]
 	},
 	{
-		"start": 9,
-		"end": 0,
+		"start": 5,
+		"end": 3,
 		"rows": 4,
 		"cols": 4,
-		"id": 440020,
+		"id": 440154,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					8,
-					12,
-					13,
-					14
+					7,
+					6,
+					2
 				]
-			},
-			{
-				"forced": true,
-				"array": [
-					2,
-					1
-				]
-			},
+			}
+		],
+		"solvePath": [
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			14,
+			15,
+			11,
+			7,
+			6,
+			2,
+			3
+		]
+	},
+	{
+		"start": 3,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440155,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
 			{
 				"forced": false,
 				"array": [
 					15,
-					11,
-					7
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					0,
+					1
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					14,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					12,
+					8,
+					9
 				]
 			}
 		],
 		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
 			9,
 			10,
 			6,
 			5,
 			4,
-			8,
-			12,
+			0,
+			1,
+			2
+		]
+	},
+	{
+		"start": 13,
+		"end": 4,
+		"rows": 4,
+		"cols": 4,
+		"id": 440156,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
 			13,
+			12,
+			8,
+			9,
+			5,
+			6,
+			10,
 			14,
 			15,
 			11,
@@ -805,7 +261,8 @@ levels: [
 			3,
 			2,
 			1,
-			0
+			0,
+			4
 		]
 	},
 	{
@@ -813,217 +270,14 @@ levels: [
 		"end": 0,
 		"rows": 4,
 		"cols": 4,
-		"id": 440021,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					9,
-					10
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					13,
-					14
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			5,
-			9,
-			10,
-			6,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 12,
-		"end": 7,
-		"rows": 4,
-		"cols": 4,
-		"id": 440022,
+		"id": 440157,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					14,
-					15
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					0,
-					1
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					9,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7
-		]
-	},
-	{
-		"start": 15,
-		"end": 14,
-		"rows": 4,
-		"cols": 4,
-		"id": 440023,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					11,
-					7
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14
-		]
-	},
-	{
-		"start": 9,
-		"end": 7,
-		"rows": 4,
-		"cols": 4,
-		"id": 440024,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					5,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			6,
-			2,
-			3,
-			7
-		]
-	},
-	{
-		"start": 15,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440025,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					6,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			5,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			10,
-			11
-		]
-	},
-	{
-		"start": 3,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440026,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					0,
-					4,
+					1,
 					5,
 					6
 				]
@@ -1033,92 +287,218 @@ levels: [
 			3,
 			2,
 			1,
-			0,
-			4,
 			5,
 			6,
 			7,
 			11,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 5,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440027,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					0,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			5,
-			4,
-			0,
-			1,
-			2,
-			6,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
 			15,
-			11,
-			7,
-			3
+			14,
+			10,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0
 		]
 	},
 	{
-		"start": 12,
-		"end": 2,
+		"start": 3,
+		"end": 7,
 		"rows": 4,
 		"cols": 4,
-		"id": 440028,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440158,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					15,
-					11,
-					7
+					1,
+					5,
+					6
 				]
 			}
 		],
 		"solvePath": [
+			3,
+			2,
+			6,
+			5,
+			1,
+			0,
+			4,
+			8,
 			12,
 			13,
 			9,
-			8,
-			4,
-			0,
+			10,
+			14,
+			15,
+			11,
+			7
+		]
+	},
+	{
+		"start": 1,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440159,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					8,
+					12
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					9,
+					10
+				]
+			}
+		],
+		"solvePath": [
 			1,
-			5,
-			6,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
 			10,
 			14,
 			15,
 			11,
 			7,
 			3,
-			2
+			2,
+			6,
+			5
+		]
+	},
+	{
+		"start": 9,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440160,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					8,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					10,
+					6,
+					7
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			5,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0
+		]
+	},
+	{
+		"start": 1,
+		"end": 7,
+		"rows": 4,
+		"cols": 4,
+		"id": 440161,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					2,
+					6
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					14,
+					15,
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			2,
+			3,
+			7
 		]
 	},
 	{
@@ -1126,17 +506,16 @@ levels: [
 		"end": 2,
 		"rows": 4,
 		"cols": 4,
-		"id": 440029,
-		"solves": 4,
-		"maxSolves": 4,
+		"id": 440162,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					7,
-					11,
-					15,
-					14
+					8,
+					9,
+					10
 				]
 			}
 		],
@@ -1146,13 +525,13 @@ levels: [
 			11,
 			15,
 			14,
-			10,
-			6,
-			5,
-			9,
 			13,
 			12,
 			8,
+			9,
+			10,
+			6,
+			5,
 			4,
 			0,
 			1,
@@ -1160,13 +539,94 @@ levels: [
 		]
 	},
 	{
-		"start": 12,
-		"end": 8,
+		"start": 5,
+		"end": 9,
 		"rows": 4,
 		"cols": 4,
-		"id": 440030,
+		"id": 440163,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					2,
+					1,
+					0
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9
+		]
+	},
+	{
+		"start": 15,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440164,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			14,
+			13,
+			9,
+			8,
+			12
+		]
+	},
+	{
+		"start": 3,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440165,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
@@ -1178,999 +638,132 @@ levels: [
 			}
 		],
 		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			2,
+			1,
+			0,
+			4,
+			8,
 			12,
 			13,
 			9,
-			5,
-			6,
-			10,
-			14,
-			15,
-			11,
+			5
+		]
+	},
+	{
+		"start": 12,
+		"end": 13,
+		"rows": 4,
+		"cols": 4,
+		"id": 440166,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					9,
+					5,
+					6
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					0,
+					1,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
 			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9,
+			13
+		]
+	},
+	{
+		"start": 3,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440167,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					9,
+					10,
+					6
+				]
+			}
+		],
+		"solvePath": [
 			3,
 			2,
 			1,
 			0,
 			4,
+			5,
+			9,
+			10,
+			6,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
 			8
 		]
 	},
 	{
-		"start": 0,
-		"end": 12,
+		"start": 4,
+		"end": 13,
 		"rows": 4,
 		"cols": 4,
-		"id": 440031,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440168,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					5,
-					4
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					8,
-					9,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			9,
-			10,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 13,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440032,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					0,
-					1
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					5,
-					4
-				]
-			}
-		],
-		"solvePath": [
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			5,
-			6,
-			10,
-			9,
-			8,
-			12
-		]
-	},
-	{
-		"start": 10,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440033,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					6,
-					5
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					15,
-					11,
-					7
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					13,
-					14
-				]
-			}
-		],
-		"solvePath": [
-			10,
-			9,
-			5,
-			6,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3
-		]
-	},
-	{
-		"start": 0,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440034,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					13,
-					12
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					15,
-					11,
-					7
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			2,
-			6,
-			10,
-			9,
-			5,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3
-		]
-	},
-	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440035,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					12,
-					8,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			10,
-			6,
-			5,
-			4
-		]
-	},
-	{
-		"start": 12,
-		"end": 5,
-		"rows": 4,
-		"cols": 4,
-		"id": 440036,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					3,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5
-		]
-	},
-	{
-		"start": 7,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440037,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					6,
 					10,
-					11
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					13,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			7,
-			3,
-			2,
-			6,
-			10,
-			11,
-			15,
-			14,
-			13,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440038,
-		"solves": 3,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					7,
 					6
 				]
 			}
 		],
 		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			5,
-			1,
-			0
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440039,
-		"solves": 5,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					2,
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			5,
-			9,
-			10,
-			6,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 3,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440040,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					7,
-					6,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 6,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440041,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					13,
-					12,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					11,
-					7
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					2,
-					3
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			6,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			1,
-			5,
-			4,
-			0
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440042,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					13,
-					14
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			10,
-			6,
-			5,
-			9
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440043,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					5,
-					9,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			5,
-			9,
-			10,
-			6,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 9,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440044,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					5,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			5,
-			6,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			10,
-			11,
-			15
-		]
-	},
-	{
-		"start": 5,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440045,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					9,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			5,
-			4,
-			0,
-			1,
-			2,
-			6,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440046,
-		"solves": 7,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					8,
-					4
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			5,
-			1,
-			0
-		]
-	},
-	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440047,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			9,
-			10,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4
-		]
-	},
-	{
-		"start": 1,
-		"end": 10,
-		"rows": 4,
-		"cols": 4,
-		"id": 440048,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					2,
-					3,
-					7
-				]
-			}
-		],
-		"solvePath": [
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10
-		]
-	},
-	{
-		"start": 3,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440049,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					4,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440050,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					4,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			5,
-			1,
-			0
-		]
-	},
-	{
-		"start": 3,
-		"end": 5,
-		"rows": 4,
-		"cols": 4,
-		"id": 440051,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					2,
-					1
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					6,
-					7
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					13,
-					12,
-					8,
-					4
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					15,
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			7,
-			6,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			9,
-			5
-		]
-	},
-	{
-		"start": 1,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440052,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					13,
-					12,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					15,
-					14,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 15,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440053,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					11,
-					10
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					2,
-					3
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					12,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			5,
 			4,
 			0,
 			1,
@@ -2178,134 +771,15 @@ levels: [
 			3,
 			7,
 			11,
+			15,
+			14,
 			10,
-			6
-		]
-	},
-	{
-		"start": 3,
-		"end": 2,
-		"rows": 4,
-		"cols": 4,
-		"id": 440054,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					13,
-					12,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					0,
-					1
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					7,
-					6,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			7,
 			6,
 			5,
 			9,
-			10,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2
-		]
-	},
-	{
-		"start": 10,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440055,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					6,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
 			8,
 			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440056,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					7,
-					3,
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			10,
-			6,
-			5,
-			9
+			13
 		]
 	},
 	{
@@ -2313,10 +787,640 @@ levels: [
 		"end": 12,
 		"rows": 4,
 		"cols": 4,
-		"id": 440057,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440169,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					2,
+					3,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					13,
+					14,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 4,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440170,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					12,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					1
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					7,
+					11,
+					15,
+					14
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			10,
+			6,
+			5
+		]
+	},
+	{
+		"start": 3,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440171,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					9,
+					13
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2
+		]
+	},
+	{
+		"start": 13,
+		"end": 11,
+		"rows": 4,
+		"cols": 4,
+		"id": 440172,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					0,
+					1,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					10,
+					14,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			14,
+			15,
+			11
+		]
+	},
+	{
+		"start": 0,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440173,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					10,
+					6,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			5,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			9,
+			8,
+			12
+		]
+	},
+	{
+		"start": 7,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440174,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					10,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					1
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					15,
+					14
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9
+		]
+	},
+	{
+		"start": 0,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440175,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					4,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					13,
+					9,
+					10,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			11,
+			15,
+			14
+		]
+	},
+	{
+		"start": 0,
+		"end": 4,
+		"rows": 4,
+		"cols": 4,
+		"id": 440176,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					15,
+					14,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			4
+		]
+	},
+	{
+		"start": 1,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440177,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					14
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6,
+			5
+		]
+	},
+	{
+		"start": 6,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440178,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					14,
+					13,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			6,
+			10,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 12,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440179,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					1,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					7,
+					3
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			8,
+			4,
+			0,
+			1,
+			5,
+			6,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 13,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440180,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					14,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					8,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6
+		]
+	},
+	{
+		"start": 1,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440181,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					15,
+					11,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					13,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0
+		]
+	},
+	{
+		"start": 1,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440182,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
 			{
 				"forced": false,
 				"array": [
@@ -2324,9 +1428,252 @@ levels: [
 					14,
 					15
 				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					2
+				]
 			}
 		],
 		"solvePath": [
+			1,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0
+		]
+	},
+	{
+		"start": 1,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440183,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					6,
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 5,
+		"end": 11,
+		"rows": 4,
+		"cols": 4,
+		"id": 440184,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					4,
+					0
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11
+		]
+	},
+	{
+		"start": 7,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440185,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					0
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					15
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			9
+		]
+	},
+	{
+		"start": 12,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440186,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					6,
+					10,
+					14,
+					15
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			9,
+			8,
+			4,
+			5,
+			6,
+			10,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0
+		]
+	},
+	{
+		"start": 13,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440187,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					3
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					14,
+					10
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					4,
+					0
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					7,
+					11
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
 			8,
 			4,
 			0,
@@ -2340,19 +1687,885 @@ levels: [
 			15,
 			14,
 			10,
-			9,
+			9
+		]
+	},
+	{
+		"start": 1,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440188,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
 			13,
-			12
+			12,
+			8,
+			9,
+			10,
+			6,
+			5,
+			4,
+			0
+		]
+	},
+	{
+		"start": 13,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440189,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9
+		]
+	},
+	{
+		"start": 6,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440190,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					14
+				]
+			}
+		],
+		"solvePath": [
+			6,
+			10,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
 		]
 	},
 	{
 		"start": 3,
-		"end": 13,
+		"end": 2,
 		"rows": 4,
 		"cols": 4,
-		"id": 440058,
+		"id": 440191,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					12,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					15,
+					14,
+					10
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					0,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2
+		]
+	},
+	{
+		"start": 1,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440192,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					4,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					13,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 12,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440193,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					7,
+					3,
+					2,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					5
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					14,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8
+		]
+	},
+	{
+		"start": 5,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440194,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					8,
+					12,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					10,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14
+		]
+	},
+	{
+		"start": 15,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440195,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			14,
+			13,
+			12,
+			8,
+			9
+		]
+	},
+	{
+		"start": 3,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440196,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					4,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					15,
+					14
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					1,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			6,
+			10
+		]
+	},
+	{
+		"start": 13,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440197,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					14,
+					10
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6
+		]
+	},
+	{
+		"start": 12,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440198,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					15,
+					14
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					1,
+					5
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			9,
+			8,
+			4,
+			0,
+			1,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10
+		]
+	},
+	{
+		"start": 10,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440199,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					12,
+					8,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			10,
+			6,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3
+		]
+	},
+	{
+		"start": 13,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440200,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					1
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9
+		]
+	},
+	{
+		"start": 4,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440201,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					1
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			10,
+			6,
+			5
+		]
+	},
+	{
+		"start": 1,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440202,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					15,
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					7,
+					6
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					12,
+					13
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 12,
+		"end": 7,
+		"rows": 4,
+		"cols": 4,
+		"id": 440203,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					2,
+					1
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					10,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			6,
+			5,
+			9,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7
+		]
+	},
+	{
+		"start": 0,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440204,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					7,
+					3,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					13,
+					12,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			5,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			10,
+			6
+		]
+	},
+	{
+		"start": 0,
+		"end": 1,
+		"rows": 4,
+		"cols": 4,
+		"id": 440205,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					12,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					10
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1
+		]
+	},
+	{
+		"start": 13,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440206,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
@@ -2362,11 +2575,128 @@ levels: [
 				]
 			},
 			{
+				"forced": true,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
 				"forced": false,
 				"array": [
+					1,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6,
+			5,
+			9
+		]
+	},
+	{
+		"start": 0,
+		"end": 1,
+		"rows": 4,
+		"cols": 4,
+		"id": 440207,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					4,
+					5
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					15,
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					12,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
 					10,
-					9,
-					8
+					9
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1
+		]
+	},
+	{
+		"start": 3,
+		"end": 13,
+		"rows": 4,
+		"cols": 4,
+		"id": 440208,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					12,
+					8,
+					9
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					7,
+					6
 				]
 			}
 		],
@@ -2390,151 +2720,17 @@ levels: [
 		]
 	},
 	{
-		"start": 0,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440059,
-		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					2,
-					6,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			9,
-			10,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 0,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440060,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					2
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					6,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6,
-			5,
-			4,
-			8,
-			12,
-			13,
-			9
-		]
-	},
-	{
 		"start": 15,
-		"end": 12,
+		"end": 6,
 		"rows": 4,
 		"cols": 4,
-		"id": 440061,
+		"id": 440209,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					5,
-					9
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					11,
-					7,
-					3
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					2,
-					6,
-					10,
-					14
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			14,
-			13,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 15,
-		"end": 1,
-		"rows": 4,
-		"cols": 4,
-		"id": 440062,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					3,
 					7,
 					11
 				]
@@ -2542,92 +2738,68 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					9,
-					8
+					3,
+					2
 				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			4,
-			0,
-			1
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440063,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
+			},
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					11,
-					7
+					4,
+					8
 				]
 			},
 			{
 				"forced": true,
 				"array": [
-					14,
-					10,
-					6
+					0,
+					1,
+					5
 				]
 			}
 		],
 		"solvePath": [
 			15,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			9,
+			10,
 			11,
 			7,
 			3,
 			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			10,
-			6,
-			5,
-			9
+			6
 		]
 	},
 	{
-		"start": 1,
-		"end": 2,
+		"start": 7,
+		"end": 14,
 		"rows": 4,
 		"cols": 4,
-		"id": 440064,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440210,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					11,
-					7
+					9,
+					10
 				]
 			}
 		],
 		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			5,
 			1,
 			0,
 			4,
@@ -2635,8 +2807,84 @@ levels: [
 			12,
 			13,
 			9,
+			10,
+			11,
+			15,
+			14
+		]
+	},
+	{
+		"start": 7,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440211,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					4,
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
 			5,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			6
+		]
+	},
+	{
+		"start": 6,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440212,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					4,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					14,
+					15
+				]
+			}
+		],
+		"solvePath": [
 			6,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
 			10,
 			14,
 			15,
@@ -2647,30 +2895,93 @@ levels: [
 		]
 	},
 	{
-		"start": 5,
-		"end": 3,
+		"start": 15,
+		"end": 12,
 		"rows": 4,
 		"cols": 4,
-		"id": 440065,
-		"solves": 4,
-		"maxSolves": 4,
+		"id": 440213,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					14,
-					13
+					10,
+					11
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					3,
+					2,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					6
 				]
 			}
 		],
 		"solvePath": [
-			5,
-			4,
-			0,
-			1,
-			2,
-			6,
+			15,
+			11,
 			10,
+			14,
+			13,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12
+		]
+	},
+	{
+		"start": 1,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440214,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					10,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			5,
 			9,
 			8,
 			12,
@@ -2678,8 +2989,149 @@ levels: [
 			14,
 			15,
 			11,
+			10,
+			6,
 			7,
-			3
+			3,
+			2
+		]
+	},
+	{
+		"start": 3,
+		"end": 13,
+		"rows": 4,
+		"cols": 4,
+		"id": 440215,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					2,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					14,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			8,
+			12,
+			13
+		]
+	},
+	{
+		"start": 5,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440216,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					11,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9
+		]
+	},
+	{
+		"start": 5,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440217,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					3,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12
 		]
 	},
 	{
@@ -2687,30 +3139,30 @@ levels: [
 		"end": 8,
 		"rows": 4,
 		"cols": 4,
-		"id": 440066,
+		"id": 440218,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					1,
-					0
+					9,
+					13
 				]
 			},
 			{
 				"forced": false,
 				"array": [
+					0,
 					4,
-					5,
-					9
+					5
 				]
 			},
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					14,
-					10
+					10,
+					6
 				]
 			}
 		],
@@ -2734,407 +3186,24 @@ levels: [
 		]
 	},
 	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440067,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					12,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					2,
-					3
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					1,
-					5,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4
-		]
-	},
-	{
-		"start": 10,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440068,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					0,
-					4,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 14,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440069,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			5,
-			9,
-			10,
-			11,
-			15
-		]
-	},
-	{
-		"start": 15,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440070,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					14,
-					13,
-					12,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			9,
-			10,
-			6,
-			2,
-			3,
-			7,
-			11
-		]
-	},
-	{
-		"start": 15,
-		"end": 14,
-		"rows": 4,
-		"cols": 4,
-		"id": 440071,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					5,
-					6
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					4,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			5,
-			6,
-			10,
-			14
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440072,
-		"solves": 5,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					6,
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6,
-			2,
-			1,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 15,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440073,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					10,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11
-		]
-	},
-	{
-		"start": 11,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440074,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					0,
-					4,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			11,
-			10,
-			6,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			5,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 13,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440075,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					9,
-					8,
-					12
-				]
-			}
-		],
-		"solvePath": [
-			13,
-			12,
-			8,
-			9,
-			5,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6
-		]
-	},
-	{
-		"start": 0,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440076,
-		"solves": 2,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					4,
-					5,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9
-		]
-	},
-	{
-		"start": 1,
+		"start": 12,
 		"end": 10,
 		"rows": 4,
 		"cols": 4,
-		"id": 440077,
+		"id": 440219,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
+			{
+				"forced": true,
+				"array": [
+					3,
+					2
+				]
+			},
 			{
 				"forced": false,
 				"array": [
-					14,
 					15,
 					11
 				]
@@ -3142,152 +3211,43 @@ levels: [
 			{
 				"forced": true,
 				"array": [
-					12,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			1,
-			0,
-			4,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			10
-		]
-	},
-	{
-		"start": 7,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440078,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					14,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					0,
-					4
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					6,
-					2,
-					3
-				]
-			}
-		],
-		"solvePath": [
-			7,
-			3,
-			2,
-			6,
-			10,
-			11,
-			15,
-			14,
-			13,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440079,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					5,
-					6
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					12,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					11,
-					15,
+					13,
 					14
 				]
 			},
 			{
 				"forced": false,
 				"array": [
-					2,
-					3,
-					7
+					4,
+					8
 				]
 			},
 			{
-				"forced": false,
+				"forced": true,
 				"array": [
-					13,
-					9
+					0,
+					1,
+					5
 				]
 			}
 		],
 		"solvePath": [
+			12,
+			8,
+			4,
 			0,
 			1,
 			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
 			9,
 			13,
-			12,
-			8,
-			4
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6,
+			10
 		]
 	},
 	{
@@ -3295,213 +3255,74 @@ levels: [
 		"end": 10,
 		"rows": 4,
 		"cols": 4,
-		"id": 440080,
+		"id": 440220,
 		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					3,
-					7,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			5,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			10
-		]
-	},
-	{
-		"start": 15,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440081,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					13,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			6,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			11
-		]
-	},
-	{
-		"start": 15,
-		"end": 1,
-		"rows": 4,
-		"cols": 4,
-		"id": 440082,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					8,
-					4,
-					0
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1
-		]
-	},
-	{
-		"start": 0,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440083,
-		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					15,
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			9,
-			5,
-			1,
-			2,
-			6,
-			7,
-			3
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440084,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					4,
-					0
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					1,
-					5,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			9,
-			13,
-			12
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440085,
-		"solves": 2,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					13,
-					9
+					15,
+					14,
+					13
 				]
 			},
 			{
 				"forced": false,
 				"array": [
 					7,
-					11
+					3
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			6,
+			10
+		]
+	},
+	{
+		"start": 7,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440221,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					1,
+					0,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					15
 				]
 			},
 			{
@@ -3514,12 +3335,6 @@ levels: [
 			}
 		],
 		"solvePath": [
-			15,
-			14,
-			13,
-			9,
-			10,
-			11,
 			7,
 			3,
 			2,
@@ -3529,223 +3344,31 @@ levels: [
 			0,
 			4,
 			8,
-			12
-		]
-	},
-	{
-		"start": 6,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440086,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					15,
-					14,
-					13
-				]
-			}
-		],
-		"solvePath": [
-			6,
-			10,
-			9,
-			5,
-			4,
-			8,
 			12,
 			13,
-			14,
-			15,
+			9,
+			10,
 			11,
-			7,
-			3,
-			2,
-			1,
-			0
+			15,
+			14
 		]
 	},
 	{
-		"start": 3,
-		"end": 7,
+		"start": 4,
+		"end": 13,
 		"rows": 4,
 		"cols": 4,
-		"id": 440087,
+		"id": 440222,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
-			{
-				"forced": false,
-				"array": [
-					5,
-					6
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					4,
-					8
-				]
-			},
 			{
 				"forced": false,
 				"array": [
 					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			9,
-			5,
-			6,
-			7
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440088,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					14,
-					10,
-					11
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440089,
-		"solves": 2,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					13,
-					12
+					15
 				]
 			},
-			{
-				"forced": false,
-				"array": [
-					7,
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			10,
-			9
-		]
-	},
-	{
-		"start": 0,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440090,
-		"solves": 2,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					7,
-					6,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			12,
-			13,
-			9,
-			10,
-			14,
-			15,
-			11,
-			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 0,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440091,
-		"solves": 2,
-		"maxSolves": 7,
-		"presets": [
 			{
 				"forced": true,
 				"array": [
@@ -3757,40 +3380,120 @@ levels: [
 				"forced": false,
 				"array": [
 					5,
-					9
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					10,
+					14
 				]
 			}
 		],
 		"solvePath": [
+			4,
 			0,
 			1,
+			5,
+			6,
 			2,
 			3,
 			7,
-			6,
-			10,
 			11,
 			15,
 			14,
-			13,
+			10,
 			9,
-			5,
-			4,
 			8,
-			12
+			12,
+			13
 		]
 	},
 	{
-		"start": 0,
-		"end": 12,
+		"start": 15,
+		"end": 3,
 		"rows": 4,
 		"cols": 4,
-		"id": 440092,
+		"id": 440223,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
+				"array": [
+					6,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					13
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			11,
+			10,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			6,
+			7,
+			3
+		]
+	},
+	{
+		"start": 11,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440224,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					5,
+					6
+				]
+			},
+			{
+				"forced": true,
 				"array": [
 					10,
 					9
@@ -3799,6 +3502,58 @@ levels: [
 			{
 				"forced": true,
 				"array": [
+					4,
+					8,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			11,
+			10,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15
+		]
+	},
+	{
+		"start": 3,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440225,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					6
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					12
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
 					15,
 					14
 				]
@@ -3806,98 +3561,687 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					6,
-					2
+					8,
+					9
 				]
 			}
 		],
 		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			9,
-			10,
-			6,
-			2,
 			3,
 			7,
 			11,
 			15,
 			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 15,
-		"end": 1,
-		"rows": 4,
-		"cols": 4,
-		"id": 440093,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					9,
-					13
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			9,
 			13,
 			12,
 			8,
+			9,
+			10,
+			6,
+			2,
+			1,
+			5,
+			4,
+			0
+		]
+	},
+	{
+		"start": 4,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440226,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					2,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 13,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440227,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					15,
+					14,
+					10
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					1,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9
+		]
+	},
+	{
+		"start": 7,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440228,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					12,
+					13,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					2,
+					1
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			5,
+			6,
+			10,
+			11,
+			15,
+			14
+		]
+	},
+	{
+		"start": 9,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440229,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10
+		]
+	},
+	{
+		"start": 7,
+		"end": 1,
+		"rows": 4,
+		"cols": 4,
+		"id": 440230,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					9,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
 			4,
 			0,
 			1
 		]
 	},
 	{
-		"start": 12,
-		"end": 7,
+		"start": 0,
+		"end": 6,
 		"rows": 4,
 		"cols": 4,
-		"id": 440094,
+		"id": 440231,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					5,
-					6,
+					14,
+					10
+				]
+			},
+			{
+				"forced": true,
+				"array": [
 					2,
-					3
+					3,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					13,
+					9
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					5,
+					1
 				]
 			}
 		],
 		"solvePath": [
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			5,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10,
+			6
+		]
+	},
+	{
+		"start": 4,
+		"end": 5,
+		"rows": 4,
+		"cols": 4,
+		"id": 440232,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					7,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5
+		]
+	},
+	{
+		"start": 1,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440233,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					6,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					8,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			10
+		]
+	},
+	{
+		"start": 5,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440234,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					14,
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			6,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3
+		]
+	},
+	{
+		"start": 5,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440235,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					9,
+					13
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					2,
+					1,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					15,
+					14,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			6,
+			7,
+			11,
+			15,
+			14,
+			10,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3
+		]
+	},
+	{
+		"start": 10,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440236,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					13,
+					14
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					5,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			10,
+			6,
+			2,
+			1,
+			0,
+			4,
+			5,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3
+		]
+	},
+	{
+		"start": 9,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440237,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					15,
+					14
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					6,
+					7
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			5,
+			1,
+			0,
+			4,
+			8,
 			12,
 			13,
 			14,
 			15,
 			11,
 			10,
+			6,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 3,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440238,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					1,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			2,
+			6,
+			7,
+			11,
+			10,
+			9,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15
+		]
+	},
+	{
+		"start": 1,
+		"end": 7,
+		"rows": 4,
+		"cols": 4,
+		"id": 440239,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					10,
+					11,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			5,
 			9,
 			8,
-			4,
-			0,
-			1,
-			5,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
 			6,
 			2,
 			3,
@@ -3905,21 +4249,255 @@ levels: [
 		]
 	},
 	{
-		"start": 3,
-		"end": 8,
+		"start": 15,
+		"end": 14,
 		"rows": 4,
 		"cols": 4,
-		"id": 440095,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440240,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
+					8,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
 					4,
 					5
 				]
 			},
+			{
+				"forced": true,
+				"array": [
+					12,
+					13
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					10,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			11,
+			10,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			9,
+			8,
+			12,
+			13,
+			14
+		]
+	},
+	{
+		"start": 15,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440241,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					14,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			14,
+			10,
+			11,
+			7,
+			6,
+			5,
+			9,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3
+		]
+	},
+	{
+		"start": 5,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440242,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					1,
+					0,
+					4,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6
+		]
+	},
+	{
+		"start": 3,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440243,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					1,
+					0,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					10
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			9,
+			10,
+			6,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 4,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440244,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					12
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 3,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440245,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
 			{
 				"forced": true,
 				"array": [
@@ -3935,17 +4513,11 @@ levels: [
 				]
 			},
 			{
-				"forced": false,
-				"array": [
-					15,
-					14
-				]
-			},
-			{
 				"forced": true,
 				"array": [
-					9,
-					13
+					4,
+					5,
+					6
 				]
 			}
 		],
@@ -3969,34 +4541,72 @@ levels: [
 		]
 	},
 	{
-		"start": 3,
-		"end": 0,
+		"start": 0,
+		"end": 12,
 		"rows": 4,
 		"cols": 4,
-		"id": 440096,
+		"id": 440246,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					9,
+					10,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			4,
+			8,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 3,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440247,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					5,
-					4
+					15,
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					4,
+					0
 				]
 			},
 			{
 				"forced": true,
 				"array": [
-					7,
-					11
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					12,
-					8,
-					9
+					6,
+					5
 				]
 			}
 		],
@@ -4006,85 +4616,152 @@ levels: [
 			11,
 			15,
 			14,
-			13,
-			12,
-			8,
-			9,
 			10,
 			6,
-			2,
-			1,
 			5,
-			4,
-			0
-		]
-	},
-	{
-		"start": 12,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440097,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					11,
-					10,
-					9
-				]
-			}
-		],
-		"solvePath": [
+			9,
+			13,
 			12,
 			8,
 			4,
 			0,
 			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			10,
-			9,
-			13,
-			14,
-			15
+			2
 		]
 	},
 	{
-		"start": 0,
-		"end": 14,
+		"start": 5,
+		"end": 9,
 		"rows": 4,
 		"cols": 4,
-		"id": 440098,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440248,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					15,
-					11
-				]
-			},
-			{
-				"forced": false,
-				"array": [
 					8,
-					12,
-					13
+					12
 				]
 			},
 			{
 				"forced": false,
 				"array": [
 					6,
-					7
+					10
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					0
+				]
+			}
+		],
+		"solvePath": [
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9
+		]
+	},
+	{
+		"start": 12,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440249,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					9,
+					13,
+					14
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			8,
+			9,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10
+		]
+	},
+	{
+		"start": 0,
+		"end": 4,
+		"rows": 4,
+		"cols": 4,
+		"id": 440250,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					7,
+					6
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					10,
+					11,
+					15
 				]
 			}
 		],
@@ -4096,37 +4773,223 @@ levels: [
 			7,
 			6,
 			5,
-			4,
-			8,
-			12,
-			13,
 			9,
 			10,
 			11,
 			15,
-			14
+			14,
+			13,
+			12,
+			8,
+			4
 		]
 	},
 	{
-		"start": 11,
-		"end": 15,
+		"start": 6,
+		"end": 8,
 		"rows": 4,
 		"cols": 4,
-		"id": 440099,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440251,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					9,
+					0,
+					4,
+					5
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					1,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					14,
+					13
+				]
+			}
+		],
+		"solvePath": [
+			6,
+			10,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 4,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440252,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			5,
+			9,
+			8,
+			12,
+			13,
+			14,
+			10,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15
+		]
+	},
+	{
+		"start": 6,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440253,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					15,
+					14
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					1
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			6,
+			10,
+			9,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 7,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440254,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
 					10
 				]
 			},
 			{
 				"forced": true,
 				"array": [
-					7,
 					3,
 					2
 				]
@@ -4134,8 +4997,16 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					12,
-					13
+					0,
+					4,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					14
 				]
 			},
 			{
@@ -4147,13 +5018,10 @@ levels: [
 			}
 		],
 		"solvePath": [
-			11,
 			7,
 			3,
 			2,
 			6,
-			10,
-			9,
 			5,
 			1,
 			0,
@@ -4162,223 +5030,36 @@ levels: [
 			12,
 			13,
 			14,
-			15
-		]
-	},
-	{
-		"start": 14,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440100,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					0,
-					1,
-					2
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					10,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			14,
-			13,
-			12,
-			8,
-			9,
-			10,
-			6,
-			5,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15
-		]
-	},
-	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440101,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					5,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
 			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4
-		]
-	},
-	{
-		"start": 0,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440102,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					7
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					12,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					5,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			4,
-			5,
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			9,
-			10,
-			6
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440103,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					3,
-					7
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					12,
-					8,
-					4
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
 			11,
 			10,
 			9
 		]
 	},
 	{
-		"start": 9,
-		"end": 0,
+		"start": 10,
+		"end": 4,
 		"rows": 4,
 		"cols": 4,
-		"id": 440104,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440255,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					3,
-					7
-				]
-			},
 			{
 				"forced": true,
 				"array": [
-					4,
+					9,
 					8,
-					12
+					12,
+					13
 				]
 			}
 		],
 		"solvePath": [
-			9,
 			10,
 			6,
 			5,
-			4,
+			9,
 			8,
 			12,
 			13,
@@ -4389,70 +5070,18 @@ levels: [
 			3,
 			2,
 			1,
-			0
-		]
-	},
-	{
-		"start": 9,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440105,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					0,
-					4,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					12,
-					13,
-					14
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					10,
-					11,
-					7
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			5,
-			6,
-			10,
-			11,
-			7,
-			3,
-			2,
-			1,
 			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15
+			4
 		]
 	},
 	{
 		"start": 12,
-		"end": 5,
+		"end": 10,
 		"rows": 4,
 		"cols": 4,
-		"id": 440106,
+		"id": 440256,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
@@ -4464,210 +5093,6 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					2,
-					1
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					3,
-					7
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					6,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			10,
-			11,
-			15,
-			14,
-			13,
-			9,
-			5
-		]
-	},
-	{
-		"start": 12,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440107,
-		"solves": 3,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					15,
-					14
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					3,
-					7
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					11,
-					10,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			6,
-			7,
-			3,
-			2,
-			1,
-			5,
-			9,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 13,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440108,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					12,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					0,
-					1
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					10,
-					9,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			9,
-			10,
-			14,
-			15,
-			11,
-			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 0,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440109,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					9,
-					8,
-					12
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			4,
-			5,
-			1,
-			2,
-			6,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3
-		]
-	},
-	{
-		"start": 3,
-		"end": 7,
-		"rows": 4,
-		"cols": 4,
-		"id": 440110,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					15,
-					11
-				]
-			},
-			{
-				"forced": false,
-				"array": [
 					0,
 					1,
 					2
@@ -4675,172 +5100,90 @@ levels: [
 			}
 		],
 		"solvePath": [
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
 			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
 			13,
 			9,
 			5,
 			6,
-			10,
-			14,
-			15,
-			11,
-			7
+			10
 		]
 	},
 	{
-		"start": 12,
-		"end": 15,
+		"start": 3,
+		"end": 13,
 		"rows": 4,
 		"cols": 4,
-		"id": 440111,
-		"solves": 4,
-		"maxSolves": 4,
+		"id": 440257,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
+			{
+				"forced": false,
+				"array": [
+					14,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					1,
+					0
+				]
+			},
 			{
 				"forced": false,
 				"array": [
 					8,
-					4,
-					0
+					12
 				]
 			},
 			{
 				"forced": true,
 				"array": [
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			10,
-			14,
-			15
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440112,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					3,
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			9,
-			5,
-			6,
-			10,
-			11,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 4,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440113,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					0
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					9,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					11,
 					10,
 					6
 				]
 			}
 		],
 		"solvePath": [
-			4,
-			0,
-			1,
-			2,
 			3,
 			7,
 			11,
+			15,
+			14,
 			10,
 			6,
+			2,
+			1,
+			0,
+			4,
 			5,
 			9,
 			8,
 			12,
-			13,
-			14,
-			15
+			13
 		]
 	},
 	{
-		"start": 13,
-		"end": 14,
+		"start": 10,
+		"end": 4,
 		"rows": 4,
 		"cols": 4,
-		"id": 440114,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440258,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
-			{
-				"forced": true,
-				"array": [
-					12,
-					8
-				]
-			},
 			{
 				"forced": false,
 				"array": [
@@ -4851,28 +5194,28 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					7,
-					6
+					8,
+					9
 				]
 			}
 		],
 		"solvePath": [
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
+			10,
 			6,
 			5,
 			9,
-			10,
-			11,
+			8,
+			12,
+			13,
+			14,
 			15,
-			14
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4
 		]
 	},
 	{
@@ -4880,20 +5223,52 @@ levels: [
 		"end": 3,
 		"rows": 4,
 		"cols": 4,
-		"id": 440115,
-		"solves": 4,
-		"maxSolves": 4,
+		"id": 440259,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					5,
-					6
+					14,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					6,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					8,
+					12
 				]
 			}
 		],
 		"solvePath": [
 			2,
+			6,
+			5,
 			1,
 			0,
 			4,
@@ -4901,8 +5276,6 @@ levels: [
 			12,
 			13,
 			9,
-			5,
-			6,
 			10,
 			14,
 			15,
@@ -4912,31 +5285,82 @@ levels: [
 		]
 	},
 	{
-		"start": 3,
-		"end": 2,
+		"start": 1,
+		"end": 5,
 		"rows": 4,
 		"cols": 4,
-		"id": 440116,
-		"solves": 2,
-		"maxSolves": 4,
+		"id": 440260,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					0,
-					1,
-					5
+					3,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					12,
+					13,
+					9
 				]
 			}
 		],
 		"solvePath": [
-			3,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			10,
+			14,
+			15,
+			11,
 			7,
+			3,
+			2,
+			6,
+			5
+		]
+	},
+	{
+		"start": 7,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440261,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					8,
+					12
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					1
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			10,
 			11,
 			15,
 			14,
-			10,
-			9,
 			13,
 			12,
 			8,
@@ -4944,22 +5368,138 @@ levels: [
 			0,
 			1,
 			5,
-			6,
-			2
+			9
 		]
 	},
 	{
-		"start": 15,
-		"end": 3,
+		"start": 7,
+		"end": 1,
 		"rows": 4,
 		"cols": 4,
-		"id": 440117,
-		"solves": 3,
-		"maxSolves": 4,
+		"id": 440262,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
+					8,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			5,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1
+		]
+	},
+	{
+		"start": 4,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440263,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					6,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 9,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440264,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					6,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			10,
+			6,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 7,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440265,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					3,
 					2,
 					1
 				]
@@ -4967,131 +5507,112 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					7,
-					6
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					12,
-					13
-				]
-			},
-			{
-				"forced": false,
-				"array": [
+					10,
 					11,
-					10
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					4,
+					5
 				]
 			}
 		],
 		"solvePath": [
-			15,
-			14,
-			10,
-			11,
 			7,
-			6,
+			3,
+			2,
+			1,
+			0,
+			4,
 			5,
 			9,
-			13,
-			12,
 			8,
-			4,
-			0,
-			1,
-			2,
-			3
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			6
 		]
 	},
 	{
-		"start": 12,
-		"end": 2,
+		"start": 0,
+		"end": 1,
 		"rows": 4,
 		"cols": 4,
-		"id": 440118,
+		"id": 440266,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
+				"array": [
+					9,
+					10,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1
+		]
+	},
+	{
+		"start": 1,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440267,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
 				"array": [
 					4,
 					8
 				]
 			},
 			{
-				"forced": true,
-				"array": [
-					1,
-					5,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			9,
-			13,
-			14,
-			15,
-			11,
-			10,
-			6,
-			7,
-			3,
-			2
-		]
-	},
-	{
-		"start": 14,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440119,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
 				"forced": false,
 				"array": [
-					5,
-					9
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					13,
 					12,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					2,
-					6
+					13,
+					14
 				]
 			}
 		],
 		"solvePath": [
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
 			1,
-			5,
-			9,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
 			10,
+			9,
+			5,
 			6,
 			2,
 			3,
@@ -5101,26 +5622,769 @@ levels: [
 		]
 	},
 	{
-		"start": 13,
-		"end": 3,
+		"start": 3,
+		"end": 7,
 		"rows": 4,
 		"cols": 4,
-		"id": 440120,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440268,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
+					8,
 					12,
-					8
+					13
 				]
 			},
 			{
 				"forced": false,
 				"array": [
 					6,
+					10,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					4,
+					0
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7
+		]
+	},
+	{
+		"start": 10,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440269,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					6,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			10,
+			9,
+			8,
+			4,
+			0,
+			1,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 12,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440270,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					1,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					14,
+					15,
+					11
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			9,
+			10,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6,
+			5,
+			1,
+			0,
+			4,
+			8
+		]
+	},
+	{
+		"start": 12,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440271,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					13,
+					14
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
 					7,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					15,
+					11
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8
+		]
+	},
+	{
+		"start": 7,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440272,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					13,
+					14
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					15
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					4,
+					8
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			9,
+			5,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 1,
+		"end": 7,
+		"rows": 4,
+		"cols": 4,
+		"id": 440273,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					4,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			2,
+			3,
+			7
+		]
+	},
+	{
+		"start": 6,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440274,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					7,
+					3
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					14
+				]
+			}
+		],
+		"solvePath": [
+			6,
+			10,
+			9,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 9,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440275,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					10,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					5,
+					1,
+					0
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					14,
+					15
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					7
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			10,
+			6,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2
+		]
+	},
+	{
+		"start": 9,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440276,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					7,
+					3,
+					2
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					13,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			9,
+			5,
+			6,
+			10,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15
+		]
+	},
+	{
+		"start": 15,
+		"end": 11,
+		"rows": 4,
+		"cols": 4,
+		"id": 440277,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					9,
+					10
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					7,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			11
+		]
+	},
+	{
+		"start": 8,
+		"end": 12,
+		"rows": 4,
+		"cols": 4,
+		"id": 440278,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					9,
+					5,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 15,
+		"end": 11,
+		"rows": 4,
+		"cols": 4,
+		"id": 440279,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					7,
+					3,
+					2,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					5,
+					9
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			14,
+			13,
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			9,
+			10,
+			6,
+			2,
+			3,
+			7,
+			11
+		]
+	},
+	{
+		"start": 12,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440280,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					8,
+					9,
+					5
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			8,
+			9,
+			5,
+			6,
+			10
+		]
+	},
+	{
+		"start": 15,
+		"end": 3,
+		"rows": 4,
+		"cols": 4,
+		"id": 440281,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					0,
+					4,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					1,
+					2,
+					6
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					7,
+					11,
+					10
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			4,
+			0,
+			1,
+			2,
+			6,
+			10,
+			11,
+			7,
+			3
+		]
+	},
+	{
+		"start": 1,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440282,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					4,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			9,
+			5,
+			6,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			10
+		]
+	},
+	{
+		"start": 13,
+		"end": 6,
+		"rows": 4,
+		"cols": 4,
+		"id": 440283,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					14,
+					10,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					15,
 					11
 				]
 			}
@@ -5139,52 +6403,9 @@ levels: [
 			15,
 			11,
 			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440121,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					4,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					9,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			9,
-			10,
-			11,
-			7,
 			3,
 			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12
+			6
 		]
 	},
 	{
@@ -5192,10 +6413,221 @@ levels: [
 		"end": 10,
 		"rows": 4,
 		"cols": 4,
-		"id": 440122,
-		"solves": 3,
-		"maxSolves": 4,
+		"id": 440284,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
+			{
+				"forced": false,
+				"array": [
+					1,
+					0
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					5,
+					9
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					7,
+					3
+				]
+			}
+		],
+		"solvePath": [
+			12,
+			8,
+			4,
+			0,
+			1,
+			5,
+			9,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6,
+			10
+		]
+	},
+	{
+		"start": 4,
+		"end": 0,
+		"rows": 4,
+		"cols": 4,
+		"id": 440285,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					7,
+					3,
+					2
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0
+		]
+	},
+	{
+		"start": 15,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440286,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					2,
+					3,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					9,
+					8
+				]
+			}
+		],
+		"solvePath": [
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14
+		]
+	},
+	{
+		"start": 1,
+		"end": 7,
+		"rows": 4,
+		"cols": 4,
+		"id": 440287,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					10
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					2,
+					3
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					9,
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			10,
+			9,
+			5,
+			6,
+			2,
+			3,
+			7
+		]
+	},
+	{
+		"start": 9,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440288,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					14,
+					15
+				]
+			},
 			{
 				"forced": false,
 				"array": [
@@ -5206,232 +6638,115 @@ levels: [
 			{
 				"forced": false,
 				"array": [
-					8,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10
-		]
-	},
-	{
-		"start": 3,
-		"end": 7,
-		"rows": 4,
-		"cols": 4,
-		"id": 440123,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					9,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7
-		]
-	},
-	{
-		"start": 15,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440124,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					7,
-					3,
-					2
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			13,
-			12,
-			8,
-			4,
-			0,
-			1,
-			5,
-			9,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6
-		]
-	},
-	{
-		"start": 12,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440125,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					13,
-					14,
-					15
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					11,
-					7,
-					3
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9,
-			8,
-			4,
-			5,
-			1,
-			0
-		]
-	},
-	{
-		"start": 3,
-		"end": 2,
-		"rows": 4,
-		"cols": 4,
-		"id": 440126,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					15
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					6,
 					5,
-					9
+					6,
+					10
 				]
 			}
 		],
 		"solvePath": [
-			3,
-			7,
-			11,
-			15,
-			14,
+			9,
 			10,
 			6,
 			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0,
 			1,
+			0,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
 			2
 		]
 	},
 	{
-		"start": 0,
-		"end": 14,
+		"start": 15,
+		"end": 4,
 		"rows": 4,
 		"cols": 4,
-		"id": 440127,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440289,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
 				"array": [
-					2,
-					3
+					0,
+					1
 				]
 			},
 			{
 				"forced": false,
 				"array": [
-					9,
-					10,
-					6
+					8,
+					9
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					11,
+					10
 				]
 			}
 		],
 		"solvePath": [
+			15,
+			11,
+			10,
+			14,
+			13,
+			12,
+			8,
+			9,
+			5,
+			6,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4
+		]
+	},
+	{
+		"start": 13,
+		"end": 14,
+		"rows": 4,
+		"cols": 4,
+		"id": 440290,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					15,
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					12,
+					8,
+					4
+				]
+			}
+		],
+		"solvePath": [
+			13,
+			12,
+			8,
+			4,
 			0,
 			1,
 			5,
-			4,
-			8,
-			12,
-			13,
 			9,
 			10,
 			6,
@@ -5444,133 +6759,29 @@ levels: [
 		]
 	},
 	{
-		"start": 9,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440128,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					10,
-					11
-				]
-			}
-		],
-		"solvePath": [
-			9,
-			5,
-			6,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			10,
-			11,
-			15
-		]
-	},
-	{
-		"start": 3,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440129,
-		"solves": 3,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					6,
-					2,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			7,
-			11,
-			10,
-			6,
-			2,
-			1,
-			0,
-			4,
-			5,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
 		"start": 0,
-		"end": 1,
+		"end": 12,
 		"rows": 4,
 		"cols": 4,
-		"id": 440130,
-		"solves": 2,
-		"maxSolves": 2,
+		"id": 440291,
+		"solves": 1,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": true,
 				"array": [
-					8,
-					12,
-					13
+					3,
+					7,
+					11
 				]
 			},
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					10,
-					9,
-					5
+					6,
+					10
 				]
-			}
-		],
-		"solvePath": [
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6,
-			10,
-			9,
-			5,
-			1
-		]
-	},
-	{
-		"start": 0,
-		"end": 4,
-		"rows": 4,
-		"cols": 4,
-		"id": 440131,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
+			},
 			{
 				"forced": false,
 				"array": [
@@ -5580,168 +6791,7 @@ levels: [
 				]
 			},
 			{
-				"forced": false,
-				"array": [
-					6,
-					2,
-					3
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			5,
-			9,
-			10,
-			6,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			13,
-			12,
-			8,
-			4
-		]
-	},
-	{
-		"start": 3,
-		"end": 13,
-		"rows": 4,
-		"cols": 4,
-		"id": 440132,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
 				"forced": true,
-				"array": [
-					11,
-					15
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					10,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6,
-			2,
-			1,
-			0,
-			4,
-			5,
-			9,
-			8,
-			12,
-			13
-		]
-	},
-	{
-		"start": 12,
-		"end": 2,
-		"rows": 4,
-		"cols": 4,
-		"id": 440133,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					10,
-					9,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			9,
-			8,
-			4,
-			0,
-			1,
-			5,
-			6,
-			7,
-			3,
-			2
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440134,
-		"solves": 3,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					7,
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			9,
-			13,
-			12
-		]
-	},
-	{
-		"start": 0,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440135,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			},
-			{
-				"forced": false,
 				"array": [
 					4,
 					8
@@ -5750,10 +6800,91 @@ levels: [
 			{
 				"forced": false,
 				"array": [
+					5,
 					1,
 					2
 				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			8,
+			9,
+			10,
+			6,
+			5,
+			1,
+			2,
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12
+		]
+	},
+	{
+		"start": 4,
+		"end": 8,
+		"rows": 4,
+		"cols": 4,
+		"id": 440292,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					15,
+					14
+				]
 			},
+			{
+				"forced": true,
+				"array": [
+					6,
+					5,
+					9
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					11
+				]
+			}
+		],
+		"solvePath": [
+			4,
+			0,
+			1,
+			2,
+			3,
+			7,
+			6,
+			5,
+			9,
+			10,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8
+		]
+	},
+	{
+		"start": 0,
+		"end": 9,
+		"rows": 4,
+		"cols": 4,
+		"id": 440293,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
 			{
 				"forced": false,
 				"array": [
@@ -5762,154 +6893,274 @@ levels: [
 				]
 			},
 			{
-				"forced": true,
-				"array": [
-					14,
-					13,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			10,
-			11,
-			15,
-			14,
-			13,
-			9,
-			5,
-			4,
-			8,
-			12
-		]
-	},
-	{
-		"start": 10,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440136,
-		"solves": 1,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					11,
-					15
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					13,
-					12,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					9,
-					5,
-					1
-				]
-			}
-		],
-		"solvePath": [
-			10,
-			9,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11,
-			7,
-			6,
-			2,
-			3
-		]
-	},
-	{
-		"start": 15,
-		"end": 3,
-		"rows": 4,
-		"cols": 4,
-		"id": 440137,
-		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
 				"forced": false,
 				"array": [
 					10,
-					6,
-					7
+					6
 				]
-			}
-		],
-		"solvePath": [
-			15,
-			11,
-			7,
-			6,
-			10,
-			14,
-			13,
-			12,
-			8,
-			9,
-			5,
-			4,
-			0,
-			1,
-			2,
-			3
-		]
-	},
-	{
-		"start": 12,
-		"end": 10,
-		"rows": 4,
-		"cols": 4,
-		"id": 440138,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
+			},
 			{
-				"forced": true,
+				"forced": false,
 				"array": [
-					9,
+					1,
+					5,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					15,
+					14,
 					13
 				]
 			},
 			{
 				"forced": true,
 				"array": [
+					8,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			1,
+			5,
+			4,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			6,
+			10,
+			9
+		]
+	},
+	{
+		"start": 10,
+		"end": 4,
+		"rows": 4,
+		"cols": 4,
+		"id": 440294,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
 					2,
+					1,
+					0
+				]
+			}
+		],
+		"solvePath": [
+			10,
+			6,
+			5,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4
+		]
+	},
+	{
+		"start": 3,
+		"end": 2,
+		"rows": 4,
+		"cols": 4,
+		"id": 440295,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					5,
+					4,
+					0
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					8,
+					12,
+					13
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					15,
+					11,
+					7
+				]
+			}
+		],
+		"solvePath": [
+			3,
+			7,
+			11,
+			15,
+			14,
+			13,
+			12,
+			8,
+			9,
+			10,
+			6,
+			5,
+			4,
+			0,
+			1,
+			2
+		]
+	},
+	{
+		"start": 0,
+		"end": 1,
+		"rows": 4,
+		"cols": 4,
+		"id": 440296,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					3,
+					2
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					11,
+					7
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					10,
+					6,
+					5
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					9,
+					8,
+					12
+				]
+			}
+		],
+		"solvePath": [
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15,
+			11,
+			7,
+			3,
+			2,
+			1
+		]
+	},
+	{
+		"start": 7,
+		"end": 1,
+		"rows": 4,
+		"cols": 4,
+		"id": 440297,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": false,
+				"array": [
+					11,
+					10,
 					6
 				]
 			}
 		],
 		"solvePath": [
+			7,
+			3,
+			2,
+			6,
+			10,
+			11,
+			15,
+			14,
+			13,
 			12,
 			8,
+			9,
+			5,
 			4,
 			0,
-			1,
-			5,
+			1
+		]
+	},
+	{
+		"start": 9,
+		"end": 10,
+		"rows": 4,
+		"cols": 4,
+		"id": 440298,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": false,
+				"array": [
+					3,
+					7,
+					11
+				]
+			}
+		],
+		"solvePath": [
 			9,
+			5,
+			1,
+			0,
+			4,
+			8,
+			12,
 			13,
 			14,
 			15,
@@ -5922,550 +7173,99 @@ levels: [
 		]
 	},
 	{
-		"start": 12,
-		"end": 13,
+		"start": 9,
+		"end": 8,
 		"rows": 4,
 		"cols": 4,
-		"id": 440139,
+		"id": 440299,
 		"solves": 1,
-		"maxSolves": 2,
+		"maxSolves": 1,
 		"presets": [
 			{
 				"forced": false,
-				"array": [
-					9,
-					5
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					8,
-					4,
-					0
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			5,
-			9,
-			10,
-			11,
-			15,
-			14,
-			13
-		]
-	},
-	{
-		"start": 12,
-		"end": 7,
-		"rows": 4,
-		"cols": 4,
-		"id": 440140,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					0,
-					4,
-					8
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					1,
-					2
-				]
-			}
-		],
-		"solvePath": [
-			12,
-			13,
-			14,
-			15,
-			11,
-			10,
-			6,
-			5,
-			9,
-			8,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7
-		]
-	},
-	{
-		"start": 15,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440141,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					8,
-					4,
-					0
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			9,
-			13,
-			12
-		]
-	},
-	{
-		"start": 5,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440142,
-		"solves": 1,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
 				"array": [
 					12,
-					13
+					13,
+					14
 				]
 			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					0,
-					1
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					7,
-					3
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					8,
-					9
-				]
-			}
-		],
-		"solvePath": [
-			5,
-			4,
-			0,
-			1,
-			2,
-			3,
-			7,
-			6,
-			10,
-			9,
-			8,
-			12,
-			13,
-			14,
-			15,
-			11
-		]
-	},
-	{
-		"start": 1,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440143,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					7,
-					11
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					6,
-					5
-				]
-			}
-		],
-		"solvePath": [
-			1,
-			2,
-			3,
-			7,
-			11,
-			15,
-			14,
-			10,
-			6,
-			5,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 15,
-		"end": 9,
-		"rows": 4,
-		"cols": 4,
-		"id": 440144,
-		"solves": 4,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					5,
-					6
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					11,
-					10
-				]
-			}
-		],
-		"solvePath": [
-			15,
-			14,
-			10,
-			11,
-			7,
-			3,
-			2,
-			6,
-			5,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9
-		]
-	},
-	{
-		"start": 5,
-		"end": 11,
-		"rows": 4,
-		"cols": 4,
-		"id": 440145,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					1,
-					2
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					4,
-					8
-				]
-			}
-		],
-		"solvePath": [
-			5,
-			6,
-			7,
-			3,
-			2,
-			1,
-			0,
-			4,
-			8,
-			12,
-			13,
-			9,
-			10,
-			14,
-			15,
-			11
-		]
-	},
-	{
-		"start": 3,
-		"end": 0,
-		"rows": 4,
-		"cols": 4,
-		"id": 440146,
-		"solves": 1,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": true,
-				"array": [
-					11,
-					15
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					2,
-					1,
-					5,
-					6
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			5,
-			6,
-			7,
-			11,
-			15,
-			14,
-			10,
-			9,
-			13,
-			12,
-			8,
-			4,
-			0
-		]
-	},
-	{
-		"start": 0,
-		"end": 6,
-		"rows": 4,
-		"cols": 4,
-		"id": 440147,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
 			{
 				"forced": false,
 				"array": [
 					15,
 					11,
-					7
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					4,
-					8
-				]
-			},
-			{
-				"forced": false,
-				"array": [
-					1,
-					5
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					12,
-					13
-				]
-			},
-			{
-				"forced": true,
-				"array": [
-					3,
-					2
+					10
 				]
 			}
 		],
 		"solvePath": [
-			0,
-			1,
-			5,
-			4,
-			8,
-			12,
-			13,
-			9,
-			10,
-			14,
-			15,
-			11,
-			7,
-			3,
-			2,
-			6
-		]
-	},
-	{
-		"start": 3,
-		"end": 15,
-		"rows": 4,
-		"cols": 4,
-		"id": 440148,
-		"solves": 4,
-		"maxSolves": 7,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					12,
-					8,
-					4
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			6,
-			7,
-			11,
-			10,
 			9,
 			5,
-			1,
-			0,
 			4,
-			8,
-			12,
-			13,
-			14,
-			15
-		]
-	},
-	{
-		"start": 0,
-		"end": 12,
-		"rows": 4,
-		"cols": 4,
-		"id": 440149,
-		"solves": 3,
-		"maxSolves": 4,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					2,
-					1,
-					5
-				]
-			}
-		],
-		"solvePath": [
 			0,
-			4,
-			8,
-			9,
-			5,
 			1,
 			2,
 			3,
 			7,
 			6,
 			10,
-			11,
-			15,
-			14,
-			13,
-			12
-		]
-	},
-	{
-		"start": 3,
-		"end": 8,
-		"rows": 4,
-		"cols": 4,
-		"id": 440150,
-		"solves": 2,
-		"maxSolves": 2,
-		"presets": [
-			{
-				"forced": false,
-				"array": [
-					14,
-					13,
-					12
-				]
-			}
-		],
-		"solvePath": [
-			3,
-			2,
-			1,
-			0,
-			4,
-			5,
-			9,
-			10,
-			6,
-			7,
 			11,
 			15,
 			14,
 			13,
 			12,
 			8
+		]
+	},
+	{
+		"start": 11,
+		"end": 15,
+		"rows": 4,
+		"cols": 4,
+		"id": 440300,
+		"solves": 1,
+		"maxSolves": 1,
+		"presets": [
+			{
+				"forced": true,
+				"array": [
+					9,
+					8,
+					12
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					0,
+					4
+				]
+			},
+			{
+				"forced": true,
+				"array": [
+					5,
+					6
+				]
+			}
+		],
+		"solvePath": [
+			11,
+			7,
+			3,
+			2,
+			1,
+			0,
+			4,
+			5,
+			6,
+			10,
+			9,
+			8,
+			12,
+			13,
+			14,
+			15
 		]
 	}
 ]

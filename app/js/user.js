@@ -51,7 +51,7 @@ var _reportUserId = function() {
                 , os: BrowserDetect.OS
                 , browser: BrowserDetect.browser
                 , bversion: BrowserDetect.version
-                , mobile: $.mobile
+                , mobile: $.mobile == true ? "Y" : "N"
                 , version: $.definitions.version
             },
             function(response, error) {

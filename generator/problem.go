@@ -41,6 +41,9 @@ func (p *Problem) Generate() int {
 	maxSolves := generateMaxSolves(p.Graph.Rows, p.Graph.Cols, p.Rand)
 
 	for {
+		if p.Start == 10 && p.End == 9 {
+			fmt.Printf("solves: %d\n", solves)
+		}
 		if solves == 0 {
 			if attempts == MAX_ATTEMPTS {
 				return 3

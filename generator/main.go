@@ -17,6 +17,7 @@ import (
 )
 
 var rows, cols, numProblems, start, count int
+var seed int64
 var solvesFile, refFile, countFile string
 var outputPath, levelFile, title string
 var help bool
@@ -29,6 +30,7 @@ func init() {
 	flag.StringVar(&solvesFile, "s", "", "Solves file")
 	flag.StringVar(&refFile, "ref", "", "Reference file")
 	flag.StringVar(&countFile, "count", "", "Path to count file")
+	flag.Int64Var(&seed, "seed", time.Now().Unix(), "Seed to use for RNG")
 	// For converting and output
 	flag.StringVar(&levelFile, "l", "", "Level file from generator")
 	flag.StringVar(&outputPath, "o", "", "Output file")
@@ -86,8 +88,7 @@ func runGenerator() {
 
 	fmt.Printf("Starting with count: %d\n", count)
 
-	//seed := 1
-	seed := time.Now().Unix()
+	fmt.Printf("Random seed: %+v\n", seed)
 	r := rand.New(rand.NewSource(seed))
 	solvability := LoadSolvability(rows, cols)
 
@@ -147,6 +148,7 @@ func runGenerator() {
 					fmt.Printf("Preset: %+v\n", prob.Presets.Presets[i])
 				}*/
 				fmt.Printf("Successful generation! %d\n", numSolves+1)
+				fmt.Printf("Problem: %+v\n", prob)
 
 				// add to solves, increase num solves
 				numSolves++
@@ -200,6 +202,7 @@ func main() {
 		fmt.Printf("\t-s     Solve output file\n")
 		fmt.Printf("\t-ref   Reference file, a list of previously solved problems for row/col\n")
 		fmt.Printf("\t-count Path to count file\n")
+		fmt.Printf("\t-seed  Seed to use for rng\n")
 
 		fmt.Printf("\nTo run the converter:\n")
 		fmt.Printf("\t-l Generated level file\n")

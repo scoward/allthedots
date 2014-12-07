@@ -107,21 +107,26 @@ $.resetMouse = function() {
 
 $.reset = function() {
     $.resetMouse()
-    $.dt = 1
+    //$.dt = 1
+    // last time
     $.lt = 0
-    $.elapsed = 0
+    // start time
+    $.st = 0
     $.tick = 0
+    $.stats = null
     
     $.levelStarted = false
 }
 
 $.updateDelta = function() {
     var now = Date.now()
-    $.dt = (now - $.lt) / (1000  / 60)
-    $.dt = ($.dt < 0) ? 0.001 : $.dt
-    $.dt = ($.dt > 10) ? 10 : $.dt
+    if ($.st == 0) {
+        $.st = Date.now()
+    }
+    //$.dt = (now - $.lt) / (1000  / 60)
+    //$.dt = ($.dt < 0) ? 0.001 : $.dt
+    //$.dt = ($.dt > 10) ? 10 : $.dt
     $.lt = now
-    $.elapsed += $.dt
 }
 
 $.loadLevel = function(level) {

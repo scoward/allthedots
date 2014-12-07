@@ -29,11 +29,6 @@ func scoreReport(resp http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(resp, Response{"result": "success", "error": "none"})
 }
 
-func getLevelStats(resp http.ResponseWriter, req *http.Request) {
-	resp.Header().Set("Content-Type", "application/json")
-	fmt.Fprint(resp, Response{"result": "success", "error": "none"})
-}
-
 func getConfigData(c *conf.Config, key string) string {
 	foo, err := c.String("default", key)
 	if err != nil {
@@ -69,7 +64,7 @@ func main() {
 	config.NumWorkers = getConfigDataInt(configFile, "num_workers")
 
 	// Make sure DB is actually there
-	db, err := sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
+	db, err = sql.Open("mysql", config.DBUser+":"+config.DBPass+"@/"+config.DBName)
 	if err != nil {
 		fmt.Sprintf("Error with sql.Open on DB: %s\n", err)
 	}

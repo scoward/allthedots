@@ -13,13 +13,19 @@ type Worker struct {
 
 const (
 	LevelCompleteEvent = iota
-	UserReportEvent    = iota
+	UserReportEvent
+	UpdateLevelStats
+	UpdateUserTotals
 )
 
 type WorkRequest struct {
 	Type    int
 	Object  interface{}
 	Retries int
+}
+
+func NewWorkRequest(t int, object interface{}) *WorkRequest {
+	return &WorkRequest{Type: t, Object: object}
 }
 
 func NewWorker(id int, workerQueue chan chan *WorkRequest) *Worker {
@@ -52,6 +58,16 @@ func (w *Worker) Start() {
 					l := work.Object.(*LevelComplete)
 					fmt.Printf("Worker%d: Received player score, %+v\n", w.Id, work.Object)
 					shouldIncrement, err = handleLevelComplete(l)
+				} else if work.Type == UpdateLevelStats {
+					found = true
+					l := work.Object.(*LevelComplete)
+					fmt.Printf("Worker%d: Received level stats event, %+v\n", w.Id, work.Object)
+					shouldIncrement, err = levelCompleteUpdateStats(l)
+				} else if work.Type == UpdateUserTotals {
+					found = true
+					l := work.Object.(*LevelComplete)
+					fmt.Printf("Worker%d: Received update user totals event, %+v\n", w.Id, work.Object)
+					shouldIncrement, err = levelCompleteUpdateUser(l)
 				}
 				if found {
 					if err != nil {

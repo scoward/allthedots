@@ -52,11 +52,8 @@ func StartDispatcher(nworkers int) {
 		for {
 			select {
 			case work := <-WorkQueue:
-				fmt.Printf("Received work request\n")
 				go func() {
 					worker := <-WorkerQueue
-
-					fmt.Printf("Dispatching work request\n")
 					worker <- work
 				}()
 			}
